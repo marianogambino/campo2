@@ -7,7 +7,7 @@
     <ProjectGuid>{8433072C-749E-4D1D-8D1A-5C164A93FF7E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Services</RootNamespace>
+    <RootNamespace>Confluence.Services</RootNamespace>
     <AssemblyName>Services</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
