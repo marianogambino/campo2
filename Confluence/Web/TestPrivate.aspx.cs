@@ -1,0 +1,43 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
+using Confluence.Domain;
+using Confluence.Services;
+
+public partial class TestPrivate : PrivatePage
+{
+    private LoginService dummyService;
+
+    public LoginService DummyService
+    {
+        get { return dummyService; }
+        set { dummyService = value; }
+    }
+
+
+    public override void  On_Load(object sender, EventArgs e)
+    {
+        if (DummyService != null)
+        {
+            DummyService = null;
+        }
+
+    }
+    
+    public override IList<Patente> getPatentes()
+    {
+        IList<Patente> patentes = new List<Patente>();
+        patentes.Add(new Patente());
+        patentes.Add(new Patente());
+        patentes.Add(new Patente());
+        return patentes;
+    }
+}

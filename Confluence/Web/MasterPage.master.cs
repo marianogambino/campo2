@@ -1,23 +1,19 @@
 using System;
 using System.Data;
 using System.Configuration;
+using System.Collections;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Confluence.Services;
 
-public partial class _Default : System.Web.UI.Page 
+public partial class MasterPage : System.Web.UI.MasterPage
 {
-    private ILoginService loginService;
 
-    public ILoginService LoginService
+    protected void doLogin(object sender, EventArgs e)
     {
-        get { return loginService; }
-        set { loginService = value; }
+
     }
-    
-    
 }
