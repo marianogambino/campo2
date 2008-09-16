@@ -7,7 +7,7 @@ using NUnit.Framework.SyntaxHelpers;
 namespace Confluence.Services.Tests
 {
     [TestFixture]
-    [Category("Dummy")]
+    [Category("Demo")]
     public class DemoTest : AssertionHelper
     {
         int max;
