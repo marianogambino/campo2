@@ -12,14 +12,14 @@ using System.Collections.Generic;
 
 public static class SecuritySpec
 {
-    public static bool validateUser(User user,IList<int> patentes)
+    public static bool validateUser(User user,int patente)
     {
         if (user == null) return false;
 
-        bool ret = true;
-        foreach (int patNro in patentes)
-            ret &= user.hasPatente(patNro);
+        bool hasIt = false;
+        foreach (Patente pat in user.Patentes)
+            if (pat.Id == patente) hasIt = true;
 
-        return ret;
+        return hasIt;
     }
 }
