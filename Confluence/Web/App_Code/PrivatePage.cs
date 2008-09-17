@@ -15,16 +15,16 @@ public abstract class PrivatePage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!SecuritySpec.validateUser(ActiveUser, getPagePatente()))
-            redirectHome();
-        
-        this.On_Load(sender, e);
-        
-    }
+        //If user is not logged in, redirect to Login Page and WARN
+        if(!SecuritySpec.isLoggedIn(ActiveUser))
+            Response.Redirect(Constants.Redirects.MUST_LOGIN);
 
-    protected void redirectHome()
-    {
-        Response.Redirect(Constants.Redirects.LOGIN);
+        //If user is logged in but it's not allowed, redirect to Home page
+        if (!SecuritySpec.canAccessPage(ActiveUser, Patente))
+            Response.Redirect(Constants.Redirects.HOME);
+        
+        //If everything is fine, call hook and continue
+        this.On_Load(sender, e);
     }
 
     protected User ActiveUser
@@ -32,9 +32,9 @@ public abstract class PrivatePage : System.Web.UI.Page
         get { return (User)Session[Constants.SessionKeys.USER]; }
     }
 
-    private int getPagePatente()
+    protected int Patente
     {
-        return AuthorizationMap.Instance.get(this.GetType().Name);
+        get { return AuthorizationMap.Instance.get(this.GetType().Name); }
     }
 
     public virtual void On_Load(object sender, EventArgs e) { }
