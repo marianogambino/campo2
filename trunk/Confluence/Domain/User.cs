@@ -13,5 +13,16 @@ namespace Confluence.Domain
             get { return patentes; }
             set { patentes = value; }
         }
+        public User()
+        {
+            patentes = new List<Patente>();
+        }
+        public bool hasPatente(int patNumber)
+        {
+            foreach (Patente pat in Patentes)
+                if (pat.Id == patNumber) return true;
+
+            return false;
+        }
     }
 }
