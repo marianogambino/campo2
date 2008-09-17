@@ -31,13 +31,4 @@ public partial class TestPrivate : PrivatePage
         }
 
     }
-    
-    public override IList<Patente> getPatentes()
-    {
-        IList<Patente> patentes = new List<Patente>();
-        patentes.Add(new Patente());
-        patentes.Add(new Patente());
-        patentes.Add(new Patente());
-        return patentes;
-    }
-}
+ }

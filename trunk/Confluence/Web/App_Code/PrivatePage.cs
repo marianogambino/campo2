@@ -15,7 +15,7 @@ public abstract class PrivatePage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!SecuritySpec.validateUser(ActiveUser, getPatentes()))
+        if (!SecuritySpec.validateUser(ActiveUser, getPagePatente()))
             redirectHome();
         
         this.On_Load(sender, e);
@@ -32,7 +32,7 @@ public abstract class PrivatePage : System.Web.UI.Page
         get { return (User)Session[Constants.SessionKeys.USER]; }
     }
 
-    private IList<int> getPatentes()
+    private int getPagePatente()
     {
         return AuthorizationMap.Instance.get(this.GetType().Name);
     }

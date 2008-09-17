@@ -10,20 +10,19 @@ using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
 using Confluence.Domain;
 
+//Singleton
 public class AuthorizationMap
 {
     public static AuthorizationMap Instance = new AuthorizationMap();
-    private IDictionary<String, IList<int>> map;
-    
+    private IDictionary<String, int> map;
+
     private AuthorizationMap() 
     {
-        map = new Dictionary<String, IList<int>>();
-
-        map.Add(Constants.PageNames.HOME,new int[]{1,2,3});
-        map.Add(Constants.PageNames.TEST, new int[] {1,5,3,2});
+        map = new Dictionary<String, int>();
+        map.Add(Constants.PageNames.TEST, 1);
     }
 
-    public IList<int> get(String pageName) 
+    public int get(String pageName) 
     {
         try
         {
@@ -31,7 +30,7 @@ public class AuthorizationMap
         }
         catch (KeyNotFoundException e)
         {
-            return new int[] { };
+            return 0;
         }
     }
 }
