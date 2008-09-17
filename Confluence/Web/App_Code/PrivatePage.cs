@@ -24,7 +24,7 @@ public abstract class PrivatePage : System.Web.UI.Page
 
     protected void redirectHome()
     {
-        Response.Redirect(Constants.Pages.LOGIN);
+        Response.Redirect(Constants.Redirects.LOGIN);
     }
 
     protected User ActiveUser
@@ -32,7 +32,10 @@ public abstract class PrivatePage : System.Web.UI.Page
         get { return (User)Session[Constants.SessionKeys.USER]; }
     }
 
-    public abstract IList<Patente> getPatentes();
+    private IList<int> getPatentes()
+    {
+        return AuthorizationMap.Instance.get(this.GetType().Name);
+    }
 
     public virtual void On_Load(object sender, EventArgs e) { }
 }
