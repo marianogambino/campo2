@@ -28,7 +28,7 @@ public class AuthorizationMap
         {
             return map[pageName];
         }
-        catch (KeyNotFoundException e)
+        catch (KeyNotFoundException)
         {
             return 0;
         }
