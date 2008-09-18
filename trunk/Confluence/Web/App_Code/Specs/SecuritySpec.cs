@@ -14,7 +14,7 @@ public static class SecuritySpec
 {
     public static bool canAccessPage(User user,int patente)
     {
-        if (!isLoggedIn(user)) return false;
+        if (patente == 0) return true;
 
         bool hasIt = false;
         foreach (Patente pat in user.Patentes)
