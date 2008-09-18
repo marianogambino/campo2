@@ -19,7 +19,7 @@ public class AuthorizationMap
     private AuthorizationMap() 
     {
         map = new Dictionary<String, int>();
-        map.Add(Constants.PageNames.TEST, 1);
+        map.Add(Constants.PageNames.TEST, 0);
     }
 
     public int get(String pageName) 
