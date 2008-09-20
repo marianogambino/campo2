@@ -21,7 +21,8 @@ namespace Confluence.Services.Tests
         [Test]
         public void doLogin()
         {
-            Assert.That(true, Is.True);
+            Assert.That(LoginService.doLogin("NotExistent", "WhoCares"),Is.Null);
+            Assert.That(LoginService.doLogin("Stub1", "pass1"), Is.Not.Null);
         }
 
         protected override string[] ConfigLocations
