@@ -3,21 +3,52 @@ using System.Collections.Generic;
 using System.Text;
 using Spring.Testing.NUnit;
 using NUnit.Framework;
+using NUnit.Framework.SyntaxHelpers;
+using Confluence.DAL;
+using Confluence.Domain;
+using Confluence.DAL.Tests.Utils;
 
 namespace Confluence.DAL.Tests
 {
     [TestFixture]
     public class UserDaoTest : AbstractTransactionalDbProviderSpringContextTests
     {
+        private IUserDao userDao;
+
+        public IUserDao UserDao
+        {
+            get { return userDao; }
+            set { userDao = value; }
+        }
+
+        //[testfixturesetup]
+        //public void setup()
+        //{
+        //    adotemplate.execute(
+        //}
+
+        [Test]
         public void NewUser()
         {
+            User user = ObjectMother.User;
+            UserDao.Persist(user);
+            SetComplete();
+            User persisted = UserDao.GetById(user.Id);
 
-        }
+            Assert.That(user.Id, Is.EqualTo(persisted.Id));
+            Assert.That(user.Name, Is.EqualTo(persisted.Name));
+            Assert.That(user.Mail, Is.EqualTo(persisted.Mail));
+            Assert.That(user.Password, Is.EqualTo(persisted.Password));
+         }
+
+
         protected override string[] ConfigLocations
         {
-            //Should Refer an assembly!!! :D (Nota: Se podrian sacar los conf del Website)
-            //Y crear un nuevo proyecto (donde tambien pueden ir los helpers!) :) x 2 
-            get { throw new Exception("The method or operation is not implemented."); }
+            get
+            {
+                return new String[]{"assembly://Web.Code/Web.Code.Config/Data.xml"};
+            }
         }
-    }
+
+   }
 }
