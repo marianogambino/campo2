@@ -21,12 +21,6 @@ namespace Confluence.DAL.Tests
             set { userDao = value; }
         }
 
-        //[testfixturesetup]
-        //public void setup()
-        //{
-        //    adotemplate.execute(
-        //}
-
         [Test]
         public void NewUser()
         {
@@ -35,11 +29,31 @@ namespace Confluence.DAL.Tests
             SetComplete();
             User persisted = UserDao.GetById(user.Id);
 
+            Assert.That(user,Is.EqualTo(persisted));
+
             Assert.That(user.Id, Is.EqualTo(persisted.Id));
             Assert.That(user.Name, Is.EqualTo(persisted.Name));
             Assert.That(user.Mail, Is.EqualTo(persisted.Mail));
             Assert.That(user.Password, Is.EqualTo(persisted.Password));
-         }
+        }
+
+        [Test]
+        public void FindByName()
+        {
+            User user = ObjectMother.User;
+            UserDao.Persist(user);
+
+            User persisted = UserDao.GetByName(user.Name);
+
+            Assert.That(user,Is.EqualTo(persisted));
+            Assert.That(user.Password,Is.EqualTo(persisted.Password));
+
+            //Unexistent User (must fail)
+            Assert.That(UserDao.GetByName("GHOST"), Is.Null);
+            //Find by password (must fail)
+            Assert.That(UserDao.GetByName(user.Password),Is.Null);
+        }
+        
 
 
         protected override string[] ConfigLocations

@@ -53,6 +53,18 @@ namespace Confluence.Domain
         }
         #endregion
 
+        public override bool Equals(object obj)
+        {
+            if (obj is User)
+            {
+                User other = (User)obj;
+                return (Name.Equals(other.Name));
+            }
+            else
+            {
+                return false;
+            }
+        }
         
     }
 }
