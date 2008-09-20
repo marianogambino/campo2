@@ -39,16 +39,6 @@
 		        <div id="sidebar">
         			<ul>
         			<asp:ContentPlaceHolder ID="Menu" runat="server">
-        			    <li id="categories">
-        			        <h2>Login</h2>
-        			        <form action="Default.aspx" runat="server">
-        			            <label for="txtName">Nombre:</label>
-                                <asp:TextBox runat="server" ID="txtName" SkinID="id"/><br />
-                                <label for="txtPass">Password:</label>
-                                <asp:TextBox runat="server" ID="txtPass" TextMode="Password" /><br />
-                                <asp:Button runat="server" ID="submit" Text="Login" OnClick="doLogin"/>
-                            </form>
-        			    </li>
         			</asp:ContentPlaceHolder>
         			</ul>
 		        </div>
