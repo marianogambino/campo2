@@ -18,7 +18,7 @@ namespace Confluence.Services
 
         public bool doLogin(string userName, string password)
         {
-            userDao.SaveUser();
+            //userDao.SaveUser();
             return false;
         }
 
