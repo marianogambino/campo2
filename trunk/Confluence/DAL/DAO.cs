@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.DAL
 {
-    public interface DAO<T>
+    public interface IDAO<T>
     {
         T GetById(long id);
         void Persist(T entity);

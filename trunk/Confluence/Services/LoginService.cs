@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Confluence.DAL;
+using Confluence.Domain;
 
 namespace Confluence.Services
 {
@@ -14,13 +15,17 @@ namespace Confluence.Services
         public IUserDao UserDao
         {
             set { userDao = value; }
+            get { return userDao; }
         }
 
-        public bool doLogin(string userName, string password)
+        public User doLogin(string userName, string password)
         {
-            //userDao.SaveUser();
-            return false;
-        }
+            User found = UserDao.GetByName(userName);
 
+            if (found == null || ! found.Password.Equals(password))
+                return null;
+            else
+                return found;
+        }
     }
 }

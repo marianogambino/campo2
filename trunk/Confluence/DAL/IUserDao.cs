@@ -5,8 +5,8 @@ using Confluence.Domain;
 
 namespace Confluence.DAL
 {
-    public interface IUserDao : DAO<User>
+    public interface IUserDao : IDAO<User>
     {
-        
+        User GetByName(string userName);
     }
 }

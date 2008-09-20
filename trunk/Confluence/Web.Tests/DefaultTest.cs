@@ -6,7 +6,8 @@ using NUnit.Framework;
 
 namespace Web.Tests
 {
-        [TestFixture]
+        //[TestFixture]
+        //[Category("Web")]
         public class NewTest
         {
             private ISelenium selenium;

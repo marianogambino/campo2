@@ -2,7 +2,7 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="ContentPlaceHolder">
-    <a href="TestPrivate.aspx"> TO THE PRIVATE!!! :)</a>
+    <a href="Login.aspx"> TO Login!!! :)</a>
 </asp:Content>
 
 

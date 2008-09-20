@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Spring.Data.NHibernate.Support;
 using Confluence.Domain;
+using System.Collections;
 
 namespace Confluence.DAL
 {
@@ -33,5 +34,18 @@ namespace Confluence.DAL
         }
 
         #endregion
+
+        public User GetByName(string name)
+        {
+            IList users = (IList) HibernateTemplate.Find("FROM User u WHERE u.Name = ?",name);
+
+            User user = null;
+
+            if(users.Count>0)
+                user = (User)users[0];
+
+            return user;
+        }
+
     }
 }
