@@ -24,7 +24,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void formSubmit(object sender, EventArgs e)
     {
-        User user = LoginService.doLogin(txtName.Text, txtPass.Text);
+        User user = LoginService.doLogin(txtName.Text.Trim(), txtPass.Text.Trim());
         if (user != null)
         {
             Session[Constants.SessionKeys.USER] = user;

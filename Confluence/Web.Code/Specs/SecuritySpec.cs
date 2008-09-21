@@ -6,15 +6,16 @@ using System.Collections.Generic;
 
 public static class SecuritySpec
 {
-    public static bool canAccessPage(User user,int patente)
+    public static bool canAccessPage(User user, String pageName)
     {
+        int patente = AuthorizationMap.Instance.get(pageName);
+
         if (patente == 0) return true;
 
-        bool hasIt = false;
         foreach (Patente pat in user.Patentes)
-            if (pat.Id == patente) hasIt = true;
+            if (pat.Id == patente) return true;
 
-        return hasIt;
+        return false;
     }
 
     public static bool isLoggedIn(User user)

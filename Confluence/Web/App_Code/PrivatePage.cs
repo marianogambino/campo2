@@ -20,7 +20,7 @@ public abstract class PrivatePage : System.Web.UI.Page
             Response.Redirect(Constants.Redirects.MUST_LOGIN);
 
         //If user is logged in but it's not allowed, redirect to Home page
-        if (!SecuritySpec.canAccessPage(ActiveUser, Patente))
+        if (!SecuritySpec.canAccessPage(ActiveUser, this.GetType().Name))
             Response.Redirect(Constants.Redirects.HOME);
         
         //If everything is fine, call hook and continue
@@ -30,11 +30,6 @@ public abstract class PrivatePage : System.Web.UI.Page
     protected User ActiveUser
     {
         get { return (User)Session[Constants.SessionKeys.USER]; }
-    }
-
-    protected int Patente
-    {
-        get { return AuthorizationMap.Instance.get(this.GetType().Name); }
     }
 
     public virtual void On_Load(object sender, EventArgs e) { }

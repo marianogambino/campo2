@@ -13,18 +13,17 @@ public class AuthorizationMap
     private AuthorizationMap() 
     {
         map = new Dictionary<String, int>();
-        map.Add(Constants.PageNames.TEST, 0);
+
+        map.Add(Constants.PageNames.HOME, 0);
+
+        //TODO remove this when real pages exists
+        map.Add(Constants.PageNames.TEST, 1);
+        map.Add("other", 2);
+        
     }
 
     public int get(String pageName) 
     {
-        try
-        {
-            return map[pageName];
-        }
-        catch (KeyNotFoundException)
-        {
-            return 0;
-        }
+        return map[pageName];
     }
 }
