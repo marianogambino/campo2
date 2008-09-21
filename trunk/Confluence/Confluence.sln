@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Tests", "Web.Tests\Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Code", "Web.Code\Web.Code.csproj", "{1BC87A91-D249-4769-8846-D10B3E158DBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Code.Test", "Web.Code.Test\Web.Code.Test.csproj", "{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -146,6 +148,16 @@ Global
 		{1BC87A91-D249-4769-8846-D10B3E158DBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1BC87A91-D249-4769-8846-D10B3E158DBB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1BC87A91-D249-4769-8846-D10B3E158DBB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Release|.NET.ActiveCfg = Release|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

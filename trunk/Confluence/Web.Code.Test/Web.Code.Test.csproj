@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{70AF7A04-9C09-4D6A-9C18-81B9C0514D41}</ProjectGuid>
+    <ProjectGuid>{9544FF89-17C3-4E79-9CC1-5DD113BF1C1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Confluence.Domain.Tests</RootNamespace>
-    <AssemblyName>Domain.Tests</AssemblyName>
+    <RootNamespace>Web.Code.Test</RootNamespace>
+    <AssemblyName>Web.Code.Test</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,13 +34,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserTest.cs" />
+    <Compile Include="SecuritySpecTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{AFE61FF6-948C-4AEE-B85A-360F6989F5C1}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Code\Web.Code.csproj">
+      <Project>{1BC87A91-D249-4769-8846-D10B3E158DBB}</Project>
+      <Name>Web.Code</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
