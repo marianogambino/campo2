@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-
+<%@ Import Namespace="System.Collections.Generic" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,19 +15,12 @@
 		        <h1><a>Confluence</a></h1>
 		        <h2><a>Portal de Recursos Humanos</a></h2>
 	        </div>
-	        <% if(ThisPage.ActiveUser != null){ %>
             <div id="menu">
                 <ul>
-                    <li class="active"><a href="#">Home</a></li>
-			        <li><a href="#">Blog</a></li>
-			        <li><a href="#">Gallery</a></li>
-			        <li><a href="#">About</a></li>
-			        <li><a href="#">Contact </a></li>
-			        <li><a href="#">Contact </a></li>
-			        <li><a href="#">Contact </a></li>
-			        <li><a href="#">Contact </a></li>
+                <%foreach(KeyValuePair<String,String> kv in ThisPage.UserMenu){%>
+                    <li><a href="<%=kv.Value %>"><%=kv.Key%></a></li>
+			    <%} %>
 			    </ul>
-			<%} %>
             </div>
         </div>
         <hr />

@@ -25,12 +25,12 @@ namespace Confluence.DAL
 
         public void Delete(User entity)
         {
-            throw new NotImplementedException();
+            HibernateTemplate.Delete(entity);
         }
 
         public void Update(User entity)
         {
-            throw new NotImplementedException();
+            HibernateTemplate.Update(entity);
         }
 
         #endregion

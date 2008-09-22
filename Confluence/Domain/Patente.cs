@@ -8,13 +8,15 @@ namespace Confluence.Domain
     {
         private int id;
         private String name;
-        private String url;
+        private String path;
 
         public Patente() { }
 
-        public Patente(int id)
+        public Patente(int id, String name, String path)
         {
             Id = id;
+            Name = name;
+            Path = path;
         }
 
         public int Id
@@ -27,10 +29,10 @@ namespace Confluence.Domain
             get { return name; }
             set { name = value; }
         }
-        public String Url
+        public String Path
         {
-            get { return url; }
-            set { url = value; }
+            get { return path; }
+            set { path = value; }
         }
     }
 }

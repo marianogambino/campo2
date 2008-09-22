@@ -27,24 +27,31 @@ public partial class Login : ComponentPage
         User user = LoginService.doLogin(txtName.Text.Trim(), txtPass.Text.Trim());
         if (user != null)
         {
-            Session[Constants.SessionKeys.FAILED] = 0;
+            ResetFailed();
             Session[Constants.SessionKeys.USER] = user;
             Response.Redirect(Constants.Redirects.HOME);
         }
         else
         {
             Problems.Text = "Usuario y/o Contraseña Incorrectos";
-        
+
             if (IsIntruder())
+            {
+                ResetFailed();
                 Response.Redirect(Constants.Redirects.INTRUDER);
+            }
         }
+    }
+    private void ResetFailed()
+    {
+        Session[Constants.SessionKeys.FAILED] = 0;
     }
     private bool IsIntruder()
     {
-        Int16 fallidos;
+        int fallidos;
         try
         {
-            fallidos = (Int16)Session[Constants.SessionKeys.FAILED];
+            fallidos = (int)Session[Constants.SessionKeys.FAILED];
         }
         catch (NullReferenceException)
         {
