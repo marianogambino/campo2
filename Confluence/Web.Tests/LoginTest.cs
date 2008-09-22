@@ -39,30 +39,33 @@ namespace Web.Tests
         [Test]
         public void GoodLogin()
         {
-            LogIn("Pablo", "Secreto");
+            LogIn("Pablo", "secretos");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertIsElementPresent(MENU);
             AssertIsTextPresent("Helooou Everybod");
         }
 
+        [Test]
+        public void RejectLogin()
+        {
+            Selenium.Open(TEST_URL);
+            LogIn("Primer", "Intento");
+            LogIn("Segundo", "Intento");
+            LogIn("Tercer", "Intento");
+
+            Assert.Ignore();
+            //Assert Redirect Pagina de Maximo de Intentos
+        }
+
         public void LogIn(String User, String Pass)
         {
             Selenium.Open(TEST_URL);
-            Selenium.Click(LOGIN_BUTTON);
 
             Selenium.Type(TXT_NAME, User);
             Selenium.Type(TXT_PASSWORD, Pass);
             Selenium.Click(LOGIN_BUTTON);
-          
+
         }
-
-        ////TODO:[Test]
-        //public void RejectLogin()
-        //{
-        //    Selenium.Open(TEST_URL);
-        //    Selenium.Click
-
-        //}
     }
 }

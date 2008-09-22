@@ -24,7 +24,7 @@ namespace Web.Tests
             get { return selenium; }
         }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void SetupTest()
         {
             selenium = new DefaultSelenium(SERVER, PORT, BROWSER, URL);
@@ -32,7 +32,7 @@ namespace Web.Tests
             verificationErrors = new StringBuilder();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void TeardownTest()
         {
             try

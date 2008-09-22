@@ -26,11 +26,9 @@ namespace Confluence.DAL.Tests
         {
             User user = ObjectMother.User;
             UserDao.Persist(user);
-            SetComplete();
             User persisted = UserDao.GetById(user.Id);
 
             Assert.That(user,Is.EqualTo(persisted));
-
             Assert.That(user.Id, Is.EqualTo(persisted.Id));
             Assert.That(user.Name, Is.EqualTo(persisted.Name));
             Assert.That(user.Mail, Is.EqualTo(persisted.Mail));
