@@ -38,32 +38,35 @@ public class ComponentPage : System.Web.UI.Page
     }
     #endregion
 
-    public User ActiveUser
-    {
-        get { return (User)Session[Constants.SessionKeys.USER]; }
-    }
+    #region Menu Management
 
-    public IDictionary<String,String> Menu
+    public IDictionary<String,String> UserMenu
     {
         get
         {
             IDictionary<String, String> menu = new Dictionary<String, String>();
             FillDefaultEntries(menu);
-            FillSpecificEntries(menu);
+            if(ActiveUser!=null)
+                FillSpecificEntries(menu);
             return menu;
         }
     }
 
-    private void FillDefaultEntries(IDictionary<String, String> Menu)
+    private void FillDefaultEntries(IDictionary<String, String> menu)
     {
         //TODO test data
-        Menu.Add("Google","www.google.com");
-        Menu.Add("Yahoo","www.yahoo.com");
+        menu.Add("Google", "www.google.com");
+        menu.Add("Yahoo", "www.yahoo.com");
     }
-    private void FillSpecificEntries(IDictionary<String, String> Menu) 
+    private void FillSpecificEntries(IDictionary<String, String> menu)
     {
-        foreach(Patente pat in ActiveUser.Patentes)
-            Menu.Add(pat.Name, pat.Url);
+        foreach (Patente pat in ActiveUser.Patentes)
+            menu.Add(pat.Name, pat.Path);
     }
+    #endregion
 
+    public User ActiveUser
+    {
+        get { return (User)Session[Constants.SessionKeys.USER]; }
+    }
 }

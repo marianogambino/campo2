@@ -23,7 +23,6 @@ namespace Web.Tests
 
             AssertIsTextPresent("Nombre es requerido");
             AssertIsTextPresent("Password es requerido");
-            AssertIsElementAbsent(MENU);
         }
 
         [Test]
@@ -33,7 +32,6 @@ namespace Web.Tests
 
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertIsTextPresent("Usuario y/o Contraseña Incorrectos");
-            AssertIsElementAbsent(MENU);
         }
 
         [Test]
@@ -42,8 +40,6 @@ namespace Web.Tests
             LogIn("Pablo", "secretos");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertIsElementPresent(MENU);
-            AssertIsTextPresent("Helooou Everybody");
             AssertIsTextPresent("Helooou Everybody");
         }
 
@@ -57,6 +53,14 @@ namespace Web.Tests
             Selenium.WaitForPageToLoad(TIMEOUT);
 
             AssertIsTextPresent("Ha alcanzado el maximo de intentos fallidos");
+        }
+        [Test]
+        public void TestRejectLoginReset()
+        {
+            //Debe Borrar la variable cada 3 intentos
+            RejectLogin();
+            RejectLogin();
+            RejectLogin();
         }
 
         public void LogIn(String User, String Pass)
