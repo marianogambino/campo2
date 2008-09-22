@@ -16,6 +16,7 @@ namespace Web.Tests
         private const int PORT = 4444;
         private const String BROWSER = "*iexplore";
         private const String URL = "http://localhost:1745/";
+        private const char SEPARATOR = '€';
 
         protected const String TIMEOUT = "30000";
 
@@ -40,8 +41,14 @@ namespace Web.Tests
                 selenium.Stop();
             }
             catch (Exception) { }
-            
-            Assert.AreEqual("", verificationErrors.ToString());
+            if (verificationErrors.ToString().Length > 0)
+            {
+                foreach (String err in verificationErrors.ToString().Split(SEPARATOR))
+                {
+                    Assert.That(false,err);
+                }
+            }
+            //Assert.AreEqual("", verificationErrors.ToString());
         }
 
         #region Custom Asserts
@@ -51,9 +58,9 @@ namespace Web.Tests
             {
                 Assert.That(selenium.IsTextPresent(text));
             }
-            catch (AssertionException e)
+            catch (AssertionException)
             {
-                verificationErrors.Append(e.Message);
+                AddError("Text: '" + text + "' is not present on page " + selenium.GetLocation());
             }
         }
         protected void AssertIsElementPresent(String locator)
@@ -62,9 +69,9 @@ namespace Web.Tests
             {
                 Assert.That(selenium.IsElementPresent(locator));
             }
-            catch (AssertionException e)
+            catch (AssertionException)
             {
-                verificationErrors.Append(e.Message);
+                AddError("Element: " + locator + " is not present on page " + selenium.GetLocation());
             }
         }
         protected void AssertIsElementAbsent(String locator)
@@ -72,12 +79,16 @@ namespace Web.Tests
             try
             {
                 Assert.That(selenium.IsElementPresent(locator));
-                verificationErrors.Append("Element: " + locator + " Should not be present");
+                AddError("Element: " + locator + " Should not be present on page " +selenium.GetLocation());
             }
             catch (AssertionException) {/*Everything OK*/}
 
         }
         #endregion
 
+        private void AddError(String message)
+        {
+            verificationErrors.Append(message + SEPARATOR);
+        }
     }
 }
