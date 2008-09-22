@@ -8,7 +8,7 @@
         <title>Confulence RRHH</title>
         <link href="Style/default.css" rel="stylesheet" type="text/css" />
     </head>
-
+    <%ComponentPage ThisPage = (ComponentPage)Page; %>
     <body>
         <div id="header">
 	        <div id="logo">
@@ -16,6 +16,7 @@
 		        <h2><a>Portal de Recursos Humanos</a></h2>
 	        </div>
             <div id="menu">
+            <% if(ThisPage.ActiveUser != null){ %>
                 <ul>
                     <li class="active"><a href="#">Home</a></li>
 			        <li><a href="#">Blog</a></li>
@@ -26,20 +27,21 @@
 			        <li><a href="#">Contact </a></li>
 			        <li><a href="#">Contact </a></li>
 			    </ul>
+			<%} %>
             </div>
         </div>
         <hr />
 
         <div id="wrapper">
 	        <div id="page">
+	            <h3 class="error"><asp:Label runat="server" ID="Problems"></asp:Label></h3>
+                <h3 class="info"><asp:Label runat="server" ID="Info"></asp:Label></h3>
 		        <div id="content">
 			         <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
                     </asp:contentplaceholder>
 		        </div>
 		        <div id="sidebar">
         			<ul>
-        			<asp:ContentPlaceHolder ID="Menu" runat="server">
-        			</asp:ContentPlaceHolder>
         			</ul>
 		        </div>
 		        <br style="clear: both;" />

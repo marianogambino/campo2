@@ -5,76 +5,64 @@ using System.Threading;
 using NUnit.Framework;
 using Selenium;
 
-namespace SeleniumTests
+namespace Web.Tests
 {
     [TestFixture]
-    public class LoginTest
+    public class LoginTest : IntegrationTest
     {
         private const String TXT_NAME = "ctl00_ContentPlaceHolder_txtName";
         private const String TXT_PASSWORD = "ctl00_ContentPlaceHolder_txtPass";
         private const String LOGIN_BUTTON = "ctl00_ContentPlaceHolder_submit";
+        private const String MENU = "menu";
+        private const String TEST_URL = "/Web/Login.aspx";
 
-        private ISelenium selenium;
-        private StringBuilder verificationErrors;
-
-        [SetUp]
-        public void SetupTest()
+        [Test]
+        public void EmptyLogin()
         {
-            selenium = new DefaultSelenium("localhost", 4444, "*iexplore", "http://localhost:1745/");
-            selenium.Start();
-            verificationErrors = new StringBuilder();
-        }
+            LogIn("", "");
 
-        [TearDown]
-        public void TeardownTest()
-        {
-            try
-            {
-                selenium.Stop();
-            }
-            catch (Exception)
-            {
-                // Ignore errors if unable to close the browser
-            }
-            Assert.AreEqual("", verificationErrors.ToString());
+            AssertIsTextPresent("Nombre es requerido");
+            AssertIsTextPresent("Password es requerido");
+            AssertIsElementAbsent(MENU);
         }
 
         [Test]
-        public void TheNewTest()
+        public void BadLogin()
         {
-            selenium.Open("/Web/Default.aspx");
-            selenium.Click("link=TO Login!!! :)");
-            selenium.WaitForPageToLoad("30000");
-            selenium.Click(LOGIN_BUTTON);
-            try
-            {
-                Assert.IsTrue(selenium.IsTextPresent("Nombre es requerido"));
-            }
-            catch (AssertionException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
-            try
-            {
-                Assert.IsTrue(selenium.IsTextPresent("Password es requerido"));
-            }
-            catch (AssertionException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
-            selenium.Type(TXT_NAME, "algo");
-            selenium.Click(LOGIN_BUTTON);
-            try
-            {
-                Assert.IsTrue(selenium.IsTextPresent("Password es requerido"));
-            }
-            catch (AssertionException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
-            selenium.Type(TXT_PASSWORD, "nolga");
-            selenium.Click(LOGIN_BUTTON);
-            selenium.WaitForPageToLoad("30000");
+            LogIn("Falso", "User");
+
+            Selenium.WaitForPageToLoad(TIMEOUT);
+            AssertIsTextPresent("Usuario y/o Contraseña Incorrectos");
+            AssertIsElementAbsent(MENU);
         }
+
+        [Test]
+        public void GoodLogin()
+        {
+            LogIn("Pablo", "Secreto");
+
+            Selenium.WaitForPageToLoad(TIMEOUT);
+            AssertIsElementPresent(MENU);
+            AssertIsTextPresent("Helooou Everybod");
+        }
+
+        public void LogIn(String User, String Pass)
+        {
+            Selenium.Open(TEST_URL);
+            Selenium.Click(LOGIN_BUTTON);
+
+            Selenium.Type(TXT_NAME, User);
+            Selenium.Type(TXT_PASSWORD, Pass);
+            Selenium.Click(LOGIN_BUTTON);
+          
+        }
+
+        ////TODO:[Test]
+        //public void RejectLogin()
+        //{
+        //    Selenium.Open(TEST_URL);
+        //    Selenium.Click
+
+        //}
     }
 }
