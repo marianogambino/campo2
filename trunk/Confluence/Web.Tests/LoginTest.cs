@@ -43,7 +43,8 @@ namespace Web.Tests
 
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertIsElementPresent(MENU);
-            AssertIsTextPresent("Helooou Everybod");
+            AssertIsTextPresent("Helooou Everybody");
+            AssertIsTextPresent("Helooou Everybody");
         }
 
         [Test]
@@ -53,9 +54,9 @@ namespace Web.Tests
             LogIn("Primer", "Intento");
             LogIn("Segundo", "Intento");
             LogIn("Tercer", "Intento");
+            Selenium.WaitForPageToLoad(TIMEOUT);
 
-            Assert.Ignore();
-            //Assert Redirect Pagina de Maximo de Intentos
+            AssertIsTextPresent("Ha alcanzado el maximo de intentos fallidos");
         }
 
         public void LogIn(String User, String Pass)

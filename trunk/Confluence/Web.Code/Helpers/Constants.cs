@@ -7,6 +7,7 @@ public static class Constants
     public static class SessionKeys
     {
         public const String USER = "user";
+        public const String FAILED = "fallidos";
     }
 
     public static class Redirects
@@ -15,6 +16,7 @@ public static class Constants
         public const String LOGIN = "Login.aspx";
         public const String MUST_LOGIN = LOGIN + "?invalid=true";
         public const String TEST = "TestPrivate.aspx";
+        public const String INTRUDER = "Intruder.aspx";
     }
 
     public static class PageNames

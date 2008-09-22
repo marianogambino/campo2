@@ -7,16 +7,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
 using Confluence.Domain;
 
 public class ComponentPage : System.Web.UI.Page
 {
     private const String INFO = "Info";
-    //Note: "Error" es heredado y no se puede usar :(
     private const String PROBLEMS = "Problems";
 
-    public ComponentPage(){}
+    public ComponentPage(){ }
 
+    #region  Master Page Utils 
     protected Label Info
     {
         get { return (Label) FindMasterControl(INFO); }
@@ -35,10 +36,34 @@ public class ComponentPage : System.Web.UI.Page
 
         return control;
     }
+    #endregion
 
     public User ActiveUser
     {
         get { return (User)Session[Constants.SessionKeys.USER]; }
+    }
+
+    public IDictionary<String,String> Menu
+    {
+        get
+        {
+            IDictionary<String, String> menu = new Dictionary<String, String>();
+            FillDefaultEntries(menu);
+            FillSpecificEntries(menu);
+            return menu;
+        }
+    }
+
+    private void FillDefaultEntries(IDictionary<String, String> Menu)
+    {
+        //TODO test data
+        Menu.Add("Google","www.google.com");
+        Menu.Add("Yahoo","www.yahoo.com");
+    }
+    private void FillSpecificEntries(IDictionary<String, String> Menu) 
+    {
+        foreach(Patente pat in ActiveUser.Patentes)
+            Menu.Add(pat.Name, pat.Url);
     }
 
 }
