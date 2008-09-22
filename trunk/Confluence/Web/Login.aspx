@@ -11,7 +11,4 @@
     <asp:Button ID="submit" runat="server" OnClick="formSubmit" Text="Go" />
 </form>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Menu" Runat="Server">
-
-</asp:Content>
 

@@ -12,7 +12,7 @@ using Confluence.Services;
 using Confluence.Domain;
 using Web.Code.Helpers;
 
-public partial class Login : System.Web.UI.Page
+public partial class Login : ComponentPage
 {
     private ILoginService loginService;
 
@@ -32,9 +32,7 @@ public partial class Login : System.Web.UI.Page
         }
         else
         {
-            //TODO Login fallido, informar y Contar
+            Problems.Text = "Usuario y/o Contraseña Incorrectos";
         }
-        
-        
     }
 }

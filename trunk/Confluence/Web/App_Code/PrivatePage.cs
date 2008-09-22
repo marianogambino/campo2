@@ -8,10 +8,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using Confluence.Domain;
 
-
-public abstract class PrivatePage : System.Web.UI.Page
+public abstract class PrivatePage : ComponentPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,11 +23,6 @@ public abstract class PrivatePage : System.Web.UI.Page
         
         //If everything is fine, call hook and continue
         this.On_Load(sender, e);
-    }
-
-    protected User ActiveUser
-    {
-        get { return (User)Session[Constants.SessionKeys.USER]; }
     }
 
     public virtual void On_Load(object sender, EventArgs e) { }

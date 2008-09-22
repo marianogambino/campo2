@@ -22,13 +22,4 @@ public partial class TestPrivate : PrivatePage
         set { dummyService = value; }
     }
 
-
-    public override void  On_Load(object sender, EventArgs e)
-    {
-        if (DummyService != null)
-        {
-            DummyService = null;
-        }
-
-    }
  }

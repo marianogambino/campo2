@@ -53,6 +53,7 @@ namespace Confluence.Domain
         }
         #endregion
 
+        #region Equals & HashCode
         public override bool Equals(object obj)
         {
             if (obj is User)
@@ -65,6 +66,14 @@ namespace Confluence.Domain
                 return false;
             }
         }
-        
+        public override int GetHashCode()
+        {
+            int ret = 31;
+            foreach(char c in Name.ToCharArray())
+                ret = ret + c;
+
+            return ret;
+        }
+        #endregion
     }
 }

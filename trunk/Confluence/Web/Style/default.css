@@ -124,6 +124,15 @@ hr {
 	padding: 0;
 }
 
+#page h3.error
+{
+	color:Red;
+}
+
+#page h3.info
+{
+	color:Green;
+}
 /* Content */
 
 #content {
