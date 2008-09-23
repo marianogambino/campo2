@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain">
+  <class name="Confluence.Domain.Family" table="families">
+    <id name="Id">
+      <generator class="increment"/>
+    </id>
+    <property name="Name"/>
+    <property name="Description"/>
+    <bag  name="Patentes" 
+          generic="true"
+          table="family_patente"
+          lazy="false"
+          cascade="save-update">
+      <key column="family_id"/>
+      <many-to-many class="Confluence.Domain.Patente" column="patente_id"/>
+    </bag>
+  </class>
+</hibernate-mapping> 

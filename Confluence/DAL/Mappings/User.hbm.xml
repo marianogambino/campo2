@@ -12,7 +12,7 @@
          generic="true"
          table="user_patente"
          lazy="false"
-         cascade="save-update">
+         cascade="none">
       <key column="user_id"/>
       <many-to-many class="Confluence.Domain.Patente" column="patente_id"/>
     </bag>

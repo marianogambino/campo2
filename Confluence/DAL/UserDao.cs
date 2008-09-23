@@ -20,6 +20,9 @@ namespace Confluence.DAL
 
         public void Persist(User entity)
         {
+            User exists = GetByName(entity.Name);
+            if (exists != null)
+                throw new DuplicateEntityException(entity.Name);
             HibernateTemplate.Save(entity);
         }
 

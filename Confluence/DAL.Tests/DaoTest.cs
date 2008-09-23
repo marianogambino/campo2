@@ -8,6 +8,7 @@ namespace Confluence.DAL.Tests
     public abstract class DaoTest : AbstractTransactionalDbProviderSpringContextTests
     {
         protected const String OBJECT_DELETED = "Spring.Data.NHibernate.HibernateObjectRetrievalFailureException";
+        protected const String DUPLICATE_ENTITY = "Confluence.DAL.DuplicateEntityException";
 
         public abstract void Create();
         public abstract void Update();

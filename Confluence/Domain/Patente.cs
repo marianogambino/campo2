@@ -6,7 +6,7 @@ namespace Confluence.Domain
 {
     public class Patente
     {
-        private int id;
+        private long id;
         private String name;
         private String path;
 
@@ -19,7 +19,7 @@ namespace Confluence.Domain
             Path = path;
         }
 
-        public virtual int Id
+        public virtual long Id
         {
             get { return id; }
             set { id = value; }
@@ -39,7 +39,7 @@ namespace Confluence.Domain
             if (obj is Patente)
             {
                 Patente other = (Patente)obj;
-                return other.Name.Equals(Name);
+                return other.Id.Equals(Id);
             }
             else
             {
@@ -49,7 +49,7 @@ namespace Confluence.Domain
         }
         public override int GetHashCode()
         {
-            return 31 * Name.GetHashCode();
+            return 31 * Id.GetHashCode();
         }
     }
 }

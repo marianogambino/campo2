@@ -36,6 +36,14 @@ namespace Confluence.DAL.Tests
             Assert.That(user.Mail, Is.EqualTo(persisted.Mail));
             Assert.That(user.Password, Is.EqualTo(persisted.Password));
         }
+        [Test]
+        [ExpectedException(DUPLICATE_ENTITY)]
+        public void DuplicateCreate()
+        {
+            User user = ObjectMother.User;
+            UserDao.Persist(user);
+            UserDao.Persist(user);
+        }
 
         [Test]
         public override void Update()
@@ -79,6 +87,7 @@ namespace Confluence.DAL.Tests
             Assert.That(UserDao.GetByName("GHOST"), Is.Null);
             Assert.That(UserDao.GetByName(user.Password),Is.Null);
         }
+
         [Test]
         public void PatentsSave() 
         {
@@ -92,6 +101,7 @@ namespace Confluence.DAL.Tests
             Assert.That(persisted.Patentes.Contains(ObjectMother.PatenteGoogle));
             Assert.That(persisted.Patentes.Contains(ObjectMother.PatenteYahoo));
         }
+
         [Test]
         public void PatentsDelete()
         {
@@ -108,5 +118,10 @@ namespace Confluence.DAL.Tests
             Assert.That(updated.Patentes.Contains(ObjectMother.PatenteGoogle));
             Assert.That(!updated.Patentes.Contains(ObjectMother.PatenteYahoo));
         }
-   }
+        [Test]
+        public void FamiliesSave() { Assert.Fail("FALTA"); }
+
+        [Test]
+        public void FamiliesDelete() { Assert.Fail("FALTA"); }
+    }
 }
