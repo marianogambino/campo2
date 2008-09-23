@@ -17,13 +17,13 @@ namespace Confluence.Domain.Tests
         public void SetUp()
         {
             pat1 = new Patente(0, "Nombre", "Pathio");
-            pat2 = new Patente(2, "Nombre", "Pathio");
-            pat3 = new Patente(1, "Nombres", "Pathio");
+            pat2 = new Patente(0, "Nombresss", "Pathioss");
+            pat3 = new Patente(1, "Nombres", "Pathio2");
         }
         [Test]
         public void TestEquality()
         {
-            //Equality is based on Patente#Name
+            //Equality is based on Patente#Id
 
             Assert.That(pat1,Is.EqualTo(pat2));
             Assert.That(pat2,Is.EqualTo(pat1));
@@ -35,7 +35,7 @@ namespace Confluence.Domain.Tests
         [Test]
         public void TestHashCode()
         {
-            //Hashcode is based on Patente#Name
+            //Hashcode is based on Patente#Id
 
             Assert.That(pat1.GetHashCode(),Is.EqualTo(pat2.GetHashCode()));
             Assert.That(pat1.GetHashCode(), Is.Not.EqualTo(pat3.GetHashCode()));

@@ -36,5 +36,6 @@
   
   <object name="UserDao" parent="Dao"
           type="Confluence.DAL.UserDao, DAL"/>
-
+  <object name="FamilyDao" parent="Dao"
+          type="Confluence.DAL.FamilyDao, DAL"/>
 </objects>
