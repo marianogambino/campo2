@@ -19,20 +19,37 @@ namespace Confluence.Domain
             Path = path;
         }
 
-        public int Id
+        public virtual int Id
         {
             get { return id; }
             set { id = value; }
         }
-        public String Name
+        public virtual String Name
         {
             get { return name; }
             set { name = value; }
         }
-        public String Path
+        public virtual String Path
         {
             get { return path; }
             set { path = value; }
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj is Patente)
+            {
+                Patente other = (Patente)obj;
+                return other.Name.Equals(Name);
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        public override int GetHashCode()
+        {
+            return 31 * Name.GetHashCode();
         }
     }
 }

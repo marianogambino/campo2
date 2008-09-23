@@ -8,5 +8,6 @@ namespace Confluence.DAL
     public interface IUserDao : IDAO<User>
     {
         User GetByName(string userName);
+        
     }
 }

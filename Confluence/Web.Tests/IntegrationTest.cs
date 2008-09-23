@@ -30,7 +30,6 @@ namespace Web.Tests
         {
             selenium = new DefaultSelenium(SERVER, PORT, BROWSER, URL);
             selenium.Start();
-            verificationErrors = new StringBuilder();
         }
 
         [TearDown]
@@ -41,14 +40,13 @@ namespace Web.Tests
                 selenium.Stop();
             }
             catch (Exception) { }
-            if (verificationErrors.ToString().Length > 0)
+            if (ErrorsExist())
             {
                 foreach (String err in verificationErrors.ToString().Split(SEPARATOR))
                 {
                     Assert.That(false,err);
                 }
             }
-            //Assert.AreEqual("", verificationErrors.ToString());
         }
 
         #region Custom Asserts
@@ -84,11 +82,18 @@ namespace Web.Tests
             catch (AssertionException) {/*Everything OK*/}
 
         }
-        #endregion
+        
 
         private void AddError(String message)
         {
+            if (verificationErrors == null) 
+                verificationErrors = new StringBuilder();
             verificationErrors.Append(message + SEPARATOR);
         }
+        private bool ErrorsExist()
+        {
+            return (verificationErrors != null && verificationErrors.Length > 0);
+        }
+        #endregion
     }
 }

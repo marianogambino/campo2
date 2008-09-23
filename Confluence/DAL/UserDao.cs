@@ -46,6 +46,5 @@ namespace Confluence.DAL
 
             return user;
         }
-
     }
 }

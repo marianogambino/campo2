@@ -16,5 +16,19 @@ namespace Confluence.DAL.Tests.Utils
                 return user;
             }
         }
+        public static Patente PatenteGoogle
+        {
+            get 
+            {
+                return new Patente(0, "Google", "www.google.com");
+            }
+        }
+        public static Patente PatenteYahoo
+        {
+            get
+            {
+                return new Patente(0, "Yahoo", "www.yahoo.com");
+            }
+        }
     }
 }
