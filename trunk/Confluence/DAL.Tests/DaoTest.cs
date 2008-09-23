@@ -7,6 +7,12 @@ namespace Confluence.DAL.Tests
 {
     public abstract class DaoTest : AbstractTransactionalDbProviderSpringContextTests
     {
+        protected const String OBJECT_DELETED = "Spring.Data.NHibernate.HibernateObjectRetrievalFailureException";
+
+        public abstract void Create();
+        public abstract void Update();
+        public abstract void Delete();
+
         protected override string[] ConfigLocations
         {
             get

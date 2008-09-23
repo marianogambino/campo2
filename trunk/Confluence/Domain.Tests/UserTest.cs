@@ -9,15 +9,22 @@ namespace Confluence.Domain.Tests
     [TestFixture]
     public class UserTest
     {
+        private User u1;
+        private User u2;
+        private User u3;
+
+        [SetUp]
+        public void SetUp()
+        {
+            u1 = new User("Pablo", "pass1");
+            u2 = new User("Pablo", "pass2");
+            u3 = new User("Paolo", "el rockero");
+        }
+
         [Test]
         public void testEquality()
         {
-            //Equality is based on User#Name
-
-            User u1 = new User("Pablo", "pass1");
-            User u2 = new User("Pablo", "pass2");
-            User u3 = new User("Paolo", "el rockero");
-
+            //Equality is given by User#Name
             Assert.That(u1, Is.EqualTo(u2));
             Assert.That(u2, Is.EqualTo(u1));
             Assert.That(u1, Is.Not.EqualTo(u3));
@@ -29,10 +36,6 @@ namespace Confluence.Domain.Tests
         public void testHashCode()
         {
             //Hashcode is based on User#Name
-
-            User u1 = new User("Pablo", "pass1");
-            User u2 = new User("Pablo", "pass2");
-            User u3 = new User("Paolo", "el rockero");
 
             Assert.That(u1.GetHashCode().Equals(u2.GetHashCode()));
             Assert.That(u1.GetHashCode(), Is.Not.EqualTo(u3.GetHashCode()));

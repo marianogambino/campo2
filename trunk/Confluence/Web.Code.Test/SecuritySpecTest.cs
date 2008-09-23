@@ -14,7 +14,7 @@ namespace Web.Code.Test
         public void canAccessPage()
         {
             User user = new User();
-            user.Patentes.Add(new Patente(1)); //Test Page
+            user.Patentes.Add(new Patente(1,"Google","www.google.com")); //Test Page
 
             Assert.That(SecuritySpec.canAccessPage(user,Constants.PageNames.TEST));
             Assert.That(SecuritySpec.canAccessPage(user, "other"), Is.False); 

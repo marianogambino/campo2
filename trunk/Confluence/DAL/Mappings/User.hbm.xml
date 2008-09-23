@@ -8,5 +8,13 @@
     <property name="Name"/>
     <property name="Password"/>
     <property name="Mail" column="email"/>
+    <bag name="Patentes" 
+         generic="true"
+         table="user_patente"
+         lazy="false"
+         cascade="save-update">
+      <key column="user_id"/>
+      <many-to-many class="Confluence.Domain.Patente" column="patente_id"/>
+    </bag>
   </class>  
 </hibernate-mapping>
