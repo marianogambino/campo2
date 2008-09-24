@@ -11,11 +11,13 @@ namespace Confluence.Domain
         private String password;
         private String mail;
         private IList<Patente> patentes;
+        private IList<Family> families;
 
         #region Constructors
         public User()
         {
             Patentes = new List<Patente>();
+            Families = new List<Family>();
         }
         public User(String name, String password)
             : this()
@@ -50,6 +52,11 @@ namespace Confluence.Domain
         {
             get { return patentes; }
             set { patentes = value; }
+        }
+        public virtual IList<Family> Families
+        {
+            get { return families; }
+            set { families = value; }
         }
         #endregion
 

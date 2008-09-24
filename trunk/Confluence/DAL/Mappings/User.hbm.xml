@@ -16,5 +16,13 @@
       <key column="user_id"/>
       <many-to-many class="Confluence.Domain.Patente" column="patente_id"/>
     </bag>
+    <bag name="Families"
+         generic="true"
+         table="user_family"
+         lazy="false"
+         cascade="all-delete-orphan">
+      <key column="user_id"/>
+      <many-to-many class="Confluence.Domain.Family" column="family_id"/>
+    </bag>
   </class>  
 </hibernate-mapping>
