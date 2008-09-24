@@ -40,5 +40,9 @@ namespace Confluence.DAL.Tests.Utils
                 return ret;
             }
         }
+        public static Family EmptyFamily
+        {
+            get {return new Family("Adams", "Adams Family");}
+        }
     }
 }

@@ -119,9 +119,32 @@ namespace Confluence.DAL.Tests
             Assert.That(!updated.Patentes.Contains(ObjectMother.PatenteYahoo));
         }
         [Test]
-        public void FamiliesSave() { Assert.Fail("FALTA"); }
+        public void FamiliesSave() 
+        {
+            User user = ObjectMother.User;
+            user.Families.Add(ObjectMother.FullFamily);
+
+            UserDao.Persist(user);
+            User persisted = UserDao.GetById(user.Id);
+
+            Assert.That(persisted.Families.Contains(ObjectMother.FullFamily));
+            Assert.That(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteGoogle));
+            Assert.That(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteYahoo));
+        }
 
         [Test]
-        public void FamiliesDelete() { Assert.Fail("FALTA"); }
+        public void FamiliesDelete()
+        {
+            User user = ObjectMother.User;
+            user.Families.Add(ObjectMother.FullFamily);
+            UserDao.Persist(user);
+
+            User persisted = UserDao.GetById(user.Id);
+            persisted.Families.Remove(ObjectMother.FullFamily);
+            UserDao.Update(persisted);
+
+            User updated = UserDao.GetById(user.Id);
+            Assert.That(!updated.Families.Contains(ObjectMother.FullFamily));
+        }
     }
 }
