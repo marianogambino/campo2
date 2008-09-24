@@ -44,6 +44,7 @@ namespace Confluence.Services.Tests.Stubs
         {
             //Updateado :D
         }
+        public void flush() { }
 
     }
 }

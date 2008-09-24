@@ -49,5 +49,8 @@ namespace Confluence.DAL
 
             return user;
         }
+        public void flush(){
+            HibernateTemplate.Flush();
+        }
     }
 }

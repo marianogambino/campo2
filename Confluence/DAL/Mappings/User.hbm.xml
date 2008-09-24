@@ -3,7 +3,7 @@
                    assembly="Domain">
   <class name="Confluence.Domain.User" table="users">
     <id name="Id">
-      <generator class="increment"/>
+      <generator class="identity"/>
     </id>
     <property name="Name"/>
     <property name="Password"/>
@@ -20,7 +20,7 @@
          generic="true"
          table="user_family"
          lazy="false"
-         cascade="all-delete-orphan">
+         cascade="save-update">
       <key column="user_id"/>
       <many-to-many class="Confluence.Domain.Family" column="family_id"/>
     </bag>

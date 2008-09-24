@@ -37,7 +37,7 @@ namespace Web.Tests
         [Test]
         public void GoodLogin()
         {
-            LogIn("Pablo", "secretos");
+            LogIn("Pablo", "secreto");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertIsTextPresent("Helooou Everybody");

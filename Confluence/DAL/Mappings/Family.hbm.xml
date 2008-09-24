@@ -3,7 +3,7 @@
                    assembly="Domain">
   <class name="Confluence.Domain.Family" table="families">
     <id name="Id">
-      <generator class="increment"/>
+      <generator class="native"/>
     </id>
     <property name="Name"/>
     <property name="Description"/>
@@ -11,7 +11,7 @@
           generic="true"
           table="family_patente"
           lazy="false"
-          cascade="save-update">
+          cascade="none">
       <key column="family_id"/>
       <many-to-many class="Confluence.Domain.Patente" column="patente_id"/>
     </bag>
