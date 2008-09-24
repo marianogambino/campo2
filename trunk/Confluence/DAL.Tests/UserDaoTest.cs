@@ -126,7 +126,6 @@ namespace Confluence.DAL.Tests
 
             UserDao.Persist(user);
             User persisted = UserDao.GetById(user.Id);
-
             Assert.That(persisted.Families.Contains(ObjectMother.FullFamily));
             Assert.That(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteGoogle));
             Assert.That(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteYahoo));
@@ -138,7 +137,6 @@ namespace Confluence.DAL.Tests
             User user = ObjectMother.User;
             user.Families.Add(ObjectMother.FullFamily);
             UserDao.Persist(user);
-
             User persisted = UserDao.GetById(user.Id);
             persisted.Families.Remove(ObjectMother.FullFamily);
             UserDao.Update(persisted);

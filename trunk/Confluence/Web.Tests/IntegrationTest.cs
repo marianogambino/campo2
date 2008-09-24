@@ -15,7 +15,7 @@ namespace Web.Tests
         private const String SERVER = "localhost";
         private const int PORT = 4444;
         private const String BROWSER = "*iexplore";
-        private const String URL = "http://localhost:1745/";
+        private const String URL = "http://localhost:3255/";
         private const char SEPARATOR = '€';
 
         protected const String TIMEOUT = "30000";
@@ -42,9 +42,17 @@ namespace Web.Tests
             catch (Exception) { }
             if (ErrorsExist())
             {
-                foreach (String err in verificationErrors.ToString().Split(SEPARATOR))
+                try
                 {
-                    Assert.That(false,err);
+                    foreach (String err in verificationErrors.ToString().Split(SEPARATOR))
+                    {
+                        Assert.That(false, err);
+                    }
+                }
+                catch (AssertionException e) { throw e; }
+                finally
+                {
+                    verificationErrors = new StringBuilder();
                 }
             }
         }
