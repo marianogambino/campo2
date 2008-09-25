@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
 using Confluence.Domain;
 using Confluence.DAL.Tests.Utils;
 
@@ -32,11 +31,11 @@ namespace Confluence.DAL.Tests
 
             Family persisted = FamilyDao.GetById(newFamily.Id);
 
-            Assert.That(newFamily.Equals(persisted));
-            Assert.That(newFamily.Description.Equals(persisted.Description));
-            Assert.That(newFamily.Patentes.Count==2);
-            Assert.That(newFamily.Patentes.Contains(ObjectMother.PatenteGoogle));
-            Assert.That(newFamily.Patentes.Contains(ObjectMother.PatenteYahoo));
+            Assert.AreEqual(newFamily,persisted);
+            Assert.AreEqual(newFamily.Description,persisted.Description);
+            Assert.IsTrue(newFamily.Patentes.Count==2);
+            Assert.IsTrue(newFamily.Patentes.Contains(ObjectMother.PatenteGoogle));
+            Assert.IsTrue(newFamily.Patentes.Contains(ObjectMother.PatenteYahoo));
         }
 
         [Test]
@@ -56,13 +55,13 @@ namespace Confluence.DAL.Tests
             FamilyDao.Persist(newFamily);
             
             Family persisted = FamilyDao.GetById(newFamily.Id);
-            Assert.That(persisted.Description.Equals("family"));
+            Assert.IsTrue(persisted.Description.Equals("family"));
 
             persisted.Description = "new description";
             FamilyDao.Update(persisted);
 
             Family updated = FamilyDao.GetById(newFamily.Id);
-            Assert.That(updated.Description, Is.EqualTo("new description"));
+            Assert.AreEqual(updated.Description, "new description");
         }
 
         [Test]
@@ -73,7 +72,7 @@ namespace Confluence.DAL.Tests
             FamilyDao.Persist(newFamily);
 
             Family persisted = FamilyDao.GetById(newFamily.Id);
-            Assert.That(persisted, Is.EqualTo(newFamily));
+            Assert.AreEqual(persisted, newFamily);
 
             long id = persisted.Id;
             FamilyDao.Delete(persisted);

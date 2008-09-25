@@ -12,8 +12,8 @@ namespace Web.Code.Test
         [NUnit.Framework.Test]
         public void EmptyString()
         {
-            Assert.That(Is.EmptyString(""));
-            Assert.That(Is.EmptyString("        "));
+            Assert.IsTrue(Is.EmptyString(""));
+            Assert.IsTrue(Is.EmptyString("        "));
             Assert.IsFalse(Is.EmptyString("algo hay!"));
         }
     }

@@ -4,7 +4,6 @@ using System.Text;
 using Spring.Testing.NUnit;
 using Confluence.Services;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
 
 namespace Confluence.Services.Tests
 {
@@ -21,8 +20,8 @@ namespace Confluence.Services.Tests
         [Test]
         public void doLogin()
         {
-            Assert.That(LoginService.doLogin("NotExistent", "WhoCares"),Is.Null);
-            Assert.That(LoginService.doLogin("Stub1", "pass1"), Is.Not.Null);
+            Assert.IsNull(LoginService.doLogin("NotExistent", "WhoCares"));
+            Assert.IsNotNull(LoginService.doLogin("Stub1", "pass1"));
         }
 
         protected override string[] ConfigLocations

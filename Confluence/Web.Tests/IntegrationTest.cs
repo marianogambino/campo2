@@ -46,7 +46,7 @@ namespace Web.Tests
                 {
                     foreach (String err in verificationErrors.ToString().Split(SEPARATOR))
                     {
-                        Assert.That(false, err);
+                        Assert.IsTrue(false, err);
                     }
                 }
                 catch (AssertionException e) { throw e; }
@@ -62,7 +62,7 @@ namespace Web.Tests
         {
             try
             {
-                Assert.That(selenium.IsTextPresent(text));
+                Assert.IsTrue(selenium.IsTextPresent(text));
             }
             catch (AssertionException)
             {
@@ -73,7 +73,7 @@ namespace Web.Tests
         {
             try
             {
-                Assert.That(selenium.IsElementPresent(locator));
+                Assert.IsTrue(selenium.IsElementPresent(locator));
             }
             catch (AssertionException)
             {
@@ -84,7 +84,7 @@ namespace Web.Tests
         {
             try
             {
-                Assert.That(selenium.IsElementPresent(locator));
+                Assert.IsTrue(selenium.IsElementPresent(locator));
                 AddError("Element: " + locator + " Should not be present on page " +selenium.GetLocation());
             }
             catch (AssertionException) {/*Everything OK*/}
