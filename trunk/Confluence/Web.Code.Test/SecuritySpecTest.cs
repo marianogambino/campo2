@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
 using Confluence.Domain;
 
 namespace Web.Code.Test
@@ -16,21 +15,21 @@ namespace Web.Code.Test
             User user = new User();
             user.Patentes.Add(new Patente(1,"Google","www.google.com")); //Test Page
 
-            Assert.That(SecuritySpec.canAccessPage(user,Constants.PageNames.TEST));
-            Assert.That(SecuritySpec.canAccessPage(user, "other"), Is.False); 
+            Assert.IsTrue(SecuritySpec.canAccessPage(user,Constants.PageNames.TEST));
+            Assert.IsFalse(SecuritySpec.canAccessPage(user, "other")); 
 
             //La patente 0 la tienen todos.
             //esto se puede llegar a eliminar
-            Assert.That(SecuritySpec.canAccessPage(user,Constants.PageNames.HOME));
+            Assert.IsTrue(SecuritySpec.canAccessPage(user,Constants.PageNames.HOME));
         }
         [NUnit.Framework.Test]
         public void isLoggedIn()
         {
             //User is logged in if != null
             User user = null;
-            Assert.That(SecuritySpec.isLoggedIn(user), Is.False);
+            Assert.IsFalse(SecuritySpec.isLoggedIn(user));
             user = new User();
-            Assert.That(SecuritySpec.isLoggedIn(user), Is.True);
+            Assert.IsTrue(SecuritySpec.isLoggedIn(user));
         }
     }
 }

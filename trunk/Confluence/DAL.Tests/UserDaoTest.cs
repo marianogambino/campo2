@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
 using Confluence.DAL;
 using Confluence.Domain;
 using Confluence.DAL.Tests.Utils;
@@ -30,11 +29,11 @@ namespace Confluence.DAL.Tests
             UserDao.Persist(user);
             User persisted = UserDao.GetById(user.Id);
 
-            Assert.That(user,Is.EqualTo(persisted));
-            Assert.That(user.Id, Is.EqualTo(persisted.Id));
-            Assert.That(user.Name, Is.EqualTo(persisted.Name));
-            Assert.That(user.Mail, Is.EqualTo(persisted.Mail));
-            Assert.That(user.Password, Is.EqualTo(persisted.Password));
+            Assert.AreEqual(user,persisted);
+            Assert.AreEqual(user.Id, persisted.Id);
+            Assert.AreEqual(user.Name, persisted.Name);
+            Assert.AreEqual(user.Mail, persisted.Mail);
+            Assert.AreEqual(user.Password, persisted.Password);
         }
         [Test]
         [ExpectedException(DUPLICATE_ENTITY)]
@@ -56,7 +55,7 @@ namespace Confluence.DAL.Tests
             UserDao.Update(persisted);
 
             User updated = UserDao.GetById(user.Id);
-            Assert.That(persisted.Password == updated.Password);
+            Assert.AreEqual(persisted.Password,updated.Password);
         }
 
         [Test]
@@ -81,11 +80,10 @@ namespace Confluence.DAL.Tests
 
             User persisted = UserDao.GetByName(user.Name);
 
-            Assert.That(user,Is.EqualTo(persisted));
-            Assert.That(user.Password,Is.EqualTo(persisted.Password));
+            Assert.AreEqual(user,persisted);
 
-            Assert.That(UserDao.GetByName("GHOST"), Is.Null);
-            Assert.That(UserDao.GetByName(user.Password),Is.Null);
+            Assert.IsNull(UserDao.GetByName("GHOST"));
+            Assert.IsNull(UserDao.GetByName(user.Password));
         }
 
         [Test]
@@ -98,8 +96,8 @@ namespace Confluence.DAL.Tests
 
             User persisted = UserDao.GetById(user.Id);
 
-            Assert.That(persisted.Patentes.Contains(ObjectMother.PatenteGoogle));
-            Assert.That(persisted.Patentes.Contains(ObjectMother.PatenteYahoo));
+            Assert.IsTrue(persisted.Patentes.Contains(ObjectMother.PatenteGoogle));
+            Assert.IsTrue(persisted.Patentes.Contains(ObjectMother.PatenteYahoo));
         }
 
         [Test]
@@ -115,8 +113,8 @@ namespace Confluence.DAL.Tests
             UserDao.Update(persisted);
 
             User updated = UserDao.GetById(user.Id);
-            Assert.That(updated.Patentes.Contains(ObjectMother.PatenteGoogle));
-            Assert.That(!updated.Patentes.Contains(ObjectMother.PatenteYahoo));
+            Assert.IsTrue(updated.Patentes.Contains(ObjectMother.PatenteGoogle));
+            Assert.IsTrue(!updated.Patentes.Contains(ObjectMother.PatenteYahoo));
         }
         [Test]
         public void FamiliesSave() 
@@ -126,9 +124,9 @@ namespace Confluence.DAL.Tests
 
             UserDao.Persist(user);
             User persisted = UserDao.GetById(user.Id);
-            Assert.That(persisted.Families.Contains(ObjectMother.FullFamily));
-            Assert.That(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteGoogle));
-            Assert.That(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteYahoo));
+            Assert.IsTrue(persisted.Families.Contains(ObjectMother.FullFamily));
+            Assert.IsTrue(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteGoogle));
+            Assert.IsTrue(persisted.Families[0].Patentes.Contains(ObjectMother.PatenteYahoo));
         }
 
         [Test]
@@ -142,7 +140,7 @@ namespace Confluence.DAL.Tests
             UserDao.Update(persisted);
 
             User updated = UserDao.GetById(user.Id);
-            Assert.That(!updated.Families.Contains(ObjectMother.FullFamily));
+            Assert.IsFalse(updated.Families.Contains(ObjectMother.FullFamily));
         }
     }
 }
