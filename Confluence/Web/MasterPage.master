@@ -27,9 +27,9 @@
         <div id="topsection">
             <div class="innertube boxed">
                 <%if(ThisPage.IsLogged){%>
-                <div id="statbar">
-                    Hello,<%=ThisPage.ActiveUser.Name %>.<br />
-                    <asp:LinkButton runat="server" OnClick="Logout">Logout</asp:LinkButton>
+                <div id="statbar" class="boxed">
+                    <span class="hellouser">Hello, <%=ThisPage.ActiveUser.Name %></span>.<br />
+                    <asp:LinkButton ID="logoutLink" CssClass="logout" runat="server" OnClick="Logout">Logout</asp:LinkButton>
                 </div>
                 <%} %>
                 <h1>Confluence</h1>
