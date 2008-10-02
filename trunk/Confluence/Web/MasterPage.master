@@ -1,51 +1,71 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 <%@ Import Namespace="System.Collections.Generic" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Import Namespace="Confluence.Domain" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Confulence RRHH</title>
-        <link href="Style/default.css" rel="stylesheet" type="text/css" />
-    </head>
-    <%ComponentPage ThisPage = (ComponentPage)Page; %>
-    <body>
-        <div id="header">
-	        <div id="logo">
-		        <h1><a>Confluence</a></h1>
-		        <h2><a>Portal de Recursos Humanos</a></h2>
-	        </div>
-            <div id="menu">
-                <ul>
-                <%foreach(KeyValuePair<String,String> kv in ThisPage.UserMenu){%>
-                    <li><a href="<%=kv.Value %>"><%=kv.Key%></a></li>
-			    <%} %>
-			    </ul>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Confluence</title>
+    <link type="text/css" rel="stylesheet" href="Style/default.css" />
+    <script type="text/javascript" src="javascript/prototype.js"></script>
+    <script type="text/javascript" src="javascript/effects.js"></script>
+    <script type="text/javascript" src="javascript/accordion.js"></script>
+    <script type="text/javascript" src="javascript/master.js"></script>
+</head>
+
+<body>
+    <form id="Form1" runat="server" action="">
+    <div id="maincontainer">
+        <div id="topsection">
+            <div class="innertube boxed">
+                <h1>Confluence</h1>
             </div>
         </div>
-        <hr />
 
-        <div id="wrapper">
-	        <div id="page">
-	            <h3 class="error"><asp:Label runat="server" ID="Problems"></asp:Label></h3>
+        <div id="contentwrapper">
+            <div id="contentcolumn">
+                <div class="innertube boxed">
+                <h3 class="error"><asp:Label runat="server" ID="Problems"></asp:Label></h3>
                 <h3 class="info"><asp:Label runat="server" ID="Info"></asp:Label></h3>
-		        <div id="content">
-			         <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
-                    </asp:contentplaceholder>
-		        </div>
-		        <div id="sidebar">
-        			<ul>
-        			</ul>
-		        </div>
-		        <br style="clear: both;" />
-	        </div>
+                <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
+                </asp:contentplaceholder>
+                </div>
+            </div>
         </div>
-        <div id="wrapper2">
-	        <p id="legal">2008 Confluence&copy;. All Rights Reserved.
-		        &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-		        Design by Pablo Fernandez &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-		        <a href="http://validator.w3.org/check/referer" class="xhtml" title="This page validates as XHTML">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="http://jigsaw.w3.org/css-validator/check/referer" class="css" title="This page validates as CSS">Valid <abbr title="Cascading Style Sheets">CSS</abbr></a> </p>
+
+        <div id="leftcolumn">
+            <div class="innertube boxed">
+                <b>Menu:</b>
+                <div id="accordion">
+                    <h2 class="accordion_toggle">Main</h2>
+                    <div class="accordion_content">
+                        <a href="Login.aspx">Login</a>
+                    </div>
+                    <%ComponentPage ThisPage = (ComponentPage)Page; %>
+                    <%if(ThisPage.ActiveUser!=null){%>
+                        <%foreach(Family fam in ThisPage.ActiveUser.Families){%>
+                            <h2 class="accordion_toggle"><%=fam.Name%></h2>
+                            <div class="accordion_content">
+                            <%foreach(Patente pat in fam.Patentes){%>
+                                <a href="<%=pat.Path%>"><%=pat.Name%></a><br />
+                            <%}%>
+                            </div>
+                        <%}%>
+                    <%}%>
+               </div>
+            </div>
         </div>
+
+        <div id="footer">
+            <div class="innertube boxed">
+                <a href="#">Footer</a>
+            </div>
+        </div>
+    </div>
+    </form>
 </body>
 </html>
+
 
