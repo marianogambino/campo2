@@ -3,7 +3,12 @@
 <%@ Import Namespace="Confluence.Domain" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<script runat="server">
+    protected ComponentPage ThisPage
+    {
+        get{ return (ComponentPage)Page ;}
+    }
+</script>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -13,14 +18,22 @@
     <script type="text/javascript" src="javascript/effects.js"></script>
     <script type="text/javascript" src="javascript/accordion.js"></script>
     <script type="text/javascript" src="javascript/master.js"></script>
+
 </head>
 
 <body>
-    <form id="Form1" runat="server" action="">
+    <form runat="server" action="">
     <div id="maincontainer">
         <div id="topsection">
             <div class="innertube boxed">
+                <%if(ThisPage.IsLogged){%>
+                <div id="statbar">
+                    Hello,<%=ThisPage.ActiveUser.Name %>.<br />
+                    <asp:LinkButton runat="server" OnClick="Logout">Logout</asp:LinkButton>
+                </div>
+                <%} %>
                 <h1>Confluence</h1>
+                <div class="clearboth" />
             </div>
         </div>
 
@@ -43,8 +56,7 @@
                     <div class="accordion_content">
                         <a href="Login.aspx">Login</a>
                     </div>
-                    <%ComponentPage ThisPage = (ComponentPage)Page; %>
-                    <%if(ThisPage.ActiveUser!=null){%>
+                    <%if(ThisPage.IsLogged){%>
                         <%foreach(Family fam in ThisPage.ActiveUser.Families){%>
                             <h2 class="accordion_toggle"><%=fam.Name%></h2>
                             <div class="accordion_content">
