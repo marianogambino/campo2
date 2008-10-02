@@ -40,7 +40,7 @@ namespace Web.Tests
             LogIn("Pablo", "secreto");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertIsTextPresent("Helooou Everybody");
+            AssertIsTextPresent("Simple Info Message");
         }
 
         [Test]
@@ -61,6 +61,13 @@ namespace Web.Tests
             RejectLogin();
             RejectLogin();
             RejectLogin();
+        }
+
+        [Test]
+        public void TestIsPresentAccordionMenu()
+        {
+            GoodLogin();
+            AssertIsElementPresent("accordion");
         }
 
         public void LogIn(String User, String Pass)

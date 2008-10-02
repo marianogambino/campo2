@@ -13,6 +13,7 @@ public partial class _Default : ComponentPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Info.Text = "Helooou Everybody";
+        Info.Text = "Simple Info Message";
+        Problems.Text = "Simple Error Message";
     }
 }
