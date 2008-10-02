@@ -40,7 +40,8 @@ namespace Web.Tests
             LogIn("Pablo", "secreto");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertIsTextPresent("Simple Info Message");
+            AssertIsTextPresent("Hello,Pablo");
+            AssertIsTextPresent("Logout");
         }
 
         [Test]
@@ -70,6 +71,15 @@ namespace Web.Tests
             AssertIsElementPresent("accordion");
         }
 
+        [Test]
+        public void LogOut()
+        {
+            GoodLogin();
+            Selenium.Click("link=Logout");
+            Selenium.WaitForPageToLoad(TIMEOUT);
+            AssertIsElementAbsent("statbar");
+        }
+
         public void LogIn(String User, String Pass)
         {
             Selenium.Open(TEST_URL);
@@ -77,7 +87,6 @@ namespace Web.Tests
             Selenium.Type(TXT_NAME, User);
             Selenium.Type(TXT_PASSWORD, Pass);
             Selenium.Click(LOGIN_BUTTON);
-
         }
     }
 }

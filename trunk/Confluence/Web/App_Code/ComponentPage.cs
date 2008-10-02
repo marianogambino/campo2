@@ -38,8 +38,20 @@ public class ComponentPage : System.Web.UI.Page
     }
     #endregion
 
+    #region User Utils
+    public bool IsLogged
+    {
+        get { return ActiveUser != null; }
+    }
+
     public User ActiveUser
     {
         get { return (User)Session[Constants.SessionKeys.USER]; }
     }
+    public void LogOut()
+    {
+        Session[Constants.SessionKeys.USER] = null;
+        Response.Redirect(Constants.Redirects.HOME);
+    }
+    #endregion
 }
