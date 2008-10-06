@@ -15,14 +15,28 @@ namespace Web.Tests
         private const String SERVER = "localhost";
         private const int PORT = 4444;
         private const String BROWSER = "*iexplore";
-        private const String URL = "http://localhost:3255/";
+        private const String URL = "http://localhost:3255";
         private const char SEPARATOR = '€';
+
+        public const String LOGIN_URL = "/Web/Login.aspx";
+        private const String LOGIN_NAME = "ctl00_ContentPlaceHolder_txtName";
+        private const String LOGIN_PASSWORD = "ctl00_ContentPlaceHolder_txtPass";
+        private const String LOGIN_BUTTON = "ctl00_ContentPlaceHolder_submit";
 
         protected const String TIMEOUT = "30000";
 
         protected ISelenium Selenium
         {
             get { return selenium; }
+        }
+
+        public void LogIn(String user, String pass)
+        {
+            Selenium.Open(LOGIN_URL);
+
+            Selenium.Type(LOGIN_NAME, user);
+            Selenium.Type(LOGIN_PASSWORD, pass);
+            Selenium.Click(LOGIN_BUTTON);
         }
 
         [SetUp]
@@ -89,6 +103,17 @@ namespace Web.Tests
             }
             catch (AssertionException) {/*Everything OK*/}
 
+        }
+        protected void AssertURL(String url)
+        {
+            try
+            {
+                Assert.AreEqual(URL + url , Selenium.GetLocation());
+            }
+            catch (AssertionException)
+            {
+                AddError("URL must have been " + url + ", but was " + selenium.GetLocation());
+            }
         }
         
 
