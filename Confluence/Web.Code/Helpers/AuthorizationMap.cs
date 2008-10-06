@@ -16,8 +16,6 @@ public class AuthorizationMap
 
         map.Add(Constants.PageNames.HOME, 0);
 
-        //TODO remove this when real pages exists
-        map.Add(Constants.PageNames.TEST, 1);
         map.Add(Constants.PageNames.LIST_USERS, 101);
         
     }
