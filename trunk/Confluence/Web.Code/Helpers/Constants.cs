@@ -19,7 +19,6 @@ public static class Constants
         public const String HOME = "~/Default.aspx";
         public const String LOGIN = "~/Login.aspx";
         public const String MUST_LOGIN = LOGIN + "?" + SessionKeys.INVALID +"=true";
-        public const String TEST = "~/TestPrivate.aspx";
         public const String INTRUDER = "~/Intruder.aspx";
         public const String LIST_USERS = "~/ListUsers.aspx";
     }
@@ -27,7 +26,6 @@ public static class Constants
     public static class PageNames
     {
         public const String HOME = "default_aspx";
-        public const String TEST = "testprivate_aspx";
         public const String LIST_USERS = "listusers_aspx";
     }
 }

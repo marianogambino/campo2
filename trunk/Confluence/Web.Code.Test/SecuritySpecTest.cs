@@ -13,10 +13,9 @@ namespace Web.Code.Test
         public void canAccessPage()
         {
             User user = new User();
-            user.Patentes.Add(new Patente(1,"Google","www.google.com")); //Test Page
+            user.Patentes.Add(new Patente(101,"Google","www.google.com")); //Test Page
 
-            Assert.IsTrue(SecuritySpec.canAccessPage(user,Constants.PageNames.TEST));
-            Assert.IsFalse(SecuritySpec.canAccessPage(user, Constants.PageNames.LIST_USERS)); 
+            Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.LIST_USERS)); 
 
             //La patente 0 la tienen todos.
             //esto se puede llegar a eliminar
@@ -41,7 +40,7 @@ namespace Web.Code.Test
             user.Families.Add(fam);
             Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.LIST_USERS));
             Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.HOME));
-            Assert.IsFalse(SecuritySpec.canAccessPage(user, Constants.PageNames.TEST));
+            Assert.IsFalse(SecuritySpec.canAccessPage(user, "sarasa"));
         }
     }
 }
