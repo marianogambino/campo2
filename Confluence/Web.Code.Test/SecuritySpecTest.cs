@@ -16,7 +16,7 @@ namespace Web.Code.Test
             user.Patentes.Add(new Patente(1,"Google","www.google.com")); //Test Page
 
             Assert.IsTrue(SecuritySpec.canAccessPage(user,Constants.PageNames.TEST));
-            Assert.IsFalse(SecuritySpec.canAccessPage(user, "other")); 
+            Assert.IsFalse(SecuritySpec.canAccessPage(user, Constants.PageNames.LIST_USERS)); 
 
             //La patente 0 la tienen todos.
             //esto se puede llegar a eliminar
@@ -30,6 +30,18 @@ namespace Web.Code.Test
             Assert.IsFalse(SecuritySpec.isLoggedIn(user));
             user = new User();
             Assert.IsTrue(SecuritySpec.isLoggedIn(user));
+        }
+
+        [NUnit.Framework.Test]
+        public void canAccessPageWithFamily()
+        {
+            User user = new User();
+            Family fam = new Family("familiy", "one");
+            fam.Patentes.Add(new Patente(101,"admin","www.adminUsers.com"));
+            user.Families.Add(fam);
+            Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.LIST_USERS));
+            Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.HOME));
+            Assert.IsFalse(SecuritySpec.canAccessPage(user, Constants.PageNames.TEST));
         }
     }
 }

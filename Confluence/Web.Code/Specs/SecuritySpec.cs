@@ -8,10 +8,24 @@ public static class SecuritySpec
 {
     public static bool canAccessPage(User user, String pageName)
     {
-        int patente = AuthorizationMap.Instance.get(pageName);
+        int patente;
+        try
+        {
+            patente = AuthorizationMap.Instance.get(pageName);
+        }
+        catch (Exception)
+        {
+            return false;
+        }
 
         if (patente == 0) return true;
 
+        /*ITERATE THROUGH FAMILY PATENTS*/
+        foreach (Family fam in user.Families)
+            foreach (Patente pat in fam.Patentes)
+                if (pat.Id == patente) return true;
+
+        /*ITERATE THROUGH SINGLE PATENTS*/
         foreach (Patente pat in user.Patentes)
             if (pat.Id == patente) return true;
 

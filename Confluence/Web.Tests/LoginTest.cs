@@ -10,11 +10,7 @@ namespace Web.Tests
     [TestFixture]
     public class LoginTest : IntegrationTest
     {
-        private const String TXT_NAME = "ctl00_ContentPlaceHolder_txtName";
-        private const String TXT_PASSWORD = "ctl00_ContentPlaceHolder_txtPass";
-        private const String LOGIN_BUTTON = "ctl00_ContentPlaceHolder_submit";
         private const String MENU = "menu";
-        private const String TEST_URL = "/Web/Login.aspx";
 
         [Test]
         public void EmptyLogin()
@@ -40,14 +36,14 @@ namespace Web.Tests
             LogIn("Pablo", "secreto");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertIsTextPresent("Hello,Pablo");
+            AssertIsTextPresent("Hello, Pablo");
             AssertIsTextPresent("Logout");
         }
 
         [Test]
         public void RejectLogin()
         {
-            Selenium.Open(TEST_URL);
+            Selenium.Open(LOGIN_URL);
             LogIn("Primer", "Intento");
             LogIn("Segundo", "Intento");
             LogIn("Tercer", "Intento");
@@ -78,15 +74,6 @@ namespace Web.Tests
             Selenium.Click("link=Logout");
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertIsElementAbsent("statbar");
-        }
-
-        public void LogIn(String User, String Pass)
-        {
-            Selenium.Open(TEST_URL);
-
-            Selenium.Type(TXT_NAME, User);
-            Selenium.Type(TXT_PASSWORD, Pass);
-            Selenium.Click(LOGIN_BUTTON);
         }
     }
 }

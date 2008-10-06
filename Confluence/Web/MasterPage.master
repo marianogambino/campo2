@@ -10,10 +10,10 @@
     }
 </script>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
+<head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Confluence</title>
-    <link type="text/css" rel="stylesheet" href="Style/default.css" />
+    <link type="text/css" rel="stylesheet" id="mainStylesheet" media="screen" runat="server" href="~/Style/default.css" />
     <script type="text/javascript" src="javascript/prototype.js"></script>
     <script type="text/javascript" src="javascript/effects.js"></script>
     <script type="text/javascript" src="javascript/accordion.js"></script>
