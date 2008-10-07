@@ -27,7 +27,9 @@ namespace Confluence.DAL.Tests.Utils
         {
             get
             {
-                return new Patente(1, "Yahoo", "www.yahoo.com");
+                Patente yaho = new Patente(1, "Yahoo", "www.yahoo.com");
+                yaho.Show = false;
+                return yaho;
             }
         }
         public static Family FullFamily

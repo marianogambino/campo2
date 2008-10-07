@@ -7,6 +7,8 @@ namespace Confluence.Services
 {
     public interface IAdminService
     {
-        IList<User> FindAll();
+        IList<User> FindAllUsers();
+        User FindUser(long id);
+        void UpdateUser(long id, String mail, int[] familias, int[] patentes);
     }
 }

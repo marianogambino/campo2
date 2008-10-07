@@ -60,7 +60,9 @@
                             <h2 class="accordion_toggle"><%=fam.Name%></h2>
                             <div class="accordion_content">
                             <%foreach(Patente pat in fam.Patentes){%>
-                                <a href="<%=pat.Path%>"><%=pat.Name%></a><br />
+                                <%if(pat.Show){ %>
+                                    <a href="<%=pat.Path%>"><%=pat.Name%></a><br />
+                                <%} %>
                             <%}%>
                             </div>
                         <%}%>
