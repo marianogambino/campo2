@@ -37,6 +37,10 @@ body{
 #contentcolumn{
 	margin-left: 200px;
 }
+#contentcolumn h1
+{
+	margin:10px 0px 20px 10px;
+}
 #contentcolumn h3.info
 {
 	color:Blue;
@@ -48,7 +52,7 @@ body{
 
 #leftcolumn{
 	float: left;
-	width: 200px; 
+	width: 200px;
 	margin-left: -100%;
 }
 
@@ -86,6 +90,25 @@ a.logout
 {
 	padding-left:20px;
 	background:url(../Images/Icons/door_out.png) no-repeat left center;
+}
+/***************************************************************************************************/
+/**FORMS**/
+
+#inputform label,#inputform input,#inputform select {
+	display: block;
+	width: 150px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#inputform label {
+	text-align: right;
+	width: 75px;
+	padding-right: 20px;
+}
+
+#inputform br {
+	clear: left;
 }
 /*************************************************************************************************/
 /**DataGrids**/

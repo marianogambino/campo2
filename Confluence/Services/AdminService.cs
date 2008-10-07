@@ -15,9 +15,19 @@ namespace Confluence.Services
             set { userDao = value; }
         }
 
-        public IList<User> FindAll()
+        public IList<User> FindAllUsers()
         {
             return UserDao.GetAll();
+        }
+
+        public User FindUser(long id)
+        {
+            return UserDao.GetById(id);
+        }
+
+        public void UpdateUser(long id, String mail, int[] familias, int[] patentes)
+        {
+
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Confluence.Domain
     {
         private long id;
         private String name;
+        private Boolean show;
         private String path;
 
         public Patente() { }
@@ -17,6 +18,7 @@ namespace Confluence.Domain
             Id = id;
             Name = name;
             Path = path;
+            Show = true;
         }
 
         public virtual long Id
@@ -33,6 +35,11 @@ namespace Confluence.Domain
         {
             get { return path; }
             set { path = value; }
+        }
+        public virtual Boolean Show
+        {
+            get { return show; }
+            set { show = value; }
         }
         public override bool Equals(object obj)
         {

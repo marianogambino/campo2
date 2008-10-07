@@ -7,5 +7,8 @@
   <object type="ListUsers.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
+  <object type="UserDetail.aspx">
+    <property name="AdminService" ref="AdminService"/>
+  </object>
 
 </objects>

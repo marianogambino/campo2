@@ -33,9 +33,11 @@ namespace Confluence.DAL.Tests
 
             Assert.AreEqual(newFamily,persisted);
             Assert.AreEqual(newFamily.Description,persisted.Description);
-            Assert.IsTrue(newFamily.Patentes.Count==2);
-            Assert.IsTrue(newFamily.Patentes.Contains(ObjectMother.PatenteGoogle));
-            Assert.IsTrue(newFamily.Patentes.Contains(ObjectMother.PatenteYahoo));
+            Assert.IsTrue(persisted.Patentes.Count==2);
+            Assert.IsTrue(persisted.Patentes.Contains(ObjectMother.PatenteGoogle));
+            Assert.IsTrue(persisted.Patentes.Contains(ObjectMother.PatenteYahoo));
+            Assert.IsTrue(persisted.Patentes[0].Show);
+            Assert.IsFalse(persisted.Patentes[1].Show);
         }
 
         [Test]
@@ -82,6 +84,5 @@ namespace Confluence.DAL.Tests
 
         }
         #endregion
-
     }
 }

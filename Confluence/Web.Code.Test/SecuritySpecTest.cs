@@ -40,6 +40,7 @@ namespace Web.Code.Test
             user.Families.Add(fam);
             Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.LIST_USERS));
             Assert.IsTrue(SecuritySpec.canAccessPage(user, Constants.PageNames.HOME));
+            Assert.IsFalse(SecuritySpec.canAccessPage(user,Constants.PageNames.USER_DETAIL));
             Assert.IsFalse(SecuritySpec.canAccessPage(user, "sarasa"));
         }
     }

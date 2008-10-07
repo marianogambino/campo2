@@ -17,6 +17,7 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.HOME, 0);
 
         map.Add(Constants.PageNames.LIST_USERS, 101);
+        map.Add(Constants.PageNames.USER_DETAIL, 102);
         
     }
 
