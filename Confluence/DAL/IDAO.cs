@@ -10,5 +10,6 @@ namespace Confluence.DAL
         void Persist(T entity);
         void Delete(T entity);
         void Update(T entity);
+        IList<T> GetAll();
     }
 }

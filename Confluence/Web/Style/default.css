@@ -3,19 +3,30 @@ body{
 	padding:0;
 	line-height: 1.5em;
 	font-family:Tahoma;
+	background:url(../Images/background.png) repeat-x;
 }
 
 #topsection{
-	height: 90px; 
+	height: 90px;
 }
 
 #topsection h1{
 	margin: 0;
+	padding-left:15px;
 	padding-top: 15px;
 }
+#topsection .subtitle
+{
+	font-size:0.8em;
+	padding-left:15px;
+	letter-spacing:1em;
+}
+
 #topsection #statbar
 {
 	float:right;
+	background:#FFFFFF;
+	padding:5px;
 }
 
 #contentwrapper{
@@ -46,11 +57,12 @@ body{
 	width: 100%;
 	text-align: center;
 	padding: 4px 0;
+	display:none;
 }
 
 .boxed
 {
-	border:solid 1px black;
+	border:solid 1px #808080;
 }
 .innertube{
 	margin: 10px; 
@@ -75,7 +87,13 @@ a.logout
 	padding-left:20px;
 	background:url(../Images/Icons/door_out.png) no-repeat left center;
 }
+/*************************************************************************************************/
+/**DataGrids**/
 
+.gridview
+{
+	margin:10px 0px 0px 20px;
+}
 
 /*************************************************************************************************/
 /**ACCORDION MENU**/

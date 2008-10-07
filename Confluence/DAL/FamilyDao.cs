@@ -32,6 +32,11 @@ namespace Confluence.DAL
         {
             HibernateTemplate.Update(entity);
         }
+
+        public IList<Family> GetAll()
+        {
+            return (IList<Family>) HibernateTemplate.Find("FROM Family f");
+        }
         #endregion
         public Family GetByName(string name)
         {
