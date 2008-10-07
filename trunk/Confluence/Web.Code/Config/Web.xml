@@ -4,5 +4,8 @@
   <object type="Login.aspx">
     <property name="LoginService" ref="LoginService"/>
   </object>
+  <object type="ListUsers.aspx">
+    <property name="AdminService" ref="AdminService"/>
+  </object>
 
 </objects>

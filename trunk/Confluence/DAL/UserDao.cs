@@ -36,6 +36,15 @@ namespace Confluence.DAL
             HibernateTemplate.Update(entity);
         }
 
+        public IList<User> GetAll()
+        {
+            IList<User> users = new List<User>();
+            IList found =  HibernateTemplate.Find("FROM User u");
+            foreach(object obj in found)
+                users.Add((User)obj);
+            return users;
+        }
+
         #endregion
 
         public User GetByName(string name)

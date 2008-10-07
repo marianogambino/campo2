@@ -24,6 +24,10 @@ namespace Confluence.Services.Tests.Stubs
 
             return null;
         }
+        public IList<User> GetAll()
+        {
+            return users;
+        }
 
         public User GetById(long id)
         {

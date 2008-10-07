@@ -5,5 +5,9 @@
           type="Confluence.Services.LoginService, Services" >
     <property name="UserDao" ref="UserDao"/>
   </object>
+  <object name="AdminService"
+          type="Confluence.Services.AdminService, Services">
+    <property name="UserDao" ref="UserDao"/>
+  </object>
 
 </objects>
