@@ -94,7 +94,7 @@ a.logout
 /***************************************************************************************************/
 /**FORMS**/
 
-#inputform label,#inputform input,#inputform select {
+#inputform label,#inputform input {
 	display: block;
 	width: 150px;
 	float: left;
@@ -109,6 +109,17 @@ a.logout
 
 #inputform br {
 	clear: left;
+}
+
+a.DcAdd
+{
+	background:url(../Images/Icons/arrow_right.png) no-repeat left center;
+	padding-left:20px;
+}
+a.DcRemove
+{
+	background:url(../Images/Icons/arrow_left.png) no-repeat left center;
+	padding-left:20px;
 }
 /*************************************************************************************************/
 /**DataGrids**/

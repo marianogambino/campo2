@@ -9,6 +9,8 @@ namespace Confluence.Services
     {
         IList<User> FindAllUsers();
         User FindUser(long id);
-        void UpdateUser(long id, String mail, int[] familias, int[] patentes);
+        void UpdateUser(long id, String mail, IList<int> familias, IList<int> patentes);
+        IList<Patente> FindPatAvailableForUser(long userId);
+        IList<Family> FindFamAvailableForUser(long userId);
     }
 }

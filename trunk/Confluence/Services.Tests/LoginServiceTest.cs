@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Confluence.Services.Tests
 {
     [TestFixture]
-    public class LoginServiceTest : AbstractDependencyInjectionSpringContextTests
+    public class LoginServiceTest : ServiceTest
     {
         private LoginService loginService;
         public LoginService LoginService
@@ -22,13 +22,6 @@ namespace Confluence.Services.Tests
         {
             Assert.IsNull(LoginService.doLogin("NotExistent", "WhoCares"));
             Assert.IsNotNull(LoginService.doLogin("Stub1", "pass1"));
-        }
-
-        protected override string[] ConfigLocations
-        {
-            get { return new String[] { "assembly://Web.Code/Web.Code.Config/StubData.xml",
-                                        "assembly://Web.Code/Web.Code.Config/Services.xml"};
-            }
         }
     }
 }
