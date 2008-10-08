@@ -8,6 +8,7 @@
   <object name="AdminService"
           type="Confluence.Services.AdminService, Services">
     <property name="UserDao" ref="UserDao"/>
+    <property name="FamilyDao" ref="FamilyDao"/>
   </object>
 
 </objects>

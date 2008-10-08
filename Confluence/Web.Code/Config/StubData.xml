@@ -5,4 +5,7 @@
   <object name="UserDao" 
           type="Confluence.Services.Tests.Stubs.UserDaoStub, Services.Tests"/>
 
+  <object name="FamilyDao"
+          type="Confluence.Services.Tests.Stubs.FamilyDaoStub, Services.Tests"/>
+
 </objects>
