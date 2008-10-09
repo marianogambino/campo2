@@ -30,18 +30,11 @@ public partial class UserDetail : PrivatePage
         TxtUserName.Text = user.Name;
         TxtUserMail.Text = user.Mail;
 
-        foreach (Family fam in user.Families)
-            SelectedFamilies.Items.Add(new ListItem(fam.Name, fam.Id.ToString()));
-
-        foreach (Patente pat in user.Patentes)
-            SelectedPatentes.Items.Add(new ListItem(pat.Name, pat.Id.ToString()));
-
-        /**
-         * *
-         * *Availables....
-         * *
-         */
-
+        /*Selecteds*/
+        PopulateFamList(SelectedFamilies, user.Families);
+        PopulatePatentList(SelectedPatentes, user.Patentes);
+        PopulateFamList(AvailableFamilies,AdminService.FindFamAvailableForUser(long.Parse(HdnUID.Value)));
+        PopulatePatentList(AvailablePatentes,AdminService.FindPatAvailableForUser(long.Parse(HdnUID.Value)));
     }
     protected void CancelBtn_Click(object sender, EventArgs e)
     {
@@ -83,5 +76,15 @@ public partial class UserDetail : PrivatePage
         if (item == null) return;
         from.Items.Remove(item);
         to.Items.Add(item);
+    }
+    private void PopulatePatentList(ListBox list, IList<Patente> pats)
+    {
+        foreach(Patente pat in pats)
+            list.Items.Add(new ListItem(pat.Name,pat.Id.ToString()));
+    }
+    private void PopulateFamList(ListBox list, IList<Family> fams)
+    {
+        foreach (Family fam in fams)
+            list.Items.Add(new ListItem(fam.Name, fam.Id.ToString()));
     }
 }

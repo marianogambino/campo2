@@ -34,4 +34,26 @@ public partial class Admin_ListUsers : PrivatePage
         Int64 user_id = (Int64) UserList.DataKeys[e.NewEditIndex].Value;
         Response.Redirect(Constants.Redirects.USER_DETAIL +"?" + Constants.SessionKeys.USER_ID + "=" + user_id.ToString());
     }
+    protected void DeleteUser(object sender, GridViewDeleteEventArgs e)
+    {
+        Int64 user_id = (Int64)UserList.DataKeys[e.RowIndex].Value;
+        Response.Redirect(Constants.Redirects.DELETE_USER + "?" + Constants.SessionKeys.USER_ID + "=" + user_id.ToString());
+    }
+    protected void SearhUser(object sender, EventArgs e)
+    {
+        if (SearchTxt.Text.Trim().Length == 0) return;
+        IList<User> result = AdminService.FindUsersLike(SearchTxt.Text);
+        result.Remove(ActiveUser);
+        if (result.Count > 0)
+        {
+            UserList.DataSource = result;
+            UserList.DataBind();
+        }
+        else
+        {
+            Info.Text = "No Hay Resultados para esta Búsqueda";
+            UserList.DataSource = null;
+            UserList.DataBind();
+        }
+    }
 }

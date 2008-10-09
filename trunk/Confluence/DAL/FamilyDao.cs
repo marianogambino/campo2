@@ -35,9 +35,14 @@ namespace Confluence.DAL
 
         public IList<Family> GetAll()
         {
-            return (IList<Family>) HibernateTemplate.Find("FROM Family f");
+            IList found = HibernateTemplate.Find("FROM Family f");
+            IList<Family> families = new List<Family>();
+            foreach (object fam in found)
+                families.Add((Family)fam);
+            return families;
         }
         #endregion
+
         public Family GetByName(string name)
         {
             IList families = (IList)HibernateTemplate.Find("FROM Family f WHERE f.Name = ?", name);
@@ -48,6 +53,15 @@ namespace Confluence.DAL
                 family = (Family)families[0];
 
             return family;
+        }
+
+        public IList<Patente> GetAllPatents()
+        {
+            IList found = HibernateTemplate.Find("FROM Patente p");
+            IList<Patente> patentes = new List<Patente>();
+            foreach (object pat in found)
+                patentes.Add((Patente)pat);
+            return patentes;
         }
     }
 }

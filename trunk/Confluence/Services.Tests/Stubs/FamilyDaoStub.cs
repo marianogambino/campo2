@@ -43,5 +43,12 @@ namespace Confluence.Services.Tests.Stubs
         {
             return new Family(name, "algo");
         }
+        public IList<Patente> GetAllPatents()
+        {
+            List<Patente> pats = new List<Patente>();
+            pats.Add(new Patente(1, "hola", "mundo"));
+            pats.Add(new Patente(2, "hola", "mundo"));
+            return pats;
+        }
     }
 }

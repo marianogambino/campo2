@@ -50,5 +50,9 @@ namespace Confluence.Services.Tests.Stubs
         }
         public void flush() { }
 
+        public IList<User> FindLike(String name)
+        {
+            return null;
+        }
     }
 }
