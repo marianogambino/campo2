@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
     <h1>Detalles de Usuario:</h1>
     <div id="inputform">
-        <asp:HiddenField ID="HdnUID" runat="server" />
+        <asp:HiddenField ID="HdnUID" runat="server" /><br />
         <label for="TxtUserName">Name:</label>
         <asp:TextBox runat="server" ID="TxtUserName" Enabled="false" /><br />
         <label for="TxtUserID">Mail:</label>

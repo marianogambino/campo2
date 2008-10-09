@@ -9,5 +9,6 @@ namespace Confluence.DAL
     {
         User GetByName(string userName);
         void flush();
+        IList<User> FindLike(String name);
     }
 }

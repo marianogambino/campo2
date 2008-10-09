@@ -54,12 +54,37 @@ namespace Confluence.Services
 
         public IList<Patente> FindPatAvailableForUser(long uid)
         {
-            return null;
+            IList<Patente> all = FamilyDao.GetAllPatents();
+            User user = UserDao.GetById(uid);
+            foreach (Patente pat in user.Patentes)
+                if (all.Contains(pat)) all.Remove(pat);
+            return all;
         }
 
         public IList<Family> FindFamAvailableForUser(long uid)
         {
-            return null;
+            IList<Family> all = FamilyDao.GetAll();
+            User user = UserDao.GetById(uid);
+            foreach (Family fam in user.Families)
+                if (all.Contains(fam)) all.Remove(fam);
+            return all;
         }
+
+        public IList<User> FindUsersLike(String name)
+        {
+            return UserDao.FindLike(name);
+        }
+        public void DeleteUser(long id)
+        {
+            UserDao.Delete(UserDao.GetById(id));
+        }
+        public void BlockUser(long id)
+        {
+            User user = UserDao.GetById(id);
+            user.Families.Clear();
+            user.Patentes.Clear();
+            UserDao.Update(user);
+        }
+
     }
 }

@@ -50,7 +50,6 @@ namespace Confluence.DAL
         public User GetByName(string name)
         {
             IList users = (IList) HibernateTemplate.Find("FROM User u WHERE u.Name = ?",name);
-
             User user = null;
 
             if(users.Count>0)
@@ -60,6 +59,24 @@ namespace Confluence.DAL
         }
         public void flush(){
             HibernateTemplate.Flush();
+        }
+
+        public IList<User> FindLike(String name)
+        {
+            IList found = HibernateTemplate.Find("FROM User u WHERE u.Name like ?", "%" + name + "%");
+            IList<User> users = new List<User>();
+            foreach (object obj in found)
+                users.Add((User)obj);
+            return users;
+        }
+
+        private IList<T> FindGeneric<T>(String query)
+        {
+            IList found = HibernateTemplate.Find(query);
+            IList<T> result = new List<T>();
+            foreach (object obj in found)
+                result.Add((T)obj);
+            return result;
         }
     }
 }

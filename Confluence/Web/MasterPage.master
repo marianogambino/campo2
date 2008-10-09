@@ -40,8 +40,8 @@
         <div id="contentwrapper">
             <div id="contentcolumn">
                 <div class="innertube boxed">
-                <h3 class="error"><asp:Label runat="server" ID="Problems"></asp:Label></h3>
-                <h3 class="info"><asp:Label runat="server" ID="Info"></asp:Label></h3>
+                <h3 class="error"><asp:Label runat="server" ID="Problems" EnableViewState="false"></asp:Label></h3>
+                <h3 class="info"><asp:Label runat="server" ID="Info" EnableViewState="false"></asp:Label></h3>
                 <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
                 </asp:contentplaceholder>
                 </div>

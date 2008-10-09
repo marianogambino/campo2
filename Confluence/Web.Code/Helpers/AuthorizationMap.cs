@@ -18,6 +18,7 @@ public class AuthorizationMap
 
         map.Add(Constants.PageNames.LIST_USERS, 101);
         map.Add(Constants.PageNames.USER_DETAIL, 102);
+        map.Add(Constants.PageNames.DELETE_USER, 103);
         
     }
 
