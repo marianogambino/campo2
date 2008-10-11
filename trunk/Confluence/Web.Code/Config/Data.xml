@@ -38,4 +38,6 @@
           type="Confluence.DAL.UserDao, DAL"/>
   <object name="FamilyDao" parent="Dao"
           type="Confluence.DAL.FamilyDao, DAL"/>
+  <object name="ClientDao" parent="Dao"
+          type="Confluence.DAL.ClientDao, DAL"/>
 </objects>

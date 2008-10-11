@@ -29,7 +29,7 @@ public partial class Login : ComponentPage
         if (user != null)
         {
             ResetFailed();
-            Session[Constants.SessionKeys.USER] = user;
+            ActiveUser = user;
             Response.Redirect(Constants.Redirects.HOME);
         }
         else

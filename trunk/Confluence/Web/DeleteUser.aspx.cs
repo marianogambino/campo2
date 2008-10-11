@@ -19,7 +19,8 @@ public partial class DeleteUser : PrivatePage
         get { return adminService; }
         set { adminService = value; }
     }
-    public override void On_Load(object sender, EventArgs args)    {
+    public override void On_Load(object sender, EventArgs args)
+    {
         if (Page.IsPostBack) return;
         String user_id = (String)Request.QueryString[Constants.SessionKeys.USER_ID];
         User user = AdminService.FindUser(long.Parse(user_id));

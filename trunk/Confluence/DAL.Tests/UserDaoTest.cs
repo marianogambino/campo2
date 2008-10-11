@@ -142,5 +142,12 @@ namespace Confluence.DAL.Tests
             User updated = UserDao.GetById(user.Id);
             Assert.IsFalse(updated.Families.Contains(ObjectMother.FullFamily));
         }
+        [Test]
+        public void SaveMessage()
+        {
+            Message msj = new Message("Jhon Bon Jovi", "bonjo@mail.com", "One More Night!");
+            UserDao.SaveUserMessage(msj);
+            Assert.IsFalse(msj.Id==0);
+        }
     }
 }

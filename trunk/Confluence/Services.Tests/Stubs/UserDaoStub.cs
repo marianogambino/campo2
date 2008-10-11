@@ -54,5 +54,6 @@ namespace Confluence.Services.Tests.Stubs
         {
             return null;
         }
+        public void SaveUserMessage(Message msj) { }
     }
 }

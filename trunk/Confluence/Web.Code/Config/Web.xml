@@ -13,5 +13,11 @@
   <object type="DeleteUser.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
+  <object type="Register.aspx">
+    <property name="RegistryService" ref="RegistryService"/>
+  </object>
+  <object type="Contact.aspx">
+    <property name="ContactService" ref="ContactService"/>
+  </object>
 
 </objects>

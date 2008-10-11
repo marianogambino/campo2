@@ -47,6 +47,7 @@ public class ComponentPage : System.Web.UI.Page
     public User ActiveUser
     {
         get { return (User)Session[Constants.SessionKeys.USER]; }
+        set { Session[Constants.SessionKeys.USER] = value; }
     }
     public void LogOut()
     {

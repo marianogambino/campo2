@@ -75,11 +75,7 @@ namespace Confluence.Domain
         }
         public override int GetHashCode()
         {
-            int ret = 31;
-            foreach(char c in Name.ToCharArray())
-                ret = ret + c;
-
-            return ret;
+            return Name.GetHashCode();
         }
         #endregion
     }

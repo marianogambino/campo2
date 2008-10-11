@@ -6,6 +6,13 @@ body{
 	background:url(../Images/background.png) repeat-x;
 }
 
+h3
+{
+	padding:0px 0px 0px 20px;
+	margin:50px 0px 0px 0px;
+	color:Gray;
+	letter-spacing:0.3em;
+}
 #topsection{
 	height: 90px;
 }
@@ -14,6 +21,7 @@ body{
 	margin: 0;
 	padding-left:15px;
 	padding-top: 15px;
+	color:#5C554E;
 }
 #topsection .subtitle
 {
@@ -93,7 +101,10 @@ a.logout
 }
 /***************************************************************************************************/
 /**FORMS**/
-
+#inputform
+{
+	border:0px;
+}
 #inputform label,#inputform input {
 	display: block;
 	width: 150px;
@@ -103,12 +114,17 @@ a.logout
 
 #inputform label {
 	text-align: right;
-	width: 75px;
+	width: 175px;
 	padding-right: 20px;
 }
 
 #inputform br {
 	clear: left;
+}
+
+#inputform h3
+{
+	margin:45px 35px 10px;
 }
 
 a.DcAdd
@@ -119,6 +135,24 @@ a.DcAdd
 a.DcRemove
 {
 	background:url(../Images/Icons/arrow_left.png) no-repeat left center;
+	padding-left:20px;
+}
+#inputform .radiolist label, #inputform .radiolist input
+{
+	width:auto;
+}
+#inputform textarea
+{
+	width:350px;
+	height:200px;
+}
+/************************************************************************************************/
+/*PARAGRAPHS*/
+#paragraphs p
+{
+	text-align:justify;
+	font-family:Verdana;
+	width:600px;
 	padding-left:20px;
 }
 /*************************************************************************************************/

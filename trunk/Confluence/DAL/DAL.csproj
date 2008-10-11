@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientDao.cs" />
     <Compile Include="DuplicateEntityException.cs" />
     <Compile Include="FamilyDao.cs" />
+    <Compile Include="IClientDao.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="IFamilyDao.cs" />
     <Compile Include="IUserDao.cs" />
@@ -71,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mappings\Family.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Client.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Message.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

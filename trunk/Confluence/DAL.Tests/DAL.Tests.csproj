@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientDaoTest.cs" />
     <Compile Include="DaoTest.cs" />
     <Compile Include="FamilyDaoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

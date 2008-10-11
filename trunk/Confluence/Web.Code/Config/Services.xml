@@ -10,5 +10,12 @@
     <property name="UserDao" ref="UserDao"/>
     <property name="FamilyDao" ref="FamilyDao"/>
   </object>
-
+  <object name="RegistryService"
+          type="Confluence.Services.RegistryService, Services">
+    <property name="ClientDao" ref="ClientDao" />
+  </object>
+  <object name="ContactService"
+          type="Confluence.Services.ContactService, Services">
+    <property name="UserDao" ref="UserDao" />
+  </object>
 </objects>
