@@ -49,14 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDao.cs" />
     <Compile Include="ClientDao.cs" />
     <Compile Include="DuplicateEntityException.cs" />
     <Compile Include="FamilyDao.cs" />
     <Compile Include="IClientDao.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="IFamilyDao.cs" />
+    <Compile Include="IServiceDao.cs" />
     <Compile Include="IUserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDao.cs" />
     <Compile Include="UserDao.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +82,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mappings\Message.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Service.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Language.hbm.xml" />
+    <EmbeddedResource Include="Mappings\ServiceType.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

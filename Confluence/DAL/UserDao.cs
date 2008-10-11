@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Confluence.DAL
 {
-    public class UserDao : HibernateDaoSupport, IUserDao 
+    public class UserDao : BaseDao, IUserDao 
     {
         public UserDao() {}
 
@@ -38,11 +38,7 @@ namespace Confluence.DAL
 
         public IList<User> GetAll()
         {
-            IList<User> users = new List<User>();
-            IList found =  HibernateTemplate.Find("FROM User u");
-            foreach(object obj in found)
-                users.Add((User)obj);
-            return users;
+            return FindAllGeneric<User>("FROM User u");
         }
 
         #endregion
@@ -52,32 +48,14 @@ namespace Confluence.DAL
             IList users = (IList) HibernateTemplate.Find("FROM User u WHERE u.Name = ?",name);
             return (users.Count > 0) ? (User)users[0] : null;
         }
-        public void flush(){
-            HibernateTemplate.Flush();
-        }
 
         public IList<User> FindLike(String name)
         {
-            IList found = HibernateTemplate.Find("FROM User u WHERE u.Name like ?", "%" + name + "%");
-            IList<User> users = new List<User>();
-            foreach (object obj in found)
-                users.Add((User)obj);
-            return users;
+            return QueryGeneric<User>("FROM User u WHERE u.Name like ?", "%" + name + "%");
         }
         public void SaveUserMessage(Message message)
         {
             HibernateTemplate.Save(message);
         }
-        
-
-        private IList<T> FindGeneric<T>(String query)
-        {
-            IList found = HibernateTemplate.Find(query);
-            IList<T> result = new List<T>();
-            foreach (object obj in found)
-                result.Add((T)obj);
-            return result;
-        }
-
     }
 }

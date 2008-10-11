@@ -34,10 +34,8 @@
     <property name="SessionFactory" ref="NHSessionFactory"/>
   </object>
   
-  <object name="UserDao" parent="Dao"
-          type="Confluence.DAL.UserDao, DAL"/>
-  <object name="FamilyDao" parent="Dao"
-          type="Confluence.DAL.FamilyDao, DAL"/>
-  <object name="ClientDao" parent="Dao"
-          type="Confluence.DAL.ClientDao, DAL"/>
+  <object name="UserDao"    parent="Dao"  type="Confluence.DAL.UserDao, DAL"/>
+  <object name="FamilyDao"  parent="Dao"  type="Confluence.DAL.FamilyDao, DAL"/>
+  <object name="ClientDao"  parent="Dao"  type="Confluence.DAL.ClientDao, DAL"/>
+  <object name="ServiceDao" parent="Dao"  type="Confluence.DAL.ServiceDao, DAL"/>
 </objects>

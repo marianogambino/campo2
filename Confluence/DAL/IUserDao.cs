@@ -8,7 +8,6 @@ namespace Confluence.DAL
     public interface IUserDao : IDAO<User>
     {
         User GetByName(string userName);
-        void flush();
         IList<User> FindLike(String name);
         void SaveUserMessage(Message message);
     }

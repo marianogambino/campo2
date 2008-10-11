@@ -2,10 +2,9 @@
 <objects  xmlns="http://www.springframework.net"
           xmlns:db="http://www.springframework.net/database">
 
-  <object name="UserDao" 
-          type="Confluence.Services.Tests.Stubs.UserDaoStub, Services.Tests"/>
-
-  <object name="FamilyDao"
-          type="Confluence.Services.Tests.Stubs.FamilyDaoStub, Services.Tests"/>
+  <object name="UserDao"    type="Confluence.Services.Tests.Stubs.UserDaoStub, Services.Tests"/>
+  <object name="FamilyDao"  type="Confluence.Services.Tests.Stubs.FamilyDaoStub, Services.Tests"/>
+  <object name="ClientDao"  type="Confluence.Services.Tests.Stubs.ClientDaoStub, Services.Tests"/>
+  <object name="ServiceDao"  type="Confluence.Services.Tests.Stubs.ServiceDaoStub, Services.Tests"/>
 
 </objects>

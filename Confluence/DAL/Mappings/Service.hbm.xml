@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain">
+  <class name="Confluence.Domain.Service" table="services">
+    <id name="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="Name" />
+    <property name="Description" />
+    
+    <many-to-one name="Type"
+                 class="Confluence.Domain.ServiceType"
+                 column="service_type_id"
+                 cascade="none" />
+    
+    <many-to-one name="Language"
+                 class="Confluence.Domain.Language"
+                 column="language_id"
+                 cascade="none" />
+    
+    <many-to-one name="Supplier"
+                 class="Confluence.Domain.Client"
+                 column="supplier_id"
+                 cascade="none" />
+  </class>
+</hibernate-mapping>
+
