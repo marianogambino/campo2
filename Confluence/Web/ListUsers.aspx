@@ -3,7 +3,8 @@
     <h1>Listado de Usuarios</h1>
     <div id="inputform">
         <label for="SearchTxt">Buscar:</label>
-        <asp:TextBox ID="SearchTxt" runat="server" />
+        <asp:TextBox ID="SearchTxt" runat="server" /><br />
+        <label></label>
         <asp:Button text="buscar" runat="server" ID="Search" OnClick="SearhUser" />
         <br />
     </div>    

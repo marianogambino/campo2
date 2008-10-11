@@ -50,12 +50,7 @@ namespace Confluence.DAL
         public User GetByName(string name)
         {
             IList users = (IList) HibernateTemplate.Find("FROM User u WHERE u.Name = ?",name);
-            User user = null;
-
-            if(users.Count>0)
-                user = (User)users[0];
-
-            return user;
+            return (users.Count > 0) ? (User)users[0] : null;
         }
         public void flush(){
             HibernateTemplate.Flush();
@@ -69,6 +64,11 @@ namespace Confluence.DAL
                 users.Add((User)obj);
             return users;
         }
+        public void SaveUserMessage(Message message)
+        {
+            HibernateTemplate.Save(message);
+        }
+        
 
         private IList<T> FindGeneric<T>(String query)
         {
@@ -78,5 +78,6 @@ namespace Confluence.DAL
                 result.Add((T)obj);
             return result;
         }
+
     }
 }
