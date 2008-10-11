@@ -23,15 +23,22 @@ namespace Confluence.DAL.Tests
             Client found = ClientDao.GetById(client.Id);
             Assert.AreEqual(found, client);
         }
+        [Test]
+        [ExpectedException(DUPLICATE_ENTITY)]
+        public void Duplicate()
+        {
+            Create();
+            Create();
+        }
 
         [Test]
         public override void Delete()
         {
             Client client = new Client("Pablo", "Secret", "Pablo Fernandez", "Argentina");
             ClientDao.Persist(client);
-            Assert.AreEqual(ClientDao.GetAll().Count, 1);
+            Assert.IsNotNull(ClientDao.GetByName("Pablo"));
             ClientDao.Delete(client);
-            Assert.AreEqual(ClientDao.GetAll().Count, 0);
+            Assert.IsNull(ClientDao.GetByName("Pablo"));
         }
 
         [Test]
@@ -39,11 +46,11 @@ namespace Confluence.DAL.Tests
         {
             Client client = new Client("Pablo", "Secret", "Pablo Fernandez", "Argentina");
             ClientDao.Persist(client);
-            Assert.AreEqual(ClientDao.GetAll().Count, 1);
+            Assert.IsNotNull(ClientDao.GetByName("Pablo"));
             client.Phone = 123;
             client.State = "estado!";
             ClientDao.Update(client);
-            Client found = ClientDao.GetById(client.Id);
+            Client found = ClientDao.GetByName("Pablo");
             Assert.AreEqual(123, found.Phone);
             Assert.AreEqual("estado!", found.State);
         }

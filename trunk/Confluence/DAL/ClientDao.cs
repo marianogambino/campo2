@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Confluence.Domain;
-using Spring.Data.NHibernate.Support;
 
 namespace Confluence.DAL
 {
-    public class ClientDao : HibernateDaoSupport, IClientDao
+    public class ClientDao : BaseDao, IClientDao
     {
         public Client GetById(long id) 
         {
@@ -30,17 +29,12 @@ namespace Confluence.DAL
         }
         public IList<Client> GetAll()
         {
-            IList found = HibernateTemplate.Find("FROM Client c");
-            IList<Client> clients = new List<Client>();
-            foreach (object obj in found)
-                clients.Add((Client)obj);
-            return clients;
-
+            return FindAllGeneric<Client>("From Client c");
         }
         public Client GetByName(String name)
         {
-            IList found = HibernateTemplate.Find("FROM Client c WHERE c.UserAccount.Name = ?", name);
-            return (found.Count > 0) ? (Client)found[0] : null;
+            IList<Client> found = QueryGeneric<Client>("From Client c WHERE c.UserAccount.Name=?", name);
+            return (found.Count > 0) ? found[0] : null;
         }
     }
 }

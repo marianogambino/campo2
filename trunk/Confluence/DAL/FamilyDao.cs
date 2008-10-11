@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Confluence.Domain;
-using Spring.Data.NHibernate.Support;
 
 namespace Confluence.DAL
 {
-    public class FamilyDao : HibernateDaoSupport,IFamilyDao
+    public class FamilyDao : BaseDao,IFamilyDao
     {
         #region CRUD
         public Family GetById(long id)
@@ -35,11 +34,7 @@ namespace Confluence.DAL
 
         public IList<Family> GetAll()
         {
-            IList found = HibernateTemplate.Find("FROM Family f");
-            IList<Family> families = new List<Family>();
-            foreach (object fam in found)
-                families.Add((Family)fam);
-            return families;
+            return FindAllGeneric<Family>("From Family f");
         }
         #endregion
 
@@ -48,7 +43,6 @@ namespace Confluence.DAL
             IList families = (IList)HibernateTemplate.Find("FROM Family f WHERE f.Name = ?", name);
 
             Family family = null;
-
             if (families.Count > 0)
                 family = (Family)families[0];
 
@@ -57,11 +51,7 @@ namespace Confluence.DAL
 
         public IList<Patente> GetAllPatents()
         {
-            IList found = HibernateTemplate.Find("FROM Patente p");
-            IList<Patente> patentes = new List<Patente>();
-            foreach (object pat in found)
-                patentes.Add((Patente)pat);
-            return patentes;
+            return FindAllGeneric<Patente>("From Patente p");
         }
     }
 }

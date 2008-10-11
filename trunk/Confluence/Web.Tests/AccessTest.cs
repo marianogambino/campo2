@@ -20,7 +20,7 @@ namespace Web.Tests
         [Test]
         public void UserWithoutPatents()
         {
-            LogIn("not", "admin");
+            LogIn("Pablo2", "Secret");
             Selenium.Open(LIST_USER_PAGE);
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertURL("/Web/Default.aspx");

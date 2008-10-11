@@ -84,5 +84,19 @@ namespace Confluence.DAL.Tests
 
         }
         #endregion
+        [Test]
+        public void FindAll()
+        {
+            IList<Family> fams = FamilyDao.GetAll();
+            Assert.IsNotNull(fams);
+            Assert.IsTrue(fams.Count > 0);
+        }
+        [Test]
+        public void GetAllPatentes()
+        {
+            IList<Patente> pats = familyDao.GetAllPatents();
+            Assert.IsNotNull(pats);
+            Assert.IsTrue(pats.Count > 0);
+        }
     }
 }

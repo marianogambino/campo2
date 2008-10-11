@@ -149,5 +149,19 @@ namespace Confluence.DAL.Tests
             UserDao.SaveUserMessage(msj);
             Assert.IsFalse(msj.Id==0);
         }
+        [Test]
+        public void GetAll()
+        {
+            IList<User> all = UserDao.GetAll();
+            Assert.IsNotNull(all);
+            Assert.IsTrue(all.Count > 0);
+        }
+        [Test]
+        public void FindLike()
+        {
+            IList<User> many = UserDao.FindLike("a");
+            Assert.IsNotNull(many);
+            Assert.IsTrue(many.Count > 1);
+        }
     }
 }
