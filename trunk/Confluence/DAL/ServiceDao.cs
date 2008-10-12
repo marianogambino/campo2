@@ -7,7 +7,7 @@ using Spring.Data.NHibernate.Support;
 
 namespace Confluence.DAL
 {
-    public class ServiceDao : HibernateDaoSupport, IServiceDao
+    public class ServiceDao : BaseDao, IServiceDao
     {
         public Service GetById(long id)
         {
@@ -27,24 +27,34 @@ namespace Confluence.DAL
         }
         public IList<Service> GetAll()
         {
-            return FindGeneric<Service>("FROM Service s");
+            return FindAllGeneric<Service>("FROM Service s");
         }
         public IList<Language> GetAllLanguages()
         {
-            return FindGeneric<Language>("FROM Language l");
+            return FindAllGeneric<Language>("FROM Language l");
         }
         public IList<ServiceType> GetAllServiceTypes()
         {
-            return FindGeneric<ServiceType>("FROM ServiceType st");
+            return FindAllGeneric<ServiceType>("FROM ServiceType st");
+        }
+        public IList<Service> FindForUser(String username)
+        {
+            return QueryGeneric<Service>("FROM Service s WHERE s.Supplier.UserAccount.Name = ?", username);
+        }
+        public IList<Service> GetAllByName(String username, String name)
+        {
+            return QueryNamedParams<Service>("FROM Service s WHERE s.Name like :name AND s.Supplier.UserAccount.Name = :uname",
+                                                new String[] { "name", "uname" },
+                                                new object[] { "%"+name+"%", username });
         }
 
-        private IList<T> FindGeneric<T>(String query)
+        public Language GetLanguageById(long id)
         {
-            IList found = HibernateTemplate.Find(query);
-            IList<T> result = new List<T>();
-            foreach (object obj in found)
-                result.Add((T)obj);
-            return result;
+            return (Language) HibernateTemplate.Get(typeof(Language), id);
+        }
+        public ServiceType GetServiceTypeById(long id)
+        {
+            return (ServiceType) HibernateTemplate.Get(typeof(ServiceType), id);
         }
 
     }

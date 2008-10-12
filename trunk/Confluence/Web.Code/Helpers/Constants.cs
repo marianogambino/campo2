@@ -27,13 +27,21 @@ public static class Constants
         public const String USER_DETAIL = "~/UserDetail.aspx";
         public const String DELETE_USER = "~/DeleteUser.aspx";
         public const String SING_UP = "~/Register.aspx";
+        public const String LIST_SERVICES = "~/ServiceList.aspx";
     }
 
     public static class PageNames
     {
+        //Publics
         public const String HOME = "default_aspx";
+
+        //Admin
         public const String LIST_USERS = "listusers_aspx";
         public const String USER_DETAIL = "userdetail_aspx";
         public const String DELETE_USER = "deleteuser_aspx";
+
+        //Supplier
+        public const String LIST_SERVICES = "servicelist_aspx";
+        public const String NEW_SERVICE = "newservice_aspx";
     }
 }

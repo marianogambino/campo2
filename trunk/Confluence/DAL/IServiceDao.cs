@@ -9,5 +9,9 @@ namespace Confluence.DAL
     {
         IList<Language> GetAllLanguages();
         IList<ServiceType> GetAllServiceTypes();
+        IList<Service> FindForUser(String username);
+        IList<Service> GetAllByName(String username, String name);
+        Language GetLanguageById(long id);
+        ServiceType GetServiceTypeById(long id);
     }
 }

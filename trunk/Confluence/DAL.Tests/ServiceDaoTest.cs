@@ -99,5 +99,19 @@ namespace Confluence.DAL.Tests
             Assert.IsNotNull(servs);
             Assert.IsTrue(servs.Count >= 0);
         }
+        [Test]
+        public void FindForUser()
+        {
+            IList<Service> servs = ServiceDao.FindForUser("Pablo");
+            Assert.IsNotNull(servs);
+            Assert.IsTrue(servs.Count > 0);
+        }
+        [Test]
+        public void FindByName()
+        {
+            IList<Service> servs = ServiceDao.GetAllByName("Pablo", "rollo");
+            Assert.IsNotNull(servs);
+            Assert.IsTrue(servs.Count > 0);
+        }
     }
 }
