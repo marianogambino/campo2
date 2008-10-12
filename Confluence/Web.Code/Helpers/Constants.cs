@@ -28,6 +28,7 @@ public static class Constants
         public const String DELETE_USER = "~/DeleteUser.aspx";
         public const String SING_UP = "~/Register.aspx";
         public const String LIST_SERVICES = "~/ServiceList.aspx";
+        public const String LIST_PROJECTS = "~/ListProjects.aspx";
     }
 
     public static class PageNames
@@ -43,5 +44,9 @@ public static class Constants
         //Supplier
         public const String LIST_SERVICES = "servicelist_aspx";
         public const String NEW_SERVICE = "newservice_aspx";
+
+        //Demandant
+        public const String LIST_PROJECTS = "listprojects_aspx";
+        public const String NEW_PROJECT = "newproject_aspx";
     }
 }

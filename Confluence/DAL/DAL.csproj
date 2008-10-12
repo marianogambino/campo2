@@ -56,8 +56,10 @@
     <Compile Include="IClientDao.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="IFamilyDao.cs" />
+    <Compile Include="IProjectDao.cs" />
     <Compile Include="IServiceDao.cs" />
     <Compile Include="IUserDao.cs" />
+    <Compile Include="ProjectDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceDao.cs" />
     <Compile Include="UserDao.cs" />
@@ -89,6 +91,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Mappings\Language.hbm.xml" />
     <EmbeddedResource Include="Mappings\ServiceType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Project.hbm.xml" />
+    <EmbeddedResource Include="Mappings\ProjectState.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

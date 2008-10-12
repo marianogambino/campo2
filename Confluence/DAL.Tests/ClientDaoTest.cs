@@ -34,23 +34,23 @@ namespace Confluence.DAL.Tests
         [Test]
         public override void Delete()
         {
-            Client client = new Client("Pablo", "Secret", "Pablo Fernandez", "Argentina");
+            Client client = new Client("Unexistent", "Secret", "Pablo Fernandez", "Argentina");
             ClientDao.Persist(client);
-            Assert.IsNotNull(ClientDao.GetByName("Pablo"));
+            Assert.IsNotNull(ClientDao.GetByName("Unexistent"));
             ClientDao.Delete(client);
-            Assert.IsNull(ClientDao.GetByName("Pablo"));
+            Assert.IsNull(ClientDao.GetByName("Unexistent"));
         }
 
         [Test]
         public override void Update()
         {
-            Client client = new Client("Pablo", "Secret", "Pablo Fernandez", "Argentina");
+            Client client = new Client("Unexistent", "Secret", "Pablo Fernandez", "Argentina");
             ClientDao.Persist(client);
-            Assert.IsNotNull(ClientDao.GetByName("Pablo"));
+            Assert.IsNotNull(ClientDao.GetByName("Unexistent"));
             client.Phone = 123;
             client.State = "estado!";
             ClientDao.Update(client);
-            Client found = ClientDao.GetByName("Pablo");
+            Client found = ClientDao.GetByName("Unexistent");
             Assert.AreEqual(123, found.Phone);
             Assert.AreEqual("estado!", found.State);
         }

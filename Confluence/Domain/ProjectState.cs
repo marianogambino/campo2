@@ -4,43 +4,29 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Language
+    public class ProjectState
     {
         #region properties
         private long id;
         private String name;
         public virtual long Id
         {
-            get { return id; }
             set { id = value; }
+            get { return id; }
         }
         public virtual String Name
         {
-            get { return name; }
             set { name = value; }
+            get { return name; }
         }
         #endregion
 
-        public Language() { }
-        public Language(long id)
+        public ProjectState() { }
+        public ProjectState(long id)
         {
             Id = id;
         }
 
-        public override bool Equals(object other)
-        {
-            if (other is Language)
-            {
-                return ((Language)other).Name.Equals(Name);
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public override int GetHashCode(){
-            return Name.GetHashCode();
-        }
         public override String ToString()
         {
             return Name;

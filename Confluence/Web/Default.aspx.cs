@@ -13,8 +13,6 @@ public partial class _Default : ComponentPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Info.Text = "ABCDEFGHAI";
-
         String message = Request.QueryString[Constants.SessionKeys.MESSAGE];
 
         if(message!=null) Info.Text = message;

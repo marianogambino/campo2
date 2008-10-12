@@ -23,4 +23,9 @@
     <property name="ServiceDao" ref="ServiceDao" />
     <property name="ClientDao" ref="ClientDao" />
   </object>
+  <object name="ProjectService"
+          type="Confluence.Services.ProjectService, Services">
+    <property name="ProjectDao" ref="ProjectDao" />
+    <property name="ClientDao" ref="ClientDao" />
+  </object>
 </objects>

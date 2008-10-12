@@ -47,8 +47,8 @@ namespace Confluence.Services
         public void Save(String user_name, String name, String desc, long lang_id, long type_id)
         {
             Client client = ClientDao.GetByName(user_name);
-            Language lang = ServiceDao.GetLanguageById(lang_id);
-            ServiceType type = ServiceDao.GetServiceTypeById(type_id);
+            Language lang = new Language(lang_id);
+            ServiceType type = new ServiceType(type_id);
 
             Service service = new Service();
             service.Name = name;
