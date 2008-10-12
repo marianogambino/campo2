@@ -2,7 +2,6 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="ContentPlaceHolder">
     <h1>Confluence RRHH</h1>
-    <a href="Login.aspx"> TO Login!!! :)</a>
 </asp:Content>
 
 

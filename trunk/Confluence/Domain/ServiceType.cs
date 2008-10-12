@@ -22,6 +22,10 @@ namespace Confluence.Domain
         #endregion
 
         public ServiceType() { }
+        public ServiceType(long id)
+        {
+            Id = id;
+        }
         
         public override bool Equals(object other)
         {

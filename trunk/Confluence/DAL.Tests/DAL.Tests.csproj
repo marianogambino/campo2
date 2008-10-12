@@ -61,6 +61,7 @@
     <Compile Include="ClientDaoTest.cs" />
     <Compile Include="DaoTest.cs" />
     <Compile Include="FamilyDaoTest.cs" />
+    <Compile Include="ProjectDaoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceDaoTest.cs" />
     <Compile Include="UserDaoTest.cs" />

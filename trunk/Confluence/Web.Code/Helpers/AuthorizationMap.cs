@@ -26,6 +26,10 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.LIST_SERVICES, 201);
         map.Add(Constants.PageNames.NEW_SERVICE, 202);
 
+        //DEMANDANT
+        map.Add(Constants.PageNames.LIST_PROJECTS, 301);
+        map.Add(Constants.PageNames.NEW_PROJECT, 302);
+
         
     }
 

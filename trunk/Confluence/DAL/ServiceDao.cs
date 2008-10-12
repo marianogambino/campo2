@@ -47,15 +47,5 @@ namespace Confluence.DAL
                                                 new String[] { "name", "uname" },
                                                 new object[] { "%"+name+"%", username });
         }
-
-        public Language GetLanguageById(long id)
-        {
-            return (Language) HibernateTemplate.Get(typeof(Language), id);
-        }
-        public ServiceType GetServiceTypeById(long id)
-        {
-            return (ServiceType) HibernateTemplate.Get(typeof(ServiceType), id);
-        }
-
     }
 }
