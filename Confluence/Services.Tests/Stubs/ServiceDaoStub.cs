@@ -15,5 +15,9 @@ namespace Confluence.Services.Tests.Stubs
         public void Delete(Service s) { }
         public IList<Service> GetAll() { return null; }
         public Service GetById(long id) { return null; }
+        public IList<Service> FindForUser(String name) { return null; }
+        public IList<Service> GetAllByName(String name,String name2) { return null; }
+        public Language GetLanguageById(long id) { return null; }
+        public ServiceType GetServiceTypeById(long id) { return null; }
     }
 }

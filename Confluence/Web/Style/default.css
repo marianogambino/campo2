@@ -51,11 +51,11 @@ h3
 }
 #contentcolumn h3.info
 {
-	color:Blue;
+	color:#2D61A6;
 }
 #contentcolumn h3.error
 {
-	color:Red;
+	color:#F6432F;
 }
 
 #leftcolumn{

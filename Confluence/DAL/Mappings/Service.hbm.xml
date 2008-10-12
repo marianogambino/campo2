@@ -11,11 +11,13 @@
     <many-to-one name="Type"
                  class="Confluence.Domain.ServiceType"
                  column="service_type_id"
+                 lazy="false" 
                  cascade="none" />
     
     <many-to-one name="Language"
                  class="Confluence.Domain.Language"
                  column="language_id"
+                 lazy="false" 
                  cascade="none" />
     
     <many-to-one name="Supplier"

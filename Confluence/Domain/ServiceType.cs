@@ -38,5 +38,9 @@ namespace Confluence.Domain
         {
             return Description.GetHashCode();
         }
+        public override string ToString()
+        {
+            return Description;
+        }
     }
 }

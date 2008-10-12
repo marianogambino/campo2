@@ -19,5 +19,11 @@
   <object type="Contact.aspx">
     <property name="ContactService" ref="ContactService"/>
   </object>
+  <object type="ServiceList.aspx">
+    <property name="ServiceService" ref="ServiceService" />
+  </object>
+  <object type="NewService.aspx">
+    <property name="ServiceService" ref="ServiceService" />
+  </object>
 
 </objects>

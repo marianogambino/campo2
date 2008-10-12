@@ -24,5 +24,13 @@ namespace Confluence.DAL
                 result.Add((T)obj);
             return result;
         }
+        protected IList<T> QueryNamedParams<T>(String query, String[] names, object[] values)
+        {
+            IList found = HibernateTemplate.FindByNamedParam(query, names, values);
+            IList<T> result = new List<T>();
+            foreach (object o in found)
+                result.Add((T)o);
+            return result;
+        }
     }
 }

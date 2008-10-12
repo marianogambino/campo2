@@ -20,6 +20,7 @@
         <entry key="hibernate.connection.driver_class" value="NHibernate.Driver.SqlClientDriver"/>
         <entry key="hibernate.dialect" value="NHibernate.Dialect.MsSql2005Dialect"/>
         <entry key="hibernate.show_sql" value="true" />
+        <entry key="hibernate.format_sql" value="true" />
       </dictionary>
     </property>
   </object>

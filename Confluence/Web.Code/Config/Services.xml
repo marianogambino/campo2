@@ -18,4 +18,9 @@
           type="Confluence.Services.ContactService, Services">
     <property name="UserDao" ref="UserDao" />
   </object>
+  <object name="ServiceService"
+          type="Confluence.Services.ServiceService, Services">
+    <property name="ServiceDao" ref="ServiceDao" />
+    <property name="ClientDao" ref="ClientDao" />
+  </object>
 </objects>

@@ -44,16 +44,9 @@ public partial class Admin_ListUsers : PrivatePage
         if (SearchTxt.Text.Trim().Length == 0) return;
         IList<User> result = AdminService.FindUsersLike(SearchTxt.Text);
         result.Remove(ActiveUser);
-        if (result.Count > 0)
-        {
-            UserList.DataSource = result;
-            UserList.DataBind();
-        }
-        else
-        {
+        UserList.DataSource = result;
+        UserList.DataBind();
+        if(UserList.Rows.Count==0)
             Info.Text = "No Hay Resultados para esta Búsqueda";
-            UserList.DataSource = null;
-            UserList.DataBind();
-        }
     }
 }

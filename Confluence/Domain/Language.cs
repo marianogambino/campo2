@@ -37,5 +37,9 @@ namespace Confluence.Domain
         public override int GetHashCode(){
             return Name.GetHashCode();
         }
+        public override String ToString()
+        {
+            return Name;
+        }
     }
 }
