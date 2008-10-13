@@ -6,8 +6,31 @@ using Spring.Data.NHibernate.Support;
 
 namespace Confluence.DAL
 {
-    public abstract class BaseDao : HibernateDaoSupport
+    public abstract class BaseDao<T> : HibernateDaoSupport
     {
+        public void Persist(T entity)
+        {
+            if (GetAll().Contains(entity))
+                throw new DuplicateEntityException(entity.ToString());
+
+            HibernateTemplate.Save(entity);
+        }
+        public T GetById(long id)
+        {
+            return (T)HibernateTemplate.Get(typeof(T), id);
+        }
+        public void Save(T entity)
+        {
+            HibernateTemplate.Save(entity);
+        }
+        public void Update(T entity)
+        {
+            HibernateTemplate.Update(entity);
+        }
+        public void Delete(T entity)
+        {
+            HibernateTemplate.Delete(entity);
+        }
         protected IList<T> FindAllGeneric<T>(String query)
         {
             IList found = HibernateTemplate.Find(query);
@@ -32,5 +55,6 @@ namespace Confluence.DAL
                 result.Add((T)o);
             return result;
         }
+        public abstract IList<T> GetAll();
     }
 }

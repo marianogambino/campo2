@@ -5,25 +5,9 @@ using Confluence.Domain;
 
 namespace Confluence.DAL
 {
-    public class ProjectDao : BaseDao, IProjectDao
+    public class ProjectDao : BaseDao<Project>, IProjectDao
     {
-        public Project GetById(long id)
-        {
-            return (Project) HibernateTemplate.Get(typeof(Project), id);
-        }
-        public void Persist(Project entity)
-        {
-            HibernateTemplate.Save(entity);
-        }
-        public void Update(Project entity)
-        {
-            HibernateTemplate.Update(entity);
-        }
-        public void Delete(Project entity)
-        {
-            HibernateTemplate.Delete(entity);
-        }
-        public IList<Project> GetAll()
+        public override IList<Project> GetAll()
         {
             return FindAllGeneric<Project>("From Project p");
         }

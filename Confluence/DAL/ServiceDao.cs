@@ -7,25 +7,9 @@ using Spring.Data.NHibernate.Support;
 
 namespace Confluence.DAL
 {
-    public class ServiceDao : BaseDao, IServiceDao
+    public class ServiceDao : BaseDao<Service>, IServiceDao
     {
-        public Service GetById(long id)
-        {
-            return (Service)HibernateTemplate.Get(typeof(Service), id);
-        }
-        public void Persist(Service entity)
-        {
-            HibernateTemplate.Save(entity);
-        }
-        public void Delete(Service entity)
-        {
-            HibernateTemplate.Delete(entity);
-        }
-        public void Update(Service entity)
-        {
-            HibernateTemplate.Update(entity);
-        }
-        public IList<Service> GetAll()
+        public override IList<Service> GetAll()
         {
             return FindAllGeneric<Service>("FROM Service s");
         }

@@ -7,41 +7,14 @@ using System.Collections;
 
 namespace Confluence.DAL
 {
-    public class UserDao : BaseDao, IUserDao 
+    public class UserDao : BaseDao<User>, IUserDao 
     {
         public UserDao() {}
 
-        #region CRUD
-
-        public User GetById(long id)
-        {
-            return (User) HibernateTemplate.Get(typeof(User), id);
-        }
-
-        public void Persist(User entity)
-        {
-            User exists = GetByName(entity.Name);
-            if (exists != null)
-                throw new DuplicateEntityException(entity.Name);
-            HibernateTemplate.Save(entity);
-        }
-
-        public void Delete(User entity)
-        {
-            HibernateTemplate.Delete(entity);
-        }
-
-        public void Update(User entity)
-        {
-            HibernateTemplate.Update(entity);
-        }
-
-        public IList<User> GetAll()
+        public override IList<User> GetAll()
         {
             return FindAllGeneric<User>("FROM User u");
         }
-
-        #endregion
 
         public User GetByName(string name)
         {
