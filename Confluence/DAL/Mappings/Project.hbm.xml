@@ -21,6 +21,12 @@
                  column="language_id"
                  lazy="false" 
                  cascade="none" />
+    
+    <many-to-one name="Publication"
+                 class="Confluence.Domain.Publication"
+                 column="publication_id"
+                 lazy="false" 
+                 cascade="none" />
 
     <many-to-one name="Owner"
                  class="Confluence.Domain.Client"

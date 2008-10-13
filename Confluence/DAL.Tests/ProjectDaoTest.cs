@@ -20,13 +20,13 @@ namespace Confluence.DAL.Tests
         public void Creation()
         {
             prj = new Project();
-            Language lang = new Language();
-            lang.Id = 1;
-            ProjectState state = new ProjectState();
-            state.Id = 2;
+            Language lang = new Language(1);
+            ProjectState state = new ProjectState(2);
+            Publication pub = new Publication(1);
             Client cl = new Client();
             cl.Id = 17;
             prj.Name = "Proyecto";
+            prj.Publication = pub;
             prj.Start = DateTime.Now;
             prj.End = DateTime.Now;
             prj.State = state;

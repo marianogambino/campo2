@@ -18,9 +18,10 @@
             <asp:BoundField DataField="Name" HeaderText="Name"/>
             <asp:BoundField DataField="State" HeaderText="State"/>
             <asp:BoundField DataField="Language" HeaderText="Language" />
+            <asp:BoundField DataField="Publication" HeaderText="Publication" />
             <asp:BoundField DataField="Start" HeaderText="Start" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="false" />
             <asp:BoundField DataField="End" HeaderText="End" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="false" />
-            <asp:ButtonField HeaderText="Details" ButtonType="Image" ImageUrl="~/Images/Icons/book_go.png" CommandName="Edit" />
+            <asp:ButtonField HeaderText="Details" ButtonType="Image" ItemStyle-HorizontalAlign="center" ImageUrl="~/Images/Icons/book_go.png" CommandName="Edit" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <RowStyle BackColor="White" ForeColor="#333333" />

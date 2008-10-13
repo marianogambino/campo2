@@ -41,6 +41,7 @@ namespace Confluence.Services
             project.End = end_date;
             project.Language = new Language(lang_id);
             project.State = new ProjectState(1);//Nuevo
+            project.Publication = new Publication(0);
             project.Owner = ClientDao.GetByName(user_name);
             ProjectDao.Persist(project);
         }
@@ -56,6 +57,20 @@ namespace Confluence.Services
         public Project GetById(long id)
         {
             return ProjectDao.GetById(id);
+        }
+        public IList<Publication> GetAllPublications()
+        {
+            return ProjectDao.GetAllPublications();
+        }
+        public void Publish(long pid, long publication_id)
+        {
+            Project project = GetById(pid);
+            project.Publication = new Publication(publication_id);
+            ProjectDao.Update(project);
+        }
+        public void Delete(long pid)
+        {
+            ProjectDao.Delete(GetById(pid));
         }
     }
 }

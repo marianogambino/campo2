@@ -51,5 +51,7 @@ public static class Constants
         public const String LIST_PROJECTS = "listprojects_aspx";
         public const String NEW_PROJECT = "newproject_aspx";
         public const String PROJECT_DETAIL = "projectdetails_aspx";
+        public const String PUBLICATIONS = "publications_aspx";
+        public const String PROJECT_QUESTIONS = "projectquestions_aspx";
     }
 }
