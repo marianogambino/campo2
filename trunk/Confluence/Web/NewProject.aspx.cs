@@ -21,6 +21,7 @@ public partial class NewProject : PrivatePage
 
     public override void On_Load(object sender, EventArgs e)
     {
+        if (Page.IsPostBack) return;
         lang.DataSource = ProjectService.FindAllLangs();
         lang.DataBind();
     }

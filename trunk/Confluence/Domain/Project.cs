@@ -13,6 +13,7 @@ namespace Confluence.Domain
         private String name;
         private String descripton;
         private Language language;
+        private Publication publication;
         private DateTime start;
         private DateTime end;
 
@@ -55,6 +56,11 @@ namespace Confluence.Domain
         {
             set { end = value; }
             get { return end.Date; }
+        }
+        public virtual Publication Publication
+        {
+            set { publication = value; }
+            get { return publication; }
         }
         #endregion
 

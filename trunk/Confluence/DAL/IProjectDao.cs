@@ -10,5 +10,6 @@ namespace Confluence.DAL
         IList<Project> GetAllForUser(String user_name);
         IList<Project> FindAllByName(String user_name, String name);
         IList<Language> FindAllLangs();
+        IList<Publication> GetAllPublications();
     }
 }

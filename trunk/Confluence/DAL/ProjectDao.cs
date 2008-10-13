@@ -25,5 +25,9 @@ namespace Confluence.DAL
         {
             return FindAllGeneric<Language>("From Language l");
         }
+        public IList<Publication> GetAllPublications()
+        {
+            return FindAllGeneric<Publication>("From Publication p");
+        }
     }
 }

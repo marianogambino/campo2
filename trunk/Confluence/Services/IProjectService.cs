@@ -13,5 +13,8 @@ namespace Confluence.Services
         void Save(String user_name, String project_name, String description, long lang_id, DateTime end_date);
         Project GetById(long id);
         void Update(long pid, String name, String description, long lang_id, DateTime end);
+        IList<Publication> GetAllPublications();
+        void Publish(long pid, long publication_id);
+        void Delete(long pid);
     }
 }

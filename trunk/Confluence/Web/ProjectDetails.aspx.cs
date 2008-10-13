@@ -33,6 +33,8 @@ public partial class ProjectDetails : PrivatePage
         name.Text = project.Name;
         description.Text = project.Description;
         lang.SelectedValue = project.Language.Id.ToString();
+        publication.Text = project.Publication.Name;
+        state.Text = project.State.Name;
         end.SelectedDate = project.End;
         
     }
@@ -40,5 +42,14 @@ public partial class ProjectDetails : PrivatePage
     {
         ProjectService.Update(long.Parse(pid.Value), name.Text, description.Text, long.Parse(lang.SelectedValue), end.SelectedDate);
         Info.Text = "Proyecto Editado correctamente";
+    }
+    protected void Eliminar_Proyecto(object sender, EventArgs e)
+    {
+        ProjectService.Delete(long.Parse(pid.Value));
+        Response.Redirect(Constants.Redirects.LIST_PROJECTS);
+    }
+    protected void Cancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect(Constants.Redirects.LIST_PROJECTS);
     }
 }
