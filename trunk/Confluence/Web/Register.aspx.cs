@@ -47,7 +47,7 @@ public partial class Registro : ComponentPage
         RegistryService.Register(client);
 
         ActiveUser = client.UserAccount;
-        Response.Redirect(Constants.Redirects.MESSAGED_HOME + "Usuario Creado Con Éxito");
+        Response.Redirect(Constants.Redirects.MESSAGED_HOME + "Ud. se ha registrado exitosamente");
     }
     protected void Cancel_Click(object sender, EventArgs e)
     {

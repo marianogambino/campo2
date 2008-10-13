@@ -41,6 +41,14 @@ namespace Confluence.DAL.Tests
         {
             User user = ObjectMother.User;
             UserDao.Persist(user);
+            try
+            {
+                UserDao.Persist(user);
+            }
+            catch (DuplicateEntityException e)
+            {
+                Assert.IsNotNull(e.ExceptionCause);
+            }
             UserDao.Persist(user);
         }
 

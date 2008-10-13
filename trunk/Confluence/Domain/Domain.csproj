@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Family.cs" />
     <Compile Include="Language.cs" />
@@ -49,6 +50,8 @@
     <Compile Include="ProjectState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publication.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="QuestionState.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="ServiceType.cs" />
     <Compile Include="Session.cs" />

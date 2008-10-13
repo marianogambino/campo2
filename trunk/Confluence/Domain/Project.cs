@@ -16,6 +16,7 @@ namespace Confluence.Domain
         private Publication publication;
         private DateTime start;
         private DateTime end;
+        private IList<Question> questions;
 
         public virtual long Id
         {
@@ -62,8 +63,35 @@ namespace Confluence.Domain
             set { publication = value; }
             get { return publication; }
         }
+        public virtual IList<Question> Questions
+        {
+            set { questions = value; }
+            get { return questions; }
+        }
         #endregion
 
-        public Project() { }
+        public Project() 
+        {
+            Questions = new List<Question>();
+        }
+        public virtual IList<Question> UnansweredQuestions
+        {
+            get
+            {
+                List<Question> result = new List<Question>();
+                foreach (Question q in Questions)
+                    if (q.State.Id != 2) result.Add(q);
+                return result;
+            }
+        }
+        public virtual void AnswerQuestion(Question question, String answer)
+        {
+            Question found = null;
+            foreach (Question q in Questions)
+                if (q.Id == question.Id) found = q;
+
+            found.Answer = new Answer(answer);
+            found.State = new QuestionState(2);//Answered!
+        }
     }
 }

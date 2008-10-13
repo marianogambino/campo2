@@ -72,5 +72,21 @@ namespace Confluence.Services
         {
             ProjectDao.Delete(GetById(pid));
         }
+        public IList<Question> FindUnansweredQuestions(long id)
+        {
+            Project project = ProjectDao.GetById(id);
+            return project.UnansweredQuestions;
+        }
+        public Question FindQuestionById(long qid)
+        {
+            return ProjectDao.GetQuestionById(qid);
+        }
+        public void AnswerQuestion(long pid, long qid, String answer)
+        {
+            Question question = ProjectDao.GetQuestionById(qid);
+            Project project = ProjectDao.GetById(pid);
+            project.AnswerQuestion(question, answer);
+            ProjectDao.Update(project);
+        }
     }
 }

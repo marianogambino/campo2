@@ -16,5 +16,8 @@ namespace Confluence.Services
         IList<Publication> GetAllPublications();
         void Publish(long pid, long publication_id);
         void Delete(long pid);
+        IList<Question> FindUnansweredQuestions(long pid);
+        Question FindQuestionById(long qid);
+        void AnswerQuestion(long pid,long qid, String answer);
     }
 }

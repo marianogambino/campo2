@@ -13,6 +13,7 @@
   <object name="RegistryService"
           type="Confluence.Services.RegistryService, Services">
     <property name="ClientDao" ref="ClientDao" />
+    <property name="FamilyDao" ref="FamilyDao" />
   </object>
   <object name="ContactService"
           type="Confluence.Services.ContactService, Services">

@@ -9,6 +9,7 @@
                  class="Confluence.Domain.User"
                  column="user_account"
                  cascade="all"
+                 lazy="false"
                  unique="true"/>
     <property name="Name" />
     <property name="Country" />
