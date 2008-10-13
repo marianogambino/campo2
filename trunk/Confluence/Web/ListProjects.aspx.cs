@@ -31,4 +31,9 @@ public partial class ListProjects : PrivatePage
             Info.Text = "La Busqueda No obtuvo Resultados";
 
     }
+    protected void Project_Details(object sender, GridViewEditEventArgs e)
+    {
+        Int64 project_id = (Int64)ProjectGrid.DataKeys[e.NewEditIndex].Value;
+        Response.Redirect(Constants.Redirects.PROJECT_DETAIL + project_id);
+    }
 }

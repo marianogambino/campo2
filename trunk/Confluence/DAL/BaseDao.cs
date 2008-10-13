@@ -19,10 +19,6 @@ namespace Confluence.DAL
         {
             return (T)HibernateTemplate.Get(typeof(T), id);
         }
-        public void Save(T entity)
-        {
-            HibernateTemplate.Save(entity);
-        }
         public void Update(T entity)
         {
             HibernateTemplate.Update(entity);
@@ -31,28 +27,28 @@ namespace Confluence.DAL
         {
             HibernateTemplate.Delete(entity);
         }
-        protected IList<T> FindAllGeneric<T>(String query)
+        protected IList<X> FindAllGeneric<X>(String query)
         {
             IList found = HibernateTemplate.Find(query);
-            IList<T> result = new List<T>();
+            IList<X> result = new List<X>();
             foreach (object obj in found)
-                result.Add((T)obj);
+                result.Add((X)obj);
             return result;
         }
-        protected IList<T> QueryGeneric<T>(String query, object parameter)
+        protected IList<X> QueryGeneric<X>(String query, object parameter)
         {
             IList found = HibernateTemplate.Find(query,parameter);
-            IList<T> result = new List<T>();
+            IList<X> result = new List<X>();
             foreach (object obj in found)
-                result.Add((T)obj);
+                result.Add((X)obj);
             return result;
         }
-        protected IList<T> QueryNamedParams<T>(String query, String[] names, object[] values)
+        protected IList<X> QueryNamedParams<X>(String query, String[] names, object[] values)
         {
             IList found = HibernateTemplate.FindByNamedParam(query, names, values);
-            IList<T> result = new List<T>();
+            IList<X> result = new List<X>();
             foreach (object o in found)
-                result.Add((T)o);
+                result.Add((X)o);
             return result;
         }
         public abstract IList<T> GetAll();

@@ -32,12 +32,12 @@ public partial class Admin_ListUsers : PrivatePage
     protected void EditUser(object sender, GridViewEditEventArgs e)
     {
         Int64 user_id = (Int64) UserList.DataKeys[e.NewEditIndex].Value;
-        Response.Redirect(Constants.Redirects.USER_DETAIL +"?" + Constants.SessionKeys.USER_ID + "=" + user_id.ToString());
+        Response.Redirect(Constants.Redirects.USER_DETAIL + user_id.ToString());
     }
     protected void DeleteUser(object sender, GridViewDeleteEventArgs e)
     {
         Int64 user_id = (Int64)UserList.DataKeys[e.RowIndex].Value;
-        Response.Redirect(Constants.Redirects.DELETE_USER + "?" + Constants.SessionKeys.USER_ID + "=" + user_id.ToString());
+        Response.Redirect(Constants.Redirects.DELETE_USER + user_id.ToString());
     }
     protected void SearhUser(object sender, EventArgs e)
     {

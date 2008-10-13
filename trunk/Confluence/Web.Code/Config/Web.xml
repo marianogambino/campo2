@@ -31,5 +31,7 @@
   <object type="NewProject.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-
+  <object type="ProjectDetails.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
 </objects>

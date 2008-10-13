@@ -14,6 +14,7 @@ public static class Constants
         public const String INVALID = "invalid";
         public const String USER_ID = "user_id";
         public const String MESSAGE = "info";
+        public const String PROJECT_ID = "project_id";
     }
 
     public static class Redirects
@@ -24,11 +25,12 @@ public static class Constants
         public const String MUST_LOGIN = LOGIN + "?" + SessionKeys.INVALID +"=true";
         public const String INTRUDER = "~/Intruder.aspx";
         public const String LIST_USERS = "~/ListUsers.aspx";
-        public const String USER_DETAIL = "~/UserDetail.aspx";
-        public const String DELETE_USER = "~/DeleteUser.aspx";
+        public const String USER_DETAIL = "~/UserDetail.aspx?" + Constants.SessionKeys.USER_ID + "=";
+        public const String DELETE_USER = "~/DeleteUser.aspx?" + Constants.SessionKeys.USER_ID + "=";
         public const String SING_UP = "~/Register.aspx";
         public const String LIST_SERVICES = "~/ServiceList.aspx";
         public const String LIST_PROJECTS = "~/ListProjects.aspx";
+        public const String PROJECT_DETAIL = "~/ProjectDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
     }
 
     public static class PageNames
@@ -48,5 +50,6 @@ public static class Constants
         //Demandant
         public const String LIST_PROJECTS = "listprojects_aspx";
         public const String NEW_PROJECT = "newproject_aspx";
+        public const String PROJECT_DETAIL = "projectdetails_aspx";
     }
 }
