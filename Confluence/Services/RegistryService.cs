@@ -9,10 +9,16 @@ namespace Confluence.Services
     public class RegistryService : IRegistryService
     {
         private IClientDao client_dao;
+        private IFamilyDao family_dao;
         public IClientDao ClientDao
         {
             set { client_dao = value; }
             get { return client_dao; }
+        }
+        public IFamilyDao FamilyDao
+        {
+            set { family_dao = value; }
+            get { return family_dao; }
         }
         public bool UserExists(String name)
         {
@@ -24,11 +30,15 @@ namespace Confluence.Services
         }
         public IList<Family> GetDemanderFams()
         {
-            return new List<Family>();
+            IList<Family> fams = new List<Family>();
+            fams.Add(FamilyDao.GetById(2));
+            return fams;
         }
         public IList<Family> GetSupplierFams()
         {
-            return new List<Family>();
+            IList<Family> fams = new List<Family>();
+            fams.Add(FamilyDao.GetById(1));
+            return fams;
         }
     }
 }

@@ -36,4 +36,9 @@ public partial class ListProjects : PrivatePage
         Int64 project_id = (Int64)ProjectGrid.DataKeys[e.NewEditIndex].Value;
         Response.Redirect(Constants.Redirects.PROJECT_DETAIL + project_id);
     }
+    protected void Project_Questions(object sender, GridViewDeleteEventArgs e)
+    {
+        Int64 project_id = (Int64)ProjectGrid.DataKeys[e.RowIndex].Value;
+        Response.Redirect(Constants.Redirects.PROJECT_QUESTIONS + project_id);
+    }
 }

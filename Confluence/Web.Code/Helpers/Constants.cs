@@ -15,6 +15,7 @@ public static class Constants
         public const String USER_ID = "user_id";
         public const String MESSAGE = "info";
         public const String PROJECT_ID = "project_id";
+        public const String QUESTION_ID = "question_id";
     }
 
     public static class Redirects
@@ -31,6 +32,8 @@ public static class Constants
         public const String LIST_SERVICES = "~/ServiceList.aspx";
         public const String LIST_PROJECTS = "~/ListProjects.aspx";
         public const String PROJECT_DETAIL = "~/ProjectDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
+        public const String PROJECT_QUESTIONS = "~/ProjectQuestions.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
+        public const String ANSWER_QUESTIONS = "~/AnswerQuestions.aspx?" + Constants.SessionKeys.QUESTION_ID + "=";
     }
 
     public static class PageNames
@@ -53,5 +56,6 @@ public static class Constants
         public const String PROJECT_DETAIL = "projectdetails_aspx";
         public const String PUBLICATIONS = "publications_aspx";
         public const String PROJECT_QUESTIONS = "projectquestions_aspx";
+        public const String ANSWER_QUESTIONS = "answerquestions_aspx";
     }
 }

@@ -102,5 +102,24 @@ namespace Confluence.DAL.Tests
             Assert.IsNotNull(all);
             Assert.IsTrue(all.Count > 0);
         }
+        [Test]
+        public void FindAllPublications()
+        {
+            IList<Publication> all = ProjectDao.GetAllPublications();
+            Assert.IsNotNull(all);
+            Assert.IsTrue(all.Count > 0);
+        }
+        [Test]
+        public void FindQuestionsAndTestCascade()
+        {
+            Project prj = ProjectDao.GetById(6);
+            Assert.IsNotNull(prj.Questions);
+            Assert.IsTrue(prj.Questions.Count > 0);
+            prj.Questions.Remove(prj.Questions[0]);
+            ProjectDao.Update(prj);
+
+            prj = ProjectDao.GetById(6);
+            Assert.IsTrue(prj.Questions.Count == 0);
+        }
     }
 }

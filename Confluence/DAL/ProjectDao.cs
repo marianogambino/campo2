@@ -29,5 +29,17 @@ namespace Confluence.DAL
         {
             return FindAllGeneric<Publication>("From Publication p");
         }
+        public Question GetQuestionById(long qid)
+        {
+            return (Question) HibernateTemplate.Get(typeof(Question), qid);
+        }
+
+        public new void Delete(Project entity)
+        {
+            entity.Questions.Clear();
+            HibernateTemplate.Update(entity);
+            HibernateTemplate.Flush();
+            HibernateTemplate.Delete(entity);
+        }
     }
 }

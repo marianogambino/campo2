@@ -32,6 +32,7 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.PROJECT_DETAIL, 303);
         map.Add(Constants.PageNames.PUBLICATIONS, 304);
         map.Add(Constants.PageNames.PROJECT_QUESTIONS, 305);
+        map.Add(Constants.PageNames.ANSWER_QUESTIONS, 306);
 
         
     }
