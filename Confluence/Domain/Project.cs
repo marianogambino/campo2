@@ -49,12 +49,12 @@ namespace Confluence.Domain
         public virtual DateTime Start
         {
             set { start = value; }
-            get { return start; }
+            get { return start.Date; }
         }
         public virtual DateTime End
         {
             set { end = value; }
-            get { return end; }
+            get { return end.Date; }
         }
         #endregion
 

@@ -11,5 +11,7 @@ namespace Confluence.Services
         IList<Project> FindByName(String user_name, String name);
         IList<Language> FindAllLangs();
         void Save(String user_name, String project_name, String description, long lang_id, DateTime end_date);
+        Project GetById(long id);
+        void Update(long pid, String name, String description, long lang_id, DateTime end);
     }
 }

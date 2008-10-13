@@ -44,5 +44,18 @@ namespace Confluence.Services
             project.Owner = ClientDao.GetByName(user_name);
             ProjectDao.Persist(project);
         }
+        public void Update(long pid, String name, String description, long lang_id, DateTime end)
+        {
+            Project project = ProjectDao.GetById(pid);
+            project.Name = name;
+            project.Description = description;
+            project.Language = new Language(lang_id);
+            project.End = end;
+            ProjectDao.Update(project);
+        }
+        public Project GetById(long id)
+        {
+            return ProjectDao.GetById(id);
+        }
     }
 }

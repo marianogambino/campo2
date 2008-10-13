@@ -12,14 +12,15 @@
     <asp:GridView   ID="ProjectGrid" 
                     runat="server" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="#336666" 
                     BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" 
-                    DataKeyNames="Id">
+                    DataKeyNames="Id" OnRowEditing="Project_Details">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" Visible="false"/>
             <asp:BoundField DataField="Name" HeaderText="Name"/>
             <asp:BoundField DataField="State" HeaderText="State"/>
             <asp:BoundField DataField="Language" HeaderText="Language" />
-            <asp:BoundField DataField="Start" HeaderText="Start" />
-            <asp:BoundField DataField="End" HeaderText="End" />
+            <asp:BoundField DataField="Start" HeaderText="Start" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="false" />
+            <asp:BoundField DataField="End" HeaderText="End" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="false" />
+            <asp:ButtonField HeaderText="Details" ButtonType="Image" ImageUrl="~/Images/Icons/book_go.png" CommandName="Edit" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <RowStyle BackColor="White" ForeColor="#333333" />
