@@ -34,6 +34,7 @@ public static class Constants
         public const String PROJECT_DETAIL = "~/ProjectDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
         public const String PROJECT_QUESTIONS = "~/ProjectQuestions.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
         public const String ANSWER_QUESTIONS = "~/AnswerQuestions.aspx?" + Constants.SessionKeys.QUESTION_ID + "=";
+        public const String PROPOSAL_DETAILS = "~/ProposalDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
     }
 
     public static class PageNames
@@ -49,6 +50,8 @@ public static class Constants
         //Supplier
         public const String LIST_SERVICES = "servicelist_aspx";
         public const String NEW_SERVICE = "newservice_aspx";
+        public const String LIST_PROPOSALS = "listproposals_aspx";
+        public const String PROPOSAL_DETAILS = "proposaldetails_aspx";
 
         //Demandant
         public const String LIST_PROJECTS = "listprojects_aspx";

@@ -17,6 +17,7 @@ namespace Confluence.Domain
         private DateTime start;
         private DateTime end;
         private IList<Question> questions;
+        private IList<Offer> offers;
 
         public virtual long Id
         {
@@ -68,11 +69,17 @@ namespace Confluence.Domain
             set { questions = value; }
             get { return questions; }
         }
+        public virtual IList<Offer> Offers
+        {
+            set { offers = value; }
+            get { return offers; }
+        }
         #endregion
 
         public Project() 
         {
             Questions = new List<Question>();
+            Offers = new List<Offer>();
         }
         public virtual IList<Question> UnansweredQuestions
         {

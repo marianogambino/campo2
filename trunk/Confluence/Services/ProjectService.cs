@@ -88,5 +88,13 @@ namespace Confluence.Services
             project.AnswerQuestion(question, answer);
             ProjectDao.Update(project);
         }
+        public IList<Project> FindAllProposals()
+        {
+            return ProjectDao.GetAllPublicatedProjects();
+        }
+        public IList<Project> FindProposalsByName(String name)
+        {
+            return ProjectDao.FindPublicatedsByName(name);
+        }
     }
 }

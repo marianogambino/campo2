@@ -19,5 +19,7 @@ namespace Confluence.Services
         IList<Question> FindUnansweredQuestions(long pid);
         Question FindQuestionById(long qid);
         void AnswerQuestion(long pid,long qid, String answer);
+        IList<Project> FindAllProposals();
+        IList<Project> FindProposalsByName(String name);
     }
 }

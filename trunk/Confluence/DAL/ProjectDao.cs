@@ -33,13 +33,13 @@ namespace Confluence.DAL
         {
             return (Question) HibernateTemplate.Get(typeof(Question), qid);
         }
-
-        public new void Delete(Project entity)
+        public IList<Project> GetAllPublicatedProjects()
         {
-            entity.Questions.Clear();
-            HibernateTemplate.Update(entity);
-            HibernateTemplate.Flush();
-            HibernateTemplate.Delete(entity);
+            return QueryGeneric<Project>("From Project p Where p.Publication.Id > ?", 0);
+        }
+        public IList<Project> FindPublicatedsByName(String name)
+        {
+            return QueryGeneric<Project>("From Project p Where p.Publication.Id > 0 And p.Name like ?", "%" + name + "%");
         }
     }
 }

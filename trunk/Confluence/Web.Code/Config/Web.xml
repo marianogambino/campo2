@@ -43,4 +43,10 @@
   <object type="AnswerQuestions.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
+  <object type="ListProposals.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
+  <object type="ProposalDetails.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
 </objects>

@@ -43,6 +43,7 @@
     <Compile Include="Language.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="Offer.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="OperationType.cs" />
     <Compile Include="Patente.cs" />

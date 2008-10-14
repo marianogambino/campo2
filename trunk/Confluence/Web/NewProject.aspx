@@ -6,7 +6,7 @@
 <asp:TextBox ID="name" runat="server" />
 <asp:RequiredFieldValidator ID="reqName" runat="server" ControlToValidate="name" ErrorMessage="* Nombre es requerido" /><br />
 <label for="description">Descripcion:</label>
-<asp:TextBox ID="description" runat="server" />
+<asp:TextBox TextMode="multiline" ID="description" runat="server" />
 <asp:RequiredFieldValidator ID="reqDescription" runat="server" ControlToValidate="description" ErrorMessage="* Descripcion es requerida" /><br />
 <label for="language">Lenguaje:</label>
 <asp:DropDownList ID="lang" runat="server" DataTextField="Name" DataValueField="Id" /><br />
