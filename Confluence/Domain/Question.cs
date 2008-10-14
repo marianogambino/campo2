@@ -10,6 +10,7 @@ namespace Confluence.Domain
         private String text;
         private Answer answer;
         private QuestionState state;
+        private Project project;
 
         public virtual long Id
         {
@@ -31,7 +32,16 @@ namespace Confluence.Domain
             set { state = value; }
             get { return state; }
         }
+        public virtual Project Project
+        {
+            set { project = value; }
+            get { return project; }
+        }
         public Question() { }
-
+        public Question(String text)
+        {
+            State = new QuestionState(1);//En Curso
+            Text = text;
+        }
     }
 }

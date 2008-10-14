@@ -100,5 +100,10 @@ namespace Confluence.Domain
             found.Answer = new Answer(answer);
             found.State = new QuestionState(2);//Answered!
         }
+        public virtual void AddQuestion(Question question)
+        {
+            question.Project = this;
+            Questions.Add(question);
+        }
     }
 }

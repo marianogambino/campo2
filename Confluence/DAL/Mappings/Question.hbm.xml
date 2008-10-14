@@ -16,6 +16,7 @@
                  column="answer_id"
                  lazy="false" 
                  cascade="all-delete-orphan" />
+    <many-to-one name="Project" class="Confluence.Domain.Project" column="project_id" />
   </class>
 </hibernate-mapping>
 

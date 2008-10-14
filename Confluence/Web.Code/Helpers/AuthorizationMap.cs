@@ -21,12 +21,12 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.USER_DETAIL, 102);
         map.Add(Constants.PageNames.DELETE_USER, 103);
 
-
         //SUPPLIER
         map.Add(Constants.PageNames.LIST_SERVICES, 201);
         map.Add(Constants.PageNames.NEW_SERVICE, 202);
         map.Add(Constants.PageNames.LIST_PROPOSALS, 203);
         map.Add(Constants.PageNames.PROPOSAL_DETAILS, 204);
+        map.Add(Constants.PageNames.ASK_QUESTION, 205);
 
         //DEMANDANT
         map.Add(Constants.PageNames.LIST_PROJECTS, 301);
@@ -36,7 +36,6 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.PROJECT_QUESTIONS, 305);
         map.Add(Constants.PageNames.ANSWER_QUESTIONS, 306);
 
-        
     }
 
     public int get(String pageName) 

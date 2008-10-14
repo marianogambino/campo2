@@ -96,5 +96,11 @@ namespace Confluence.Services
         {
             return ProjectDao.FindPublicatedsByName(name);
         }
+        public void SaveQuestion(long pid, String question)
+        {
+            Project project = GetById(pid);
+            project.AddQuestion(new Question(question));
+            ProjectDao.Update(project);
+        }
     }
 }

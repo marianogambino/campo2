@@ -21,5 +21,6 @@ namespace Confluence.Services
         void AnswerQuestion(long pid,long qid, String answer);
         IList<Project> FindAllProposals();
         IList<Project> FindProposalsByName(String name);
+        void SaveQuestion(long pid, String question);
     }
 }
