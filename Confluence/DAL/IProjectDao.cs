@@ -12,5 +12,7 @@ namespace Confluence.DAL
         IList<Language> FindAllLangs();
         IList<Publication> GetAllPublications();
         Question GetQuestionById(long qid);
+        IList<Project> GetAllPublicatedProjects();
+        IList<Project> FindPublicatedsByName(String name);
     }
 }

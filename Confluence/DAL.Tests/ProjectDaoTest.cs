@@ -110,15 +110,22 @@ namespace Confluence.DAL.Tests
             Assert.IsTrue(all.Count > 0);
         }
         [Test]
-        public void FindQuestionsAndTestCascade()
+        public void QuestionsTestCascadeSaveAndDelete()
         {
-            Project prj = ProjectDao.GetById(6);
+            Project prj = ProjectDao.GetById(8);
+            Question q = new Question();
+            q.Text ="Saracatunga!";
+            q.State = new QuestionState(1);
+            prj.Questions.Add(q);
+            ProjectDao.Update(prj);
+
+            prj = ProjectDao.GetById(8);
             Assert.IsNotNull(prj.Questions);
             Assert.IsTrue(prj.Questions.Count > 0);
             prj.Questions.Remove(prj.Questions[0]);
             ProjectDao.Update(prj);
 
-            prj = ProjectDao.GetById(6);
+            prj = ProjectDao.GetById(8);
             Assert.IsTrue(prj.Questions.Count == 0);
         }
     }
