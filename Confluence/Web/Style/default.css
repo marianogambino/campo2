@@ -170,7 +170,7 @@ a.DcRemove
     background:#A9D06A;
     border-bottom:1px solid #CDE99F;
     cursor:pointer;
-    font-size:12px;
+    font-size:0.9em;
     font-weight:normal;
     margin:0;
     padding:0 10px;
@@ -183,6 +183,7 @@ a.DcRemove
 .accordion_content 
 {
     overflow:hidden;
+    font-size:0.8em;
 }
 .accordion_content a
 {

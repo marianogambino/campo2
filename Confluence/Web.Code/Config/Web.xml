@@ -52,4 +52,7 @@
   <object type="AskQuestion.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
+  <object type="MakeOffer.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
 </objects>

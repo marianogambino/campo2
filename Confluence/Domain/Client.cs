@@ -74,6 +74,13 @@ namespace Confluence.Domain
             return UserAccount.Name.GetHashCode();
         }
         #endregion
+
+        public virtual Offer MakeOffer(Double amount, DateTime date)
+        {
+            Offer of = new Offer(amount, date);
+            of.Bidder = this;
+            return of;
+        }
         
     }
 }

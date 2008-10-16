@@ -15,4 +15,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         ((ComponentPage)Page).LogOut();
     }
+    protected void Page_Load(object sender, EventArgs args)
+    {
+
+    }
 }

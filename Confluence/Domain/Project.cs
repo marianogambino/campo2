@@ -10,6 +10,7 @@ namespace Confluence.Domain
         private long id;
         private ProjectState state;
         private Client owner;
+        private Client developer;
         private String name;
         private String descripton;
         private Language language;
@@ -33,6 +34,11 @@ namespace Confluence.Domain
         {
             set { owner = value; }
             get { return owner; }
+        }
+        public virtual Client Developer
+        {
+            set { developer = value; }
+            get { return developer; }
         }
         public virtual String Name
         {
@@ -104,6 +110,16 @@ namespace Confluence.Domain
         {
             question.Project = this;
             Questions.Add(question);
+        }
+        public virtual void AddOffer(Offer offer)
+        {
+            offer.Project = this;
+            Offers.Add(offer);
+        }
+        public virtual void AcceptedBy(Client developer) 
+        {
+            Developer = developer;
+            State = new ProjectState(2);//En Desarrollo
         }
     }
 }
