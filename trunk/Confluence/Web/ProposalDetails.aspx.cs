@@ -32,7 +32,7 @@ public partial class ProposalDetails : PrivatePage
     }
     protected void Offer_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect(Constants.Redirects.MAKE_OFFER + pid.Value);
     }
     protected void Ask_Click(object sender, EventArgs e)
     {
@@ -40,6 +40,14 @@ public partial class ProposalDetails : PrivatePage
     }
     protected void Accept_Click(object sender, EventArgs e)
     {
-
+        if (ProjectService.CanAccept(long.Parse(pid.Value)))
+        {
+            ProjectService.AcceptProject(ActiveUser.Name, long.Parse(pid.Value));
+            Response.Redirect(Constants.Redirects.PROPOSAL_DETAILS + pid.Value);
+        }
+        else
+        {
+            Problems.Text = "Lamentablemente el proyecto ya ha sido aceptado por otro usuario.";
+        }
     }
 }

@@ -35,11 +35,11 @@ namespace Confluence.DAL
         }
         public IList<Project> GetAllPublicatedProjects()
         {
-            return QueryGeneric<Project>("From Project p Where p.Publication.Id > ?", 0);
+            return QueryGeneric<Project>("From Project p Where p.Publication.Id > ? and p.State.Id = 1", 0);
         }
         public IList<Project> FindPublicatedsByName(String name)
         {
-            return QueryGeneric<Project>("From Project p Where p.Publication.Id > 0 And p.Name like ?", "%" + name + "%");
+            return QueryGeneric<Project>("From Project p Where p.Publication.Id > 0 And p.State.Id = 1 And p.Name like ?", "%" + name + "%");
         }
     }
 }

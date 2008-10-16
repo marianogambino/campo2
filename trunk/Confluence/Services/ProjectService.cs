@@ -102,5 +102,23 @@ namespace Confluence.Services
             project.AddQuestion(new Question(question));
             ProjectDao.Update(project);
         }
+        public bool CanAccept(long pid)
+        {
+            Project project = GetById(pid);
+            return (project.Developer == null);
+        }
+        public void AcceptProject(String developer_name, long pid)
+        {
+            Project project = GetById(pid);
+            project.AcceptedBy(ClientDao.GetByName(developer_name));
+            ProjectDao.Update(project);
+        }
+        public void MakeOffer(String name, long pid, Double amount, DateTime release_date)
+        {
+            Project project = GetById(pid);
+            Client bidder = ClientDao.GetByName(name);
+            project.AddOffer(bidder.MakeOffer(amount,release_date));
+            ProjectDao.Update(project);
+        }
     }
 }

@@ -116,17 +116,39 @@ namespace Confluence.DAL.Tests
             Question q = new Question();
             q.Text ="Saracatunga!";
             q.State = new QuestionState(1);
-            prj.Questions.Add(q);
+            prj.AddQuestion(q);
             ProjectDao.Update(prj);
 
             prj = ProjectDao.GetById(8);
             Assert.IsNotNull(prj.Questions);
-            Assert.IsTrue(prj.Questions.Count > 0);
+            int count = prj.Questions.Count;
+            Assert.IsTrue(count > 0);
             prj.Questions.Remove(prj.Questions[0]);
             ProjectDao.Update(prj);
 
             prj = ProjectDao.GetById(8);
-            Assert.IsTrue(prj.Questions.Count == 0);
+            Assert.IsTrue(prj.Questions.Count == (count-1));
+        }
+        [Test]
+        public void OfferCascades()
+        {
+            Project prj = ProjectDao.GetById(8);
+            Offer offer = new Offer();
+            offer.Amount = 100.50;
+            offer.Bidder = new Client();
+            offer.ReleaseDate = DateTime.Now;
+            prj.AddOffer(offer);
+            ProjectDao.Update(prj);
+
+            prj = ProjectDao.GetById(8);
+            Assert.IsNotNull(prj.Offers);
+            Assert.IsTrue(prj.Offers.Count > 0);
+            prj.Offers.Remove(prj.Offers[0]);
+            ProjectDao.Update(prj);
+
+            prj = ProjectDao.GetById(8);
+            Assert.IsTrue(prj.Offers.Count == 0);
+
         }
     }
 }

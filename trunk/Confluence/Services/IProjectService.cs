@@ -22,5 +22,8 @@ namespace Confluence.Services
         IList<Project> FindAllProposals();
         IList<Project> FindProposalsByName(String name);
         void SaveQuestion(long pid, String question);
+        bool CanAccept(long pid);
+        void AcceptProject(String developer_name, long pid);
+        void MakeOffer(String name,long pid, Double amount, DateTime release_date);
     }
 }

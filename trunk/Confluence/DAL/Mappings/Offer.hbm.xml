@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain">
+  <class name="Confluence.Domain.Offer" table="offers">
+    <id name="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="Amount" />
+    <property name="ReleaseDate" column="release_date" />
+    <many-to-one name="CounterOffer"
+             class="Confluence.Domain.Offer"
+             column="counter_offer"
+             cascade="all" />
+    <many-to-one name="Bidder"
+             class="Confluence.Domain.Client"
+             column="bidder_id"
+             cascade="none" />
+    <many-to-one name="Project" class="Confluence.Domain.Project" column="project_id" />
+  </class>
+</hibernate-mapping>
+
