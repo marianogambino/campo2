@@ -9,6 +9,12 @@ namespace Confluence.Services
     public class LoginService : ILoginService
     {
         private IUserDao userDao;
+        private ISecurityService security_service;
+        public ISecurityService SecurityService
+        {
+            set { security_service = value; }
+            get { return security_service; }
+        }
 
         public LoginService() { }
 
@@ -18,9 +24,10 @@ namespace Confluence.Services
             get { return userDao; }
         }
 
-        public User doLogin(string userName, string password)
+        public User doLogin(string userName, string pass)
         {
             User found = UserDao.GetByName(userName);
+            String password = SecurityService.GetHash(pass);
 
             if (found == null || ! found.Password.Equals(password))
                 return null;

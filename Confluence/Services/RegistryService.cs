@@ -10,6 +10,7 @@ namespace Confluence.Services
     {
         private IClientDao client_dao;
         private IFamilyDao family_dao;
+        private ISecurityService security_service;
         public IClientDao ClientDao
         {
             set { client_dao = value; }
@@ -20,12 +21,18 @@ namespace Confluence.Services
             set { family_dao = value; }
             get { return family_dao; }
         }
+        public ISecurityService SecurityService
+        {
+            set { security_service = value; }
+            get { return security_service; }
+        }
         public bool UserExists(String name)
         {
             return ClientDao.GetByName(name) != null;
         }
         public void Register(Client client)
         {
+            client.UserAccount.Password = SecurityService.GetHash(client.UserAccount.Password);
             ClientDao.Persist(client);
         }
         public IList<Family> GetDemanderFams()
