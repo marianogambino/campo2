@@ -25,7 +25,7 @@ public partial class Login : ComponentPage
     protected void formSubmit(object sender, EventArgs e)
     {
         //TODO: logica en el code behind. Esto es malo
-        User user = LoginService.doLogin(txtName.Text.Trim(), txtPass.Text.Trim());
+        User user = LoginService.doLogin(name.Text.Trim(), pass.Text.Trim());
         if (user != null)
         {
             ResetFailed();

@@ -20,6 +20,9 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.LIST_USERS, 101);
         map.Add(Constants.PageNames.USER_DETAIL, 102);
         map.Add(Constants.PageNames.DELETE_USER, 103);
+        map.Add(Constants.PageNames.LIST_FAMILIES, 104);
+        map.Add(Constants.PageNames.NEW_FAMILY, 105);
+        map.Add(Constants.PageNames.FAMILY_DETAILS, 106);
 
         //SUPPLIER
         map.Add(Constants.PageNames.LIST_SERVICES, 201);

@@ -30,5 +30,6 @@ namespace Confluence.DAL
         {
             HibernateTemplate.Save(message);
         }
+        
     }
 }

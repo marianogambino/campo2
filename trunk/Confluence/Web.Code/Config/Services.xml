@@ -31,6 +31,5 @@
     <property name="ProjectDao" ref="ProjectDao" />
     <property name="ClientDao" ref="ClientDao" />
   </object>
-  <object name="SecurityService"
-          type="Confluence.Services.SecurityService, Services" />
+  <object name="SecurityService" type="Confluence.Services.SecurityService, Services" />
   </objects>

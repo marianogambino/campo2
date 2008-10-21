@@ -27,9 +27,9 @@ namespace Confluence.Services
         public User doLogin(string userName, string pass)
         {
             User found = UserDao.GetByName(userName);
-            String password = SecurityService.GetHash(pass);
+            //String password = SecurityService.GetHash(pass);
 
-            if (found == null || ! found.Password.Equals(password))
+            if (found == null || ! found.Password.Equals(pass))
                 return null;
             else
                 return found;

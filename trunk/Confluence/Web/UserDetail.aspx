@@ -17,10 +17,10 @@
                     <center>
                     <table border="0">
                         <tr>
-                            <td><asp:LinkButton runat="server" CssClass="DcAdd" ID="AddFam" OnClick="AddFamily">Add</asp:LinkButton></td>
+                            <td><asp:LinkButton CausesValidation="false" runat="server" CssClass="DcAdd" ID="AddFam" OnClick="AddFamily">Add</asp:LinkButton></td>
                         </tr>
                         <tr>
-                            <td><asp:LinkButton runat="server" CssClass="DcRemove" ID="RemoveFam" OnClick="RemoveFamily">Remove</asp:LinkButton></td>
+                            <td><asp:LinkButton CausesValidation="false" runat="server" CssClass="DcRemove" ID="RemoveFam" OnClick="RemoveFamily">Remove</asp:LinkButton></td>
                         </tr>
                     </table>
                     </center>

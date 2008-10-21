@@ -8,5 +8,6 @@ namespace Confluence.DAL
     public interface IFamilyDao :IDAO<Family>
     {
         IList<Patente> GetAllPatents();
+        Family GetByName(String name);
     }
 }
