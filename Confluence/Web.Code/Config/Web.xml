@@ -22,37 +22,37 @@
   <object type="ServiceList.aspx">
     <property name="ServiceService" ref="ServiceService" />
   </object>
-  <object type="NewService.aspx">
+  <!--<object type="NewService.aspx">
     <property name="ServiceService" ref="ServiceService" />
-  </object>
+  </object>-->
   <object type="ListProjects.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="NewProject.aspx">
+  <!--<object type="NewProject.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="ProjectDetails.aspx">
+  </object>-->
+  <!--<object type="ProjectDetails.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="Publications.aspx">
+  </object>-->
+  <!--<object type="Publications.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="ProjectQuestions.aspx">
+  </object>-->
+  <!--<object type="ProjectQuestions.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="AnswerQuestions.aspx">
+  </object>-->
+  <!--<object type="AnswerQuestions.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="ListProposals.aspx">
+  </object>-->
+  <!--<object type="ListProposals.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="ProposalDetails.aspx">
+  </object>-->
+  <!--<object type="ProposalDetails.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="AskQuestion.aspx">
+  </object>-->
+  <!--<object type="AskQuestion.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
-  <object type="MakeOffer.aspx">
+  </object>-->
+  <!--<object type="MakeOffer.aspx">
     <property name="ProjectService" ref="ProjectService" />
-  </object>
+  </object>-->
 </objects>
