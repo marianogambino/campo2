@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain">
+  <class name="Confluence.Domain.Project" table="projects">
+    <id name="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="Name" />
+    <property name="Description" />
+    <property name="Start"  column="date_start" />
+    <property name="End"    column="date_end" />
+
+    <many-to-one name="State"
+                 class="Confluence.Domain.ProjectState"
+                 column="state_id"
+                 lazy="false" 
+                 cascade="none" />
+
+    <many-to-one name="Language"
+                 class="Confluence.Domain.Language"
+                 column="language_id"
+                 lazy="false" 
+                 cascade="none" />
+    
+    <many-to-one name="Publication"
+                 class="Confluence.Domain.Publication"
+                 column="publication_id"
+                 lazy="false" 
+                 cascade="none" />
+
+    <many-to-one name="Owner"
+                 class="Confluence.Domain.Client"
+                 column="owner_id"
+                 cascade="none" />
+    
+    <many-to-one name="Developer"
+                 class="Confluence.Domain.Client"
+                 column="developer_id"
+                 cascade="none" />
+
+    <bag name="Questions" 
+         generic="true"
+         lazy="false"
+         cascade="all" inverse="true">
+      <key column="project_id"/>
+      <one-to-many class="Confluence.Domain.Question"/>
+    </bag>
+    
+    <bag name="Offers" 
+        generic="true"
+        lazy="false"
+        cascade="all" inverse="true">
+      <key column="project_id"/>
+      <one-to-many class="Confluence.Domain.Offer"/>
+    </bag>
+    
+  </class>
+</hibernate-mapping>

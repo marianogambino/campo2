@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects  xmlns="http://www.springframework.net">
+
+  <object name="LoginService" 
+          type="Confluence.Services.LoginService, Services" >
+    <property name="UserDao" ref="UserDao"/>
+    <property name="SecurityService" ref="SecurityService" />
+  </object>
+  <object name="AdminService"
+          type="Confluence.Services.AdminService, Services">
+    <property name="UserDao" ref="UserDao"/>
+    <property name="FamilyDao" ref="FamilyDao"/>
+  </object>
+  <object name="RegistryService"
+          type="Confluence.Services.RegistryService, Services">
+    <property name="ClientDao" ref="ClientDao" />
+    <property name="FamilyDao" ref="FamilyDao" />
+    <property name="SecurityService" ref="SecurityService" />
+  </object>
+  <object name="ContactService"
+          type="Confluence.Services.ContactService, Services">
+    <property name="UserDao" ref="UserDao" />
+  </object>
+  <object name="ServiceService"
+          type="Confluence.Services.ServiceService, Services">
+    <property name="ServiceDao" ref="ServiceDao" />
+    <property name="ClientDao" ref="ClientDao" />
+  </object>
+  <object name="ProjectService"
+          type="Confluence.Services.ProjectService, Services">
+    <property name="ProjectDao" ref="ProjectDao" />
+    <property name="ClientDao" ref="ClientDao" />
+  </object>
+  <object name="SecurityService"
+          type="Confluence.Services.SecurityService, Services" />
+  </objects>

@@ -1,0 +1,193 @@
+body{
+	margin:0;
+	padding:0;
+	line-height: 1.5em;
+	font-family:Tahoma;
+	background:url(../Images/background.png) repeat-x;
+}
+
+h3
+{
+	padding:0px 0px 0px 20px;
+	margin:50px 0px 0px 0px;
+	color:Gray;
+	letter-spacing:0.3em;
+}
+#topsection{
+	height: 90px;
+}
+
+#topsection h1{
+	margin: 0;
+	padding-left:15px;
+	padding-top: 15px;
+	color:#5C554E;
+}
+#topsection .subtitle
+{
+	color:#5C554E;
+	font-size:0.8em;
+	padding-left:15px;
+	letter-spacing:1em;
+}
+
+#topsection #statbar
+{
+	float:right;
+	background:#FFFFFF;
+	padding:5px;
+}
+
+#contentwrapper{
+	float: left;
+	width: 100%;
+}
+
+#contentcolumn{
+	margin-left: 200px;
+}
+#contentcolumn h1
+{
+	margin:10px 0px 20px 10px;
+}
+#contentcolumn h3.info
+{
+	color:#2D61A6;
+}
+#contentcolumn h3.error
+{
+	color:#F6432F;
+}
+
+#leftcolumn{
+	float: left;
+	width: 210px;
+	margin-left: -100%;
+}
+
+#footer{
+	clear: left;
+	width: 100%;
+	text-align: center;
+	padding: 4px 0;
+	display:none;
+}
+
+.boxed
+{
+	border:solid 1px #808080;
+}
+.innertube{
+	margin: 10px; 
+	margin-top: 0;
+}
+.clearboth
+{
+	clear:both;
+}
+#statbar
+{
+	margin-right:10px;
+	margin-top:10px;
+}
+span.hellouser
+{
+	padding-left:20px;
+	background:url(../Images/Icons/user.png) no-repeat left center;
+}
+a.logout
+{
+	padding-left:20px;
+	background:url(../Images/Icons/door_out.png) no-repeat left center;
+}
+/***************************************************************************************************/
+/**FORMS**/
+#inputform
+{
+	border:0px;
+}
+#inputform label,#inputform input {
+	display: block;
+	width: 150px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#inputform label {
+	text-align: right;
+	width: 175px;
+	padding-right: 20px;
+}
+
+#inputform br {
+	clear: left;
+}
+
+#inputform h3
+{
+	margin:45px 35px 10px;
+}
+
+a.DcAdd
+{
+	background:url(../Images/Icons/arrow_right.png) no-repeat left center;
+	padding-left:20px;
+}
+a.DcRemove
+{
+	background:url(../Images/Icons/arrow_left.png) no-repeat left center;
+	padding-left:20px;
+}
+#inputform .radiolist label, #inputform .radiolist input
+{
+	width:auto;
+}
+#inputform textarea
+{
+	width:350px;
+	height:200px;
+}
+/************************************************************************************************/
+/*PARAGRAPHS*/
+#paragraphs p
+{
+	text-align:justify;
+	font-family:Verdana;
+	width:600px;
+	padding-left:20px;
+}
+/*************************************************************************************************/
+/**DataGrids**/
+
+.gridview
+{
+	margin:10px 0px 0px 20px;
+}
+
+/*************************************************************************************************/
+/**ACCORDION MENU**/
+.accordion_toggle {
+    background:#A9D06A;
+    border-bottom:1px solid #CDE99F;
+    cursor:pointer;
+    font-size:0.9em;
+    font-weight:normal;
+    margin:0;
+    padding:0 10px;
+}
+.accordion_toggle_active {
+    background:#E0542F;
+    border-bottom:1px solid #F68263;
+    color:#FFFFFF;
+}
+.accordion_content 
+{
+    overflow:hidden;
+    font-size:0.8em;
+}
+.accordion_content a
+{
+	padding-left:20px;
+	background:url(../Images/Icons/bullet_green.png) no-repeat left center;
+}
+/**************************************************************************************************/
