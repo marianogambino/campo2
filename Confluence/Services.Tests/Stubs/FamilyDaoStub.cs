@@ -50,5 +50,9 @@ namespace Confluence.Services.Tests.Stubs
             pats.Add(new Patente(2, "hola", "mundo"));
             return pats;
         }
+        public bool HasRelations(long id)
+        {
+            return (id == 0);
+        }
     }
 }

@@ -55,4 +55,13 @@
   <object type="MakeOffer.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
+  <object type="ListFamilies.aspx">
+    <property name="AdminService" ref="AdminService" />
+  </object>
+  <object type="NewFamily.aspx">
+    <property name="AdminService" ref="AdminService" />
+  </object>
+  <object type="FamilyDetail.aspx">
+    <property name="AdminService" ref="AdminService" />
+  </object>
 </objects>

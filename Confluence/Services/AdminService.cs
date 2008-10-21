@@ -85,6 +85,51 @@ namespace Confluence.Services
             user.Patentes.Clear();
             UserDao.Update(user);
         }
+        public IList<Family> FindAllFamilies()
+        {
+            return FamilyDao.GetAll();
+        }
+        public void DeleteFamily(long id)
+        {
+            FamilyDao.Delete(FamilyDao.GetById(id));
+        }
+        public IList<Patente> FindAllPatentes()
+        {
+            return FamilyDao.GetAllPatents();
+        }
+        public void CreateFamily(String name, String description, IList<int> patentes)
+        {
+            Family fam = new Family(name, description);
+            foreach (int id in patentes)
+                fam.Patentes.Add(new Patente(id,null,null));
+            FamilyDao.Persist(fam);
+        }
+        public bool FamilyExist(String name)
+        {
+            return (FamilyDao.GetByName(name) != null);
+        }
+        public IList<Patente> FindPatAvailableForFamily(long family_id)
+        {
+            IList<Patente> all = FamilyDao.GetAllPatents();
+            Family fam = FamilyDao.GetById(family_id);
+            foreach (Patente pat in fam.Patentes)
+                if (all.Contains(pat)) all.Remove(pat);
+
+            return all;
+        }
+        public void UpdateFamily(long id, String description, IList<int> patentes)
+        {
+            Family fam = FamilyDao.GetById(id);
+            fam.Description = description;
+            fam.Patentes.Clear();
+            foreach (int pat_id in patentes)
+                fam.Patentes.Add(new Patente(pat_id, null, null));
+            FamilyDao.Update(fam);
+        }
+        public Family FindFamilyById(long id)
+        {
+            return FamilyDao.GetById(id);
+        }
 
     }
 }
