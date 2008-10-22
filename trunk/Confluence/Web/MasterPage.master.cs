@@ -15,6 +15,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         ((ComponentPage)Page).LogOut();
     }
+    protected void Profile_Click(object sender, EventArgs args)
+    {
+        Response.Redirect(Constants.Redirects.USER_PROFILE);
+    }
     protected void Page_Load(object sender, EventArgs args)
     {
 

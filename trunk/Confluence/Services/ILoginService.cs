@@ -8,5 +8,6 @@ namespace Confluence.Services
     public interface ILoginService
     {
         User doLogin(String userName, String password);
+        void ChangePassword(String username, String password);
     }
 }

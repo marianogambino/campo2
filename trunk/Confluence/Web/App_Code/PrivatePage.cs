@@ -19,7 +19,7 @@ public abstract class PrivatePage : ComponentPage
 
         //If user is logged in but it's not allowed, redirect to Home page
         if (!SecuritySpec.canAccessPage(ActiveUser, this.GetType().Name))
-            Response.Redirect(Constants.Redirects.HOME);
+            Response.Redirect(Constants.Redirects.MESSAGED_HOME + "No posee permisos para ingresar a esa página");
         
         //If everything is fine, call hook and continue
         this.On_Load(sender, e);

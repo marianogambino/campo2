@@ -40,12 +40,17 @@ public static class Constants
         public const String MAKE_OFFER = "~/MakeOffer.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
         public const String FAMILY_DETAIL = "~/FamilyDetail.aspx?" + Constants.SessionKeys.FAMILY_ID + "=";
         public const String FAMILY_LIST = "~/ListFamilies.aspx";
+        public const String USER_PROFILE = "~/UserProfile.aspx";
+        public const String CHANGE_PWD = "~/ChangePass.aspx";
+        public const String EDIT_PROFILE = "~/EditProfile.aspx";
     }
 
     public static class PageNames
     {
         //Publics
         public const String HOME = "default_aspx";
+        public const String USER_PROFILE = "userprofile_aspx";
+        public const String CHANGE_PASS = "changepass_aspx";
 
         //Admin
         public const String LIST_USERS = "listusers_aspx";
@@ -70,5 +75,6 @@ public static class Constants
         public const String PUBLICATIONS = "publications_aspx";
         public const String PROJECT_QUESTIONS = "projectquestions_aspx";
         public const String ANSWER_QUESTIONS = "answerquestions_aspx";
+
     }
 }

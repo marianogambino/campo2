@@ -34,5 +34,11 @@ namespace Confluence.Services
             else
                 return found;
         }
+        public void ChangePassword(String username, String password)
+        {
+            User user = UserDao.GetByName(username);
+            user.Password = /*SecurityService.GetHash(*/password/*)*/;
+            UserDao.Update(user);
+        }
     }
 }

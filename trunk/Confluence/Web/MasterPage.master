@@ -28,7 +28,8 @@
                 <%if(ThisPage.IsLogged){%>
                 <div id="statbar" class="boxed">
                     <span class="hellouser">Hello, <%=ThisPage.ActiveUser.Name %></span>.<br />
-                    <asp:LinkButton  CausesValidation="false" ID="logoutLink" CssClass="logout" runat="server" OnClick="Logout">Logout</asp:LinkButton>
+                    <asp:LinkButton  CausesValidation="false" ID="UserProfile"  CssClass="profile" runat="server" OnClick="Profile_Click">Profile</asp:LinkButton><br />
+                    <asp:LinkButton  CausesValidation="false" ID="logoutLink"   CssClass="logout" runat="server" OnClick="Logout">Logout</asp:LinkButton>
                 </div>
                 <%} %>
                 <h1>Confluence</h1>
