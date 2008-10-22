@@ -64,4 +64,7 @@
   <object type="FamilyDetail.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
+  <object type="ChangePass.aspx">
+    <property name="LoginService" ref="LoginService" />
+  </object>
 </objects>

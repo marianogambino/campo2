@@ -15,6 +15,8 @@ public class AuthorizationMap
         map = new Dictionary<String, int>();
         //PUBLIC
         map.Add(Constants.PageNames.HOME, 0);
+        map.Add(Constants.PageNames.USER_PROFILE, 0);
+        map.Add(Constants.PageNames.CHANGE_PASS, 0);
 
         //ADMIN
         map.Add(Constants.PageNames.LIST_USERS, 101);

@@ -90,15 +90,24 @@ h3
 	margin-right:10px;
 	margin-top:10px;
 }
-span.hellouser
-{
-	padding-left:20px;
-	background:url(../Images/Icons/user.png) no-repeat left center;
-}
 a.logout
 {
 	padding-left:20px;
 	background:url(../Images/Icons/door_out.png) no-repeat left center;
+}
+a.profile
+{
+	padding-left:20px;
+	background:url(../Images/Icons/user.png) no-repeat left center;
+}
+h3.biglink
+{
+	padding:10px;
+	text-decoration:none;
+	border:solid 1px black;
+	width:350px;
+	cursor:hand;
+	background:#FFFFFF;
 }
 /***************************************************************************************************/
 /**FORMS**/
