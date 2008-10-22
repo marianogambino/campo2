@@ -2,10 +2,14 @@
 <objects  xmlns="http://www.springframework.net"
           xmlns:db="http://www.springframework.net/database">
 
-  <db:provider id="DbProvider"
-               provider="System.Data.SqlClient"
-               connectionString="Data Source=PABLO;Initial Catalog=Confluence;Integrated Security=True"/>
-
+  <!--<db:provider  id="DbProvider"
+                provider="System.Data.SqlClient"
+                connectionString="Data Source=PABLO;Initial Catalog=Confluence;Integrated Security=True"/>-->
+  
+  <db:provider  id="DbProvider"
+                provider="System.Data.SQLite"
+                connectionString="Data Source=C:\Documents and Settings\Administrador\Mis documentos\Visual Studio 2005\Projects\Confluence\Web\App_Data\test.db;Version=3"/>
+  
   <object id="NHSessionFactory" 
           type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate12">
     <property name="DbProvider" ref="DbProvider" />
@@ -16,9 +20,14 @@
     </property>
     <property name="HibernateProperties">
       <dictionary>
+        
+        <entry key="hibernate.connection.driver_class" value="NHibernate.Driver.SQLite20Driver"/>
+        <entry key="hibernate.dialect" value="NHibernate.Dialect.SQLiteDialect"/>
+        
+        <!--<entry key="hibernate.connection.driver_class" value="NHibernate.Driver.SqlClientDriver"/>
+        <entry key="hibernate.dialect" value="NHibernate.Dialect.MsSql2005Dialect"/>-->
+
         <entry key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
-        <entry key="hibernate.connection.driver_class" value="NHibernate.Driver.SqlClientDriver"/>
-        <entry key="hibernate.dialect" value="NHibernate.Dialect.MsSql2005Dialect"/>
         <entry key="hibernate.show_sql" value="true" />
         <entry key="hibernate.format_sql" value="true" />
       </dictionary>
