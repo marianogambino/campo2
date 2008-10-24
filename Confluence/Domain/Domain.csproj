@@ -41,11 +41,8 @@
     <Compile Include="Client.cs" />
     <Compile Include="Family.cs" />
     <Compile Include="Language.cs" />
-    <Compile Include="Log.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Offer.cs" />
-    <Compile Include="Operation.cs" />
-    <Compile Include="OperationType.cs" />
     <Compile Include="Patente.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="ProjectState.cs" />
@@ -55,7 +52,6 @@
     <Compile Include="QuestionState.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="ServiceType.cs" />
-    <Compile Include="Session.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -9,6 +9,8 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
 using Confluence.Domain;
+using Confluence.Services;
+using Confluence.DAL;
 
 public class ComponentPage : System.Web.UI.Page
 {
@@ -51,6 +53,7 @@ public class ComponentPage : System.Web.UI.Page
     }
     public void LogOut()
     {
+        new Log().LogExit(ActiveUser);
         Session[Constants.SessionKeys.USER] = null;
         Response.Redirect(Constants.Redirects.HOME);
     }

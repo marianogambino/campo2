@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using Confluence.Services;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {

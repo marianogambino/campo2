@@ -51,6 +51,7 @@ public static class Constants
         public const String HOME = "default_aspx";
         public const String USER_PROFILE = "userprofile_aspx";
         public const String CHANGE_PASS = "changepass_aspx";
+        public const String EDIT_PROFILE = "editprofile_aspx";
 
         //Admin
         public const String LIST_USERS = "listusers_aspx";
