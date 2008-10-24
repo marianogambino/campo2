@@ -11,5 +11,6 @@ namespace Confluence.Services
         void Register(Client client);
         IList<Family> GetDemanderFams();
         IList<Family> GetSupplierFams();
+        bool IsHR(String name);
     }
 }

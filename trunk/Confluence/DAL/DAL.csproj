@@ -51,17 +51,21 @@
   <ItemGroup>
     <Compile Include="BaseDao.cs" />
     <Compile Include="ClientDao.cs" />
+    <Compile Include="ConnectionFactory.cs" />
     <Compile Include="DuplicateEntityException.cs" />
     <Compile Include="FamilyDao.cs" />
     <Compile Include="IClientDao.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="IFamilyDao.cs" />
+    <Compile Include="ILog.cs" />
     <Compile Include="IProjectDao.cs" />
     <Compile Include="IServiceDao.cs" />
     <Compile Include="IUserDao.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="ProjectDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceDao.cs" />
+    <Compile Include="SQLServerConnectionFactory.cs" />
     <Compile Include="UserDao.cs" />
   </ItemGroup>
   <ItemGroup>

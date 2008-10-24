@@ -67,4 +67,7 @@
   <object type="ChangePass.aspx">
     <property name="LoginService" ref="LoginService" />
   </object>
+  <object type="EditProfile.aspx">
+    <property name="RegistryService" ref="RegistryService" />
+  </object>
 </objects>

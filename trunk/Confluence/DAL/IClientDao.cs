@@ -8,5 +8,6 @@ namespace Confluence.DAL
     public interface IClientDao : IDAO<Client>
     {
         Client GetByName(String name);
+        bool IsHR(String name);
     }
 }
