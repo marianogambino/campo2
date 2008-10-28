@@ -60,6 +60,7 @@ public static class Constants
         public const String LIST_FAMILIES = "listfamilies_aspx";
         public const String NEW_FAMILY = "newfamily_aspx";
         public const String FAMILY_DETAILS = "familydetail_aspx";
+        public const String ACCESS_LOG = "accesslog_aspx";
 
         //Supplier
         public const String LIST_SERVICES = "servicelist_aspx";

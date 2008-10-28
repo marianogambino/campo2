@@ -26,6 +26,7 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.LIST_FAMILIES, 104);
         map.Add(Constants.PageNames.NEW_FAMILY, 105);
         map.Add(Constants.PageNames.FAMILY_DETAILS, 106);
+        map.Add(Constants.PageNames.ACCESS_LOG, 107);
 
         //SUPPLIER
         map.Add(Constants.PageNames.LIST_SERVICES, 201);
