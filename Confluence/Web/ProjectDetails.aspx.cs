@@ -40,12 +40,12 @@ public partial class ProjectDetails : PrivatePage
     }
     protected void Editar_Proyecto(object sender, EventArgs e)
     {
-        ProjectService.Update(long.Parse(pid.Value), name.Text, description.Text, long.Parse(lang.SelectedValue), end.SelectedDate);
+        ProjectService.Update(long.Parse(pid.Value), name.Text, description.Text, long.Parse(lang.SelectedValue), end.SelectedDate, ActiveUser.Name);
         Info.Text = "Proyecto Editado correctamente";
     }
     protected void Eliminar_Proyecto(object sender, EventArgs e)
     {
-        ProjectService.Delete(long.Parse(pid.Value));
+        ProjectService.Delete(long.Parse(pid.Value), ActiveUser.Name);
         Response.Redirect(Constants.Redirects.LIST_PROJECTS);
     }
     protected void Cancel_Click(object sender, EventArgs e)

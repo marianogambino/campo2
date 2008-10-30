@@ -22,6 +22,13 @@ namespace Confluence.Services
             get { return userDao; }
             set { userDao = value; }
         }
+        private ILog log_service;
+        public ILog LogService
+        {
+            set { log_service = value; }
+            get { return log_service; }
+        }
+
         #endregion
 
         public IList<User> FindAllUsers()
@@ -34,7 +41,7 @@ namespace Confluence.Services
             return UserDao.GetById(id);
         }
 
-        public void UpdateUser(long id, String mail, IList<int> familias, IList<int> patentes)
+        public void UpdateUser(long id, String mail, IList<int> familias, IList<int> patentes, String username)
         {
             User user = UserDao.GetById(id);
 
@@ -50,6 +57,7 @@ namespace Confluence.Services
             user.Patentes = patentes_update;
             user.Families = familias_update;
             UserDao.Update(user);
+            LogService.LogOperation(username, "Se actualizó el Usuario: " + user.Name);
         }
 
         public IList<Patente> FindPatAvailableForUser(long uid)
@@ -74,35 +82,41 @@ namespace Confluence.Services
         {
             return UserDao.FindLike(name);
         }
-        public void DeleteUser(long id)
+        public void DeleteUser(long id,String username)
         {
-            UserDao.Delete(UserDao.GetById(id));
+            User user = UserDao.GetById(id);
+            UserDao.Delete(user);
+            LogService.LogOperation(username, "Se eliminó el Usuario: " + user.Name);
         }
-        public void BlockUser(long id)
+        public void BlockUser(long id,String username)
         {
             User user = UserDao.GetById(id);
             user.Families.Clear();
             user.Patentes.Clear();
             UserDao.Update(user);
+            LogService.LogOperation(username, "Se bloqueó el Usuario: " + user.Name);
         }
         public IList<Family> FindAllFamilies()
         {
             return FamilyDao.GetAll();
         }
-        public void DeleteFamily(long id)
+        public void DeleteFamily(long id, String username)
         {
-            FamilyDao.Delete(FamilyDao.GetById(id));
+            Family fam = FamilyDao.GetById(id);
+            FamilyDao.Delete(fam);
+            LogService.LogOperation(username, "Se eliminó la Familia: " + fam.Name);
         }
         public IList<Patente> FindAllPatentes()
         {
             return FamilyDao.GetAllPatents();
         }
-        public void CreateFamily(String name, String description, IList<int> patentes)
+        public void CreateFamily(String name, String description, IList<int> patentes,String username)
         {
             Family fam = new Family(name, description);
             foreach (int id in patentes)
                 fam.Patentes.Add(new Patente(id,null,null));
             FamilyDao.Persist(fam);
+            LogService.LogOperation(username, "Se creó la Familia: " + fam.Name);
         }
         public bool FamilyExist(String name)
         {
@@ -117,7 +131,7 @@ namespace Confluence.Services
 
             return all;
         }
-        public void UpdateFamily(long id, String description, IList<int> patentes)
+        public void UpdateFamily(long id, String description, IList<int> patentes, String username)
         {
             Family fam = FamilyDao.GetById(id);
             fam.Description = description;
@@ -125,6 +139,7 @@ namespace Confluence.Services
             foreach (int pat_id in patentes)
                 fam.Patentes.Add(new Patente(pat_id, null, null));
             FamilyDao.Update(fam);
+            LogService.LogOperation(username, "Se actualizó la Familia: " + fam.Name);
         }
         public Family FindFamilyById(long id)
         {

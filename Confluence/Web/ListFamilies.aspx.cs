@@ -36,7 +36,7 @@ public partial class ListFamilies : PrivatePage
         long id = (long)FamilyGrid.DataKeys[grow.RowIndex].Value;
         try
         {
-            AdminService.DeleteFamily(id);
+            AdminService.DeleteFamily(id,ActiveUser.Name);
         }catch(ConstraintException)
         {
             Problems.Text = "La Familia tiene Usuarios asignados y no puede ser eliminada";

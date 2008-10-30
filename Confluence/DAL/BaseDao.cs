@@ -11,7 +11,6 @@ namespace Confluence.DAL
         private ILog log_service = new Log();
         public void Persist(T entity)
         {
-            log_service.LogSave(entity);
             if (GetAll().Contains(entity))
                 throw new DuplicateEntityException(entity.ToString());
 

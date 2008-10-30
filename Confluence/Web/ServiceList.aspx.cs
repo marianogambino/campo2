@@ -36,7 +36,7 @@ public partial class ServiceList : PrivatePage
     protected void DeleteService(object sender, GridViewDeleteEventArgs e)
     {
         long id = (long)ServiceGrid.DataKeys[e.RowIndex].Value;
-        ServiceService.Delete(id);
+        ServiceService.Delete(id,ActiveUser.Name);
         Response.Redirect(Constants.Redirects.LIST_SERVICES);
     }
 }

@@ -21,16 +21,23 @@ namespace Confluence.Services
             set { client_dao = value; }
             get { return client_dao; }
         }
+        private ILog log_service;
+        public ILog LogService
+        {
+            set { log_service = value; }
+            get { return log_service; }
+        }
         #endregion
 
         public IList<Service> FindServicesForUser(String username)
         {
             return ServiceDao.FindForUser(username);
         }
-        public void Delete(long id)
+        public void Delete(long id,String username)
         {
             Service serv = ServiceDao.GetById(id);
             ServiceDao.Delete(serv);
+            LogService.LogOperation(username, "Se eliminó el Servicio: " + serv.Name);
         }
         public IList<Service> FindServicesByName(String username, String name)
         {
@@ -58,6 +65,7 @@ namespace Confluence.Services
             service.Language = lang;
 
             ServiceDao.Persist(service);
+            LogService.LogOperation(user_name, "Se creó el Servicio: " + service.Name);
         }
     }
 }

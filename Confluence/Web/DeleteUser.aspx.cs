@@ -42,12 +42,12 @@ public partial class DeleteUser : PrivatePage
     }
     protected void Eliminar_Click(object sender, EventArgs e)
     {
-        AdminService.DeleteUser(long.Parse(UID.Value));
+        AdminService.DeleteUser(long.Parse(UID.Value),ActiveUser.Name);
         Response.Redirect(Constants.Redirects.LIST_USERS);
     }
     protected void Bloquear_Click(object sender, EventArgs e)
     {
-        AdminService.BlockUser(long.Parse(UID.Value));
+        AdminService.BlockUser(long.Parse(UID.Value), ActiveUser.Name);
         Response.Redirect(Constants.Redirects.LIST_USERS);
     }
 }

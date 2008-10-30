@@ -40,7 +40,7 @@ public partial class FamilyDetail : PrivatePage
         foreach (ListItem it in SelectedPatentes.Items)
             patentes.Add(Int16.Parse(it.Value));
 
-        AdminService.UpdateFamily(long.Parse(fid.Value),description.Text, patentes);
+        AdminService.UpdateFamily(long.Parse(fid.Value),description.Text, patentes,ActiveUser.Name);
         Info.Text = "Familia Editada";
     }
     protected void RemovePatente(object sender, EventArgs e)
