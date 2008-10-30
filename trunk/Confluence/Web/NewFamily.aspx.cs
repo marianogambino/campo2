@@ -36,7 +36,7 @@ public partial class NewFamily : PrivatePage
         foreach (ListItem it in SelectedPatentes.Items)
             patentes.Add(Int16.Parse(it.Value));
 
-        AdminService.CreateFamily(name.Text, description.Text,patentes);
+        AdminService.CreateFamily(name.Text, description.Text, patentes, ActiveUser.Name);
         Response.Redirect(Constants.Redirects.FAMILY_LIST);
     }
     protected void Cancel_Click(object sender, EventArgs e)

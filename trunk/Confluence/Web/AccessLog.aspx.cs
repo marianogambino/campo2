@@ -20,6 +20,6 @@ public partial class AccessLog : PrivatePage
     }
     public override void On_Load(object sender, EventArgs args)
     {
-
+        
     }
 }

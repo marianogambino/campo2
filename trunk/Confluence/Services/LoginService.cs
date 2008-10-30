@@ -53,6 +53,7 @@ namespace Confluence.Services
             User user = UserDao.GetByName(username);
             user.Password = /*SecurityService.GetHash(*/password/*)*/;
             UserDao.Update(user);
+            LogService.LogOperation(username, "El usuario cambio el password");
         }
     }
 }

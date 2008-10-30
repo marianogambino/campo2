@@ -50,7 +50,7 @@ public partial class UserDetail : PrivatePage
         foreach (ListItem it in SelectedFamilies.Items)
             familias.Add(Int16.Parse(it.Value));
 
-        AdminService.UpdateUser(long.Parse(HdnUID.Value), TxtUserMail.Text, familias, patentes);
+        AdminService.UpdateUser(long.Parse(HdnUID.Value), TxtUserMail.Text, familias, patentes,ActiveUser.Name);
         Response.Redirect(Constants.Redirects.LIST_USERS);
         
     }

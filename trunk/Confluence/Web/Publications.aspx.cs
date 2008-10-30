@@ -36,7 +36,7 @@ public partial class Publications : PrivatePage
     }
     protected void Publish_Project(object sender, EventArgs e)
     {
-        ProjectService.Publish(long.Parse(projects.SelectedValue), long.Parse(publication_list.SelectedValue));
+        ProjectService.Publish(long.Parse(projects.SelectedValue), long.Parse(publication_list.SelectedValue), ActiveUser.Name);
         Info.Text = "Publicacion Modificada";
     }
     protected void Cancel_Click(object sender, EventArgs e)

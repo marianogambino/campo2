@@ -47,4 +47,5 @@
   <object name="ClientDao"  parent="Dao"  type="Confluence.DAL.ClientDao, DAL"/>
   <object name="ServiceDao" parent="Dao"  type="Confluence.DAL.ServiceDao, DAL"/>
   <object name="ProjectDao" parent="Dao"  type="Confluence.DAL.ProjectDao, DAL"/>
+  <object name="Log" type="Confluence.DAL.Log, DAL" />
 </objects>

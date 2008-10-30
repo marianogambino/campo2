@@ -29,18 +29,13 @@ namespace Confluence.DAL
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
-        public void LogSave(object obj)
+        public void LogOperation(String user_name, String message)
         {
-
+            DbCommand cmd = factory.GetCommand("INSERT INTO operation_log (user_name, operation, time) VALUES ('" + user_name + "','" + message +"','" +DateTime.Now.ToString() + "')");
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
-        public void LogUpdate(object obj)
-        {
 
-        }
-        public void LogDelete(object obj)
-        {
-
-        }
         private String AccessCommand(long user_id,String user_name, AccessType type)
         {
             return "INSERT INTO access_log (user_id, user_name, time, action) VALUES (" + user_id.ToString() + ",'" + user_name + "','"

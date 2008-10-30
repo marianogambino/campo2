@@ -6,5 +6,6 @@
   <object name="FamilyDao"  type="Confluence.Services.Tests.Stubs.FamilyDaoStub, Services.Tests"/>
   <object name="ClientDao"  type="Confluence.Services.Tests.Stubs.ClientDaoStub, Services.Tests"/>
   <object name="ServiceDao"  type="Confluence.Services.Tests.Stubs.ServiceDaoStub, Services.Tests"/>
+  <object name="LogService" type="Confluence.DAL.Log, DAL" />
 
 </objects>

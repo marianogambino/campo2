@@ -29,7 +29,7 @@ public partial class AnswerQuestions : PrivatePage
     }
     protected void Responder_Click(object sender, EventArgs e)
     {
-        ProjectService.AnswerQuestion(long.Parse(pid.Value),long.Parse(qid.Value), answer.Text);
+        ProjectService.AnswerQuestion(long.Parse(pid.Value), long.Parse(qid.Value), answer.Text, ActiveUser.Name);
         Response.Redirect(Constants.Redirects.LIST_PROJECTS);
     }
     protected void Cancel_Click(object sender, EventArgs e)

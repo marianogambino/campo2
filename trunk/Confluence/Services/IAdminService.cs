@@ -10,18 +10,18 @@ namespace Confluence.Services
         IList<User> FindAllUsers();
         IList<Family> FindAllFamilies();
         User FindUser(long id);
-        void UpdateUser(long id, String mail, IList<int> familias, IList<int> patentes);
+        void UpdateUser(long id, String mail, IList<int> familias, IList<int> patentes, String username);
         IList<Patente> FindPatAvailableForUser(long userId);
         IList<Patente> FindAllPatentes();
         IList<Family> FindFamAvailableForUser(long userId);
         IList<User> FindUsersLike(String name);
-        void DeleteUser(long id);
-        void BlockUser(long id);
-        void DeleteFamily(long id);
-        void CreateFamily(String name, String description, IList<int> patentes);
+        void DeleteUser(long id,String username);
+        void BlockUser(long id,String username);
+        void DeleteFamily(long id, String username);
+        void CreateFamily(String name, String description, IList<int> patentes, String username);
         bool FamilyExist(String name);
         IList<Patente> FindPatAvailableForFamily(long family_id);
-        void UpdateFamily(long id,String description,IList<int> patentes);
+        void UpdateFamily(long id,String description,IList<int> patentes, String username);
         Family FindFamilyById(long id);
     }
 }

@@ -20,6 +20,12 @@ namespace Confluence.Services
             get { return client_dao; }
             set { client_dao = value; }
         }
+        private ILog log_service;
+        public ILog LogService
+        {
+            set { log_service = value; }
+            get { return log_service; }
+        }
         public IList<Project> GetAllForUser(String user_name)
         {
             return ProjectDao.GetAllForUser(user_name);
@@ -44,8 +50,9 @@ namespace Confluence.Services
             project.Publication = new Publication(0);
             project.Owner = ClientDao.GetByName(user_name);
             ProjectDao.Persist(project);
+            LogService.LogOperation(user_name, "Se creó un nuevo Proyecto: " + project.Name);
         }
-        public void Update(long pid, String name, String description, long lang_id, DateTime end)
+        public void Update(long pid, String name, String description, long lang_id, DateTime end,String username)
         {
             Project project = ProjectDao.GetById(pid);
             project.Name = name;
@@ -53,6 +60,7 @@ namespace Confluence.Services
             project.Language = new Language(lang_id);
             project.End = end;
             ProjectDao.Update(project);
+            LogService.LogOperation(username, "Se actualizó un Proyecto: " + project.Name);
         }
         public Project GetById(long id)
         {
@@ -62,15 +70,18 @@ namespace Confluence.Services
         {
             return ProjectDao.GetAllPublications();
         }
-        public void Publish(long pid, long publication_id)
+        public void Publish(long pid, long publication_id,String username)
         {
             Project project = GetById(pid);
             project.Publication = new Publication(publication_id);
             ProjectDao.Update(project);
+            LogService.LogOperation(username, "Se publicó un Proyecto: " + project.Name);
         }
-        public void Delete(long pid)
+        public void Delete(long pid,String username)
         {
-            ProjectDao.Delete(GetById(pid));
+            Project project = GetById(pid);
+            ProjectDao.Delete(project);
+            LogService.LogOperation(username, "Se eliminó un Proyecto: " + project.Name);
         }
         public IList<Question> FindUnansweredQuestions(long id)
         {
@@ -81,12 +92,13 @@ namespace Confluence.Services
         {
             return ProjectDao.GetQuestionById(qid);
         }
-        public void AnswerQuestion(long pid, long qid, String answer)
+        public void AnswerQuestion(long pid, long qid, String answer,String username)
         {
             Question question = ProjectDao.GetQuestionById(qid);
             Project project = ProjectDao.GetById(pid);
             project.AnswerQuestion(question, answer);
             ProjectDao.Update(project);
+            LogService.LogOperation(username, "Se respondió una pregunta del Proyecto: " + project.Name);
         }
         public IList<Project> FindAllProposals()
         {
@@ -96,11 +108,12 @@ namespace Confluence.Services
         {
             return ProjectDao.FindPublicatedsByName(name);
         }
-        public void SaveQuestion(long pid, String question)
+        public void SaveQuestion(long pid, String question,String username)
         {
             Project project = GetById(pid);
             project.AddQuestion(new Question(question));
             ProjectDao.Update(project);
+            LogService.LogOperation(username, "Se realizó una pregunta del Proyecto: " + project.Name);
         }
         public bool CanAccept(long pid)
         {
@@ -112,6 +125,7 @@ namespace Confluence.Services
             Project project = GetById(pid);
             project.AcceptedBy(ClientDao.GetByName(developer_name));
             ProjectDao.Update(project);
+            LogService.LogOperation(developer_name, "Se aceptó un Proyecto: " + project.Name);
         }
         public void MakeOffer(String name, long pid, Double amount, DateTime release_date)
         {
@@ -119,6 +133,7 @@ namespace Confluence.Services
             Client bidder = ClientDao.GetByName(name);
             project.AddOffer(bidder.MakeOffer(amount,release_date));
             ProjectDao.Update(project);
+            LogService.LogOperation(name, "Se realizó una oferta por el Proyecto: " + project.Name);
         }
     }
 }

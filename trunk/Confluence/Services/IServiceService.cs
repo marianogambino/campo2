@@ -8,7 +8,7 @@ namespace Confluence.Services
     public interface IServiceService
     {
         IList<Service> FindServicesForUser(String username);
-        void Delete(long id);
+        void Delete(long id, String username);
         IList<Service> FindServicesByName(String username, String name);
         IList<ServiceType> GetAllSTypes();
         IList<Language> GetAllLangs();

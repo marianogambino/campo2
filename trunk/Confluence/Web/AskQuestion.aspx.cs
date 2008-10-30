@@ -29,7 +29,7 @@ public partial class AskQuestion : PrivatePage
     }
     protected void Ask_Click(object sender, EventArgs e)
     {
-        ProjectService.SaveQuestion(long.Parse(pid.Value), question.Text);
+        ProjectService.SaveQuestion(long.Parse(pid.Value), question.Text,ActiveUser.Name);
         Response.Redirect(Constants.Redirects.PROPOSAL_DETAILS + pid.Value);
     }
     protected void Cancel_Click(object sender, EventArgs e)
