@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Project
+    public class Project : DomainObject
     {
         #region properties
         private long id;

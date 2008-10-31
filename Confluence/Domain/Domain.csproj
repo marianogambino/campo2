@@ -39,6 +39,8 @@
   <ItemGroup>
     <Compile Include="Answer.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="DV.cs" />
+    <Compile Include="DomainObject.cs" />
     <Compile Include="Family.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Message.cs" />

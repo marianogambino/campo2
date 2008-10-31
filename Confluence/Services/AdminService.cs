@@ -57,6 +57,7 @@ namespace Confluence.Services
             user.Patentes = patentes_update;
             user.Families = familias_update;
             UserDao.Update(user);
+            //Compute total DV
             LogService.LogOperation(username, "Se actualizó el Usuario: " + user.Name);
         }
 
@@ -86,6 +87,7 @@ namespace Confluence.Services
         {
             User user = UserDao.GetById(id);
             UserDao.Delete(user);
+            //Compute total DV
             LogService.LogOperation(username, "Se eliminó el Usuario: " + user.Name);
         }
         public void BlockUser(long id,String username)
@@ -104,6 +106,7 @@ namespace Confluence.Services
         {
             Family fam = FamilyDao.GetById(id);
             FamilyDao.Delete(fam);
+            //Compute total DV
             LogService.LogOperation(username, "Se eliminó la Familia: " + fam.Name);
         }
         public IList<Patente> FindAllPatentes()

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Family
+    public class Family : DomainObject
     {
         private long id;
         private String name;
@@ -34,12 +34,13 @@ namespace Confluence.Domain
             get { return patentes; }
             set { patentes = value; }
         }
-
+        [DV]
         public virtual String Name
         {
             get { return name; }
             set { name = value; }
         }
+        [DV]
         public virtual String Description
         {
             set { description = value; }

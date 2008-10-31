@@ -54,9 +54,11 @@
     <Compile Include="ConnectionFactory.cs" />
     <Compile Include="DuplicateEntityException.cs" />
     <Compile Include="FamilyDao.cs" />
+    <Compile Include="HashService.cs" />
     <Compile Include="IClientDao.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="IFamilyDao.cs" />
+    <Compile Include="IHashService.cs" />
     <Compile Include="ILog.cs" />
     <Compile Include="IProjectDao.cs" />
     <Compile Include="IServiceDao.cs" />
