@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Client
+    public class Client : DomainObject
     {
         #region properties
         private long id;
@@ -14,31 +14,36 @@ namespace Confluence.Domain
         private String state;
         private long phone;
 
-        public virtual User UserAccount
-        {
-            get { return user_account; }
-            set { user_account = value; }
-        }
         public virtual long Id
         {
             get { return id; }
             set { id = value; }
         }
+        [DV(Property="Id")]
+        public virtual User UserAccount
+        {
+            get { return user_account; }
+            set { user_account = value; }
+        }
+        [DV]
         public virtual String Name
         {
             get { return name; }
             set { name = value; }
         }
+        [DV]
         public virtual String Country
         {
             get { return country; }
             set { country = value; }
         }
+        [DV]
         public virtual String State
         {
             get { return state; }
             set { state = value; }
         }
+        [DV]
         public virtual long Phone
         {
             get { return phone; }

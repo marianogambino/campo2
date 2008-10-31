@@ -12,14 +12,27 @@ using Confluence.Services;
 
 public partial class AccessLog : PrivatePage
 {
-    private IAdminService admin_service;
-    public IAdminService AdminService
+    public override void On_Load(object sender, EventArgs e)
     {
-        set { admin_service = value; }
-        get { return admin_service; }
+        if (Page.IsPostBack) return;
+        logDatasource.SelectCommand = "SELECT * FROM [access_log] ORDER BY [time] ASC";
+        logDatasource.DataBind();
+        AccessLogGrid.DataSource = logDatasource;
+        AccessLogGrid.DataBind();
     }
-    public override void On_Load(object sender, EventArgs args)
+    protected void Search_Name_Click(object sender, EventArgs e)
     {
-        
+        logDatasource.SelectCommand = "SELECT * FROM [access_log] WHERE [user_name] like '%" + SearchTxt.Text + "%' ORDER BY [time] ASC";
+        logDatasource.DataBind();
+        AccessLogGrid.DataSource = logDatasource;
+        AccessLogGrid.DataBind();
+    }
+    protected void AccessLogGrid_PageIndexChanging(object sender, GridViewPageEventArgs args)
+    {
+        logDatasource.SelectCommand = "SELECT * FROM [access_log] WHERE [user_name] like '%" + SearchTxt.Text + "%' ORDER BY [time] ASC";
+        logDatasource.DataBind();
+        AccessLogGrid.DataSource = logDatasource;
+        AccessLogGrid.PageIndex = args.NewPageIndex;
+        AccessLogGrid.DataBind();
     }
 }

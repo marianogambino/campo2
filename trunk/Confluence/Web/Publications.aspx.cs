@@ -31,6 +31,7 @@ public partial class Publications : PrivatePage
     }
     protected void Project_Changed(object sender, EventArgs e)
     {
+        if (projects.Items.Count == 0) return;
         Project selected = ProjectService.GetById(long.Parse(projects.SelectedValue));
         publication_list.SelectedValue = selected.Publication.Id.ToString();
     }

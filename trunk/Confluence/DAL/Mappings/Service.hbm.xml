@@ -7,6 +7,7 @@
     </id>
     <property name="Name" />
     <property name="Description" />
+    <property name="DV" column="DVH" />
     
     <many-to-one name="Type"
                  class="Confluence.Domain.ServiceType"

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class User
+    public class User : DomainObject
     {
         private long id;
         private String name;
@@ -33,16 +33,19 @@ namespace Confluence.Domain
             get { return id; }
             set { id = value; }
         }
+        [DV]
         public virtual String Name
         {
             get { return name; }
             set { name = value; }
         }
+        [DV]
         public virtual String Password
         {
             get { return password; }
             set { password = value; }
         }
+        [DV]
         public virtual String Mail
         {
             get { return mail; }

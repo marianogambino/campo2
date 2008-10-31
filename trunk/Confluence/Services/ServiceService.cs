@@ -57,12 +57,7 @@ namespace Confluence.Services
             Language lang = new Language(lang_id);
             ServiceType type = new ServiceType(type_id);
 
-            Service service = new Service();
-            service.Name = name;
-            service.Description = desc;
-            service.Supplier = client;
-            service.Type = type;
-            service.Language = lang;
+            Service service = new Service(name,desc,lang,type,client);
 
             ServiceDao.Persist(service);
             LogService.LogOperation(user_name, "Se creó el Servicio: " + service.Name);

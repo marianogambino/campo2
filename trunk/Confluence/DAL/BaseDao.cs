@@ -2,18 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
+using Confluence.Domain;
 using Spring.Data.NHibernate.Support;
 
 namespace Confluence.DAL
 {
-    public abstract class BaseDao<T> : HibernateDaoSupport
+    public abstract class BaseDao<T> : HibernateDaoSupport where T : DomainObject
     {
         private ILog log_service = new Log();
         public void Persist(T entity)
         {
             if (GetAll().Contains(entity))
                 throw new DuplicateEntityException(entity.ToString());
-
+            entity.CalculateDV();
             HibernateTemplate.Save(entity);
         }
         public T GetById(long id)
@@ -22,6 +23,7 @@ namespace Confluence.DAL
         }
         public void Update(T entity)
         {
+            entity.CalculateDV();
             HibernateTemplate.Update(entity);
         }
         public void Delete(T entity)
