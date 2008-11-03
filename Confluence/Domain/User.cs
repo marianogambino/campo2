@@ -81,5 +81,19 @@ namespace Confluence.Domain
             return Name.GetHashCode();
         }
         #endregion
+
+        public virtual bool ContainsPatente(int patente)
+        {
+            /*ITERATE THROUGH FAMILY PATENTS*/
+            foreach (Family fam in Families)
+                foreach (Patente pat in fam.Patentes)
+                    if (pat.Id == patente) return true;
+
+            /*ITERATE THROUGH SINGLE PATENTS*/
+            foreach (Patente pat in Patentes)
+                if (pat.Id == patente) return true;
+
+            return false;
+        }
     }
 }

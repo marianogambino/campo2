@@ -25,46 +25,55 @@ namespace Confluence.Domain
             set { id = value; }
             get { return id; }
         }
+        [DV(Property="Id")]
         public virtual ProjectState State
         {
             set { state = value; }
             get { return state; }
         }
+        [DV(Property="Id")]
         public virtual Client Owner
         {
             set { owner = value; }
             get { return owner; }
         }
+        [DV(Property="Id")]
         public virtual Client Developer
         {
             set { developer = value; }
             get { return developer; }
         }
+        [DV]
         public virtual String Name
         {
             set { name = value; }
             get { return name; }
         }
+        [DV]
         public virtual String Description
         {
             set { descripton = value; }
             get { return descripton; }
         }
+        [DV(Property="Id")]
         public virtual Language Language
         {
             set { language = value; }
             get { return language; }
         }
+        [DV]
         public virtual DateTime Start
         {
             set { start = value; }
             get { return start.Date; }
         }
+        [DV]
         public virtual DateTime End
         {
             set { end = value; }
             get { return end.Date; }
         }
+        [DV(Property="Id")]
         public virtual Publication Publication
         {
             set { publication = value; }
@@ -105,15 +114,18 @@ namespace Confluence.Domain
 
             found.Answer = new Answer(answer);
             found.State = new QuestionState(2);//Answered!
+            found.CalculateDV();
         }
         public virtual void AddQuestion(Question question)
         {
             question.Project = this;
+            question.CalculateDV();
             Questions.Add(question);
         }
         public virtual void AddOffer(Offer offer)
         {
             offer.Project = this;
+            offer.CalculateDV();
             Offers.Add(offer);
         }
         public virtual void AcceptedBy(Client developer) 

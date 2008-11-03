@@ -27,6 +27,12 @@ namespace Confluence.Services
             set { log_service = value; }
             get { return log_service; }
         }
+        private IHashService hash_service;
+        public IHashService HashService
+        {
+            set { hash_service = value; }
+            get { return hash_service; }
+        }
         #endregion
 
         public IList<Service> FindServicesForUser(String username)
@@ -37,6 +43,8 @@ namespace Confluence.Services
         {
             Service serv = ServiceDao.GetById(id);
             ServiceDao.Delete(serv);
+
+            HashService.ComputeTotalHash(serv);
             LogService.LogOperation(username, "Se eliminó el Servicio: " + serv.Name);
         }
         public IList<Service> FindServicesByName(String username, String name)
@@ -60,6 +68,8 @@ namespace Confluence.Services
             Service service = new Service(name,desc,lang,type,client);
 
             ServiceDao.Persist(service);
+
+            HashService.ComputeTotalHash(service);
             LogService.LogOperation(user_name, "Se creó el Servicio: " + service.Name);
         }
     }

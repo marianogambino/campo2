@@ -7,6 +7,7 @@
     </id>
     <property name="Name"/>
     <property name="Description"/>
+    <property name="DV" column="DVH" />
     <bag  name="Patentes" 
           generic="true"
           table="family_patente"

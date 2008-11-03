@@ -28,6 +28,7 @@ namespace Confluence.DAL
         }
         public void SaveUserMessage(Message message)
         {
+            message.CalculateDV();
             HibernateTemplate.Save(message);
         }
         

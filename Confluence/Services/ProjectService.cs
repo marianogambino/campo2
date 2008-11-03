@@ -26,6 +26,12 @@ namespace Confluence.Services
             set { log_service = value; }
             get { return log_service; }
         }
+        private IHashService hash_service;
+        public IHashService HashService
+        {
+            set { hash_service = value; }
+            get { return hash_service; }
+        }
         public IList<Project> GetAllForUser(String user_name)
         {
             return ProjectDao.GetAllForUser(user_name);
@@ -50,6 +56,8 @@ namespace Confluence.Services
             project.Publication = new Publication(0);
             project.Owner = ClientDao.GetByName(user_name);
             ProjectDao.Persist(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(user_name, "Se creó un nuevo Proyecto: " + project.Name);
         }
         public void Update(long pid, String name, String description, long lang_id, DateTime end,String username)
@@ -60,6 +68,8 @@ namespace Confluence.Services
             project.Language = new Language(lang_id);
             project.End = end;
             ProjectDao.Update(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(username, "Se actualizó un Proyecto: " + project.Name);
         }
         public Project GetById(long id)
@@ -75,12 +85,16 @@ namespace Confluence.Services
             Project project = GetById(pid);
             project.Publication = new Publication(publication_id);
             ProjectDao.Update(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(username, "Se publicó un Proyecto: " + project.Name);
         }
         public void Delete(long pid,String username)
         {
             Project project = GetById(pid);
             ProjectDao.Delete(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(username, "Se eliminó un Proyecto: " + project.Name);
         }
         public IList<Question> FindUnansweredQuestions(long id)
@@ -98,6 +112,8 @@ namespace Confluence.Services
             Project project = ProjectDao.GetById(pid);
             project.AnswerQuestion(question, answer);
             ProjectDao.Update(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(username, "Se respondió una pregunta del Proyecto: " + project.Name);
         }
         public IList<Project> FindAllProposals()
@@ -113,6 +129,8 @@ namespace Confluence.Services
             Project project = GetById(pid);
             project.AddQuestion(new Question(question));
             ProjectDao.Update(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(username, "Se realizó una pregunta del Proyecto: " + project.Name);
         }
         public bool CanAccept(long pid)
@@ -125,6 +143,8 @@ namespace Confluence.Services
             Project project = GetById(pid);
             project.AcceptedBy(ClientDao.GetByName(developer_name));
             ProjectDao.Update(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(developer_name, "Se aceptó un Proyecto: " + project.Name);
         }
         public void MakeOffer(String name, long pid, Double amount, DateTime release_date)
@@ -133,6 +153,8 @@ namespace Confluence.Services
             Client bidder = ClientDao.GetByName(name);
             project.AddOffer(bidder.MakeOffer(amount,release_date));
             ProjectDao.Update(project);
+
+            HashService.ComputeTotalHash(project);
             LogService.LogOperation(name, "Se realizó una oferta por el Proyecto: " + project.Name);
         }
     }

@@ -28,6 +28,12 @@ namespace Confluence.Services
             set { log_service = value; }
             get { return log_service; }
         }
+        private IHashService hash_service;
+        public IHashService HashService
+        {
+            set { hash_service = value; }
+            get { return hash_service; }
+        }
 
         #endregion
 
@@ -57,7 +63,8 @@ namespace Confluence.Services
             user.Patentes = patentes_update;
             user.Families = familias_update;
             UserDao.Update(user);
-            //Compute total DV
+
+            HashService.ComputeTotalHash(user);
             LogService.LogOperation(username, "Se actualizó el Usuario: " + user.Name);
         }
 
@@ -87,7 +94,8 @@ namespace Confluence.Services
         {
             User user = UserDao.GetById(id);
             UserDao.Delete(user);
-            //Compute total DV
+
+            HashService.ComputeTotalHash(user);
             LogService.LogOperation(username, "Se eliminó el Usuario: " + user.Name);
         }
         public void BlockUser(long id,String username)
@@ -96,6 +104,8 @@ namespace Confluence.Services
             user.Families.Clear();
             user.Patentes.Clear();
             UserDao.Update(user);
+
+            HashService.ComputeTotalHash(user);
             LogService.LogOperation(username, "Se bloqueó el Usuario: " + user.Name);
         }
         public IList<Family> FindAllFamilies()
@@ -106,7 +116,7 @@ namespace Confluence.Services
         {
             Family fam = FamilyDao.GetById(id);
             FamilyDao.Delete(fam);
-            //Compute total DV
+            HashService.ComputeTotalHash(fam);
             LogService.LogOperation(username, "Se eliminó la Familia: " + fam.Name);
         }
         public IList<Patente> FindAllPatentes()
@@ -119,6 +129,8 @@ namespace Confluence.Services
             foreach (int id in patentes)
                 fam.Patentes.Add(new Patente(id,null,null));
             FamilyDao.Persist(fam);
+
+            HashService.ComputeTotalHash(fam);
             LogService.LogOperation(username, "Se creó la Familia: " + fam.Name);
         }
         public bool FamilyExist(String name)
@@ -142,6 +154,8 @@ namespace Confluence.Services
             foreach (int pat_id in patentes)
                 fam.Patentes.Add(new Patente(pat_id, null, null));
             FamilyDao.Update(fam);
+
+            HashService.ComputeTotalHash(fam);
             LogService.LogOperation(username, "Se actualizó la Familia: " + fam.Name);
         }
         public Family FindFamilyById(long id)

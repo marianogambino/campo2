@@ -15,6 +15,7 @@
     <property name="Country" />
     <property name="State" />
     <property name="Phone" />
+    <property name="DV" column="DVH" />
   </class>
 </hibernate-mapping>
 

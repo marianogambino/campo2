@@ -18,9 +18,7 @@ namespace Confluence.DAL
         }
         public override DbConnection GetConnection()
         {
-            //Singleton
-            if (connection == null)
-                connection =  new SqlConnection(CONNECTION_STRING);
+            connection =  new SqlConnection(CONNECTION_STRING);
 
             if (connection.State != ConnectionState.Open)
                 connection.Open();

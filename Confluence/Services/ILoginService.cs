@@ -9,5 +9,7 @@ namespace Confluence.Services
     {
         User doLogin(String userName, String password);
         void ChangePassword(String username, String password);
+        void ValidateDV();
+        void RepairDV();
     }
 }

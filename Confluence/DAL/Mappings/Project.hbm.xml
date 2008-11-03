@@ -9,6 +9,7 @@
     <property name="Description" />
     <property name="Start"  column="date_start" />
     <property name="End"    column="date_end" />
+    <property name="DV" column="DVH" />
 
     <many-to-one name="State"
                  class="Confluence.Domain.ProjectState"

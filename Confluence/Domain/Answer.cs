@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Answer
+    public class Answer : DomainObject
     {
         private long id;
         private String text;
@@ -13,6 +13,7 @@ namespace Confluence.Domain
             set { id = value; }
             get { return id; }
         }
+        [DV]
         public virtual String Text
         {
             set { text = value; }
@@ -22,6 +23,7 @@ namespace Confluence.Domain
         public Answer(String text)
         {
             Text = text;
+            CalculateDV();
         }
     }
 }

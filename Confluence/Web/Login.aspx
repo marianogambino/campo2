@@ -9,7 +9,8 @@
     <asp:TextBox ID="pass" TextMode="password" runat="server" />
     <asp:RequiredFieldValidator ControlToValidate="pass" ID="Rpass" runat="server" ErrorMessage="* Password es requerido"/><br />
     <label></label>
-    <asp:Button ID="submit" runat="server" OnClick="formSubmit" Text="Go" /><br />
+    <asp:Button ID="submit" runat="server" OnClick="formSubmit" Text="Go" />
+    <asp:Button ID="repair" runat="server" OnClick="Repair_DV" Text="Reparar DV" Visible="false" /><br />
     </div>
 </asp:Content>
 

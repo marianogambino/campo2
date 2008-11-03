@@ -14,7 +14,7 @@ namespace Confluence.Domain
             get { return dv; }
         }
 
-        public void CalculateDV()
+        public virtual void CalculateDV()
         {
             long result = 0;
             int index = 1;
@@ -45,6 +45,8 @@ namespace Confluence.Domain
         private long GetComplexValue(PropertyInfo p, String property)
         {
             object o = p.GetGetMethod().Invoke(this,null);
+            if (o == null) return 0;
+
             foreach (PropertyInfo prop in o.GetType().GetProperties())
             {
                 if (prop.Name.Equals(property))
@@ -55,10 +57,14 @@ namespace Confluence.Domain
         private long GetSimpleValue(PropertyInfo p, object target)
         {
             object o = p.GetGetMethod().Invoke(target,null);
+            if (o == null) return 0;
 
             if (o is long || o is int) return (long)o;
 
             if (o is string) return ((string)o).GetHashCode();
+            if (o is double) return ((double)o).GetHashCode();
+            if (o is DateTime) return ((DateTime)o).GetHashCode();
+
             else throw new NotSupportedException();
         }
     }
