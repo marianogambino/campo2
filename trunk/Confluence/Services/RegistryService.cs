@@ -32,6 +32,12 @@ namespace Confluence.Services
             set { log_service = value; }
             get { return log_service; }
         }
+        private IHashService hash_service;
+        public IHashService HashService
+        {
+            set { hash_service = value; }
+            get { return hash_service; }
+        }
         public bool UserExists(String name)
         {
             return ClientDao.GetByName(name) != null;
@@ -40,6 +46,8 @@ namespace Confluence.Services
         {
             client.UserAccount.Password = SecurityService.GetHash(client.UserAccount.Password);
             ClientDao.Persist(client);
+
+            HashService.ComputeTotalHash(client);
             LogService.LogOperation(client.UserAccount.Name, "Se registró el Usuario: " + client.UserAccount.Name);
         }
         public IList<Family> GetDemanderFams()

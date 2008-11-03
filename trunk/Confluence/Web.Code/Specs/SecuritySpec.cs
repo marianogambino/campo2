@@ -20,16 +20,7 @@ public static class SecuritySpec
 
         if (patente == 0) return true;
 
-        /*ITERATE THROUGH FAMILY PATENTS*/
-        foreach (Family fam in user.Families)
-            foreach (Patente pat in fam.Patentes)
-                if (pat.Id == patente) return true;
-
-        /*ITERATE THROUGH SINGLE PATENTS*/
-        foreach (Patente pat in user.Patentes)
-            if (pat.Id == patente) return true;
-
-        return false;
+        return user.ContainsPatente(patente);
     }
 
     public static bool isLoggedIn(User user)

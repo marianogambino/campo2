@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Message
+    public class Message : DomainObject
     {
         #region properties
         private long id;
@@ -17,16 +17,19 @@ namespace Confluence.Domain
             set { id = value; }
             get { return id; }
         }
+        [DV]
         public virtual String Author
         {
             set { author = value; }
             get { return author; }
         }
+        [DV]
         public virtual String Mail
         {
             set { mail = value; }
             get { return mail; }
         }
+        [DV]
         public virtual String MessageText
         {
             set { message = value; }

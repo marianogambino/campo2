@@ -10,6 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Confluence.Services;
 using Confluence.Domain;
+using Confluence.DAL;
 using Web.Code.Helpers;
 
 public partial class Login : ComponentPage
@@ -24,7 +25,8 @@ public partial class Login : ComponentPage
 
     protected void formSubmit(object sender, EventArgs e)
     {
-        //TODO: logica en el code behind. Esto es malo
+        if (!VerifyDV()) return;
+        
         User user = LoginService.doLogin(name.Text.Trim(), pass.Text.Trim());
         if (user != null)
         {
@@ -62,5 +64,48 @@ public partial class Login : ComponentPage
         Session[Constants.SessionKeys.FAILED] = fallidos;
 
         return (fallidos.Equals(3));
+    }
+
+    private bool VerifyDV()
+    {
+        try
+        {
+            LoginService.ValidateDV();
+            return true;
+        }
+        catch (DVException ex)
+        {
+            ActiveUser = null;
+            if (ex.Vertical)
+            {
+                Problems.Text = "Error de dígito verificador vertical en la tabla '" + ex.TableName + "'";
+            }
+            else
+            {
+                Problems.Text = "Error de dígitos verificadores en la tabla '" + ex.TableName + "' fila #" + ex.Row;
+            }
+            
+            submit.Visible = false;
+            repair.Visible = true;
+            return false;
+        }
+    }
+
+    protected void Repair_DV(Object sender, EventArgs args)
+    {
+        User user = loginService.doLogin(name.Text.Trim(), pass.Text.Trim());
+        if (user == null)
+        {
+            Problems.Text = "Usuario y/o Contraseña incorrectos";
+            return;
+        }
+        if(!user.ContainsPatente(109))
+        {
+            Problems.Text = "No tiene los permisos necesarios, contacte a un administrador";
+            return;
+        }
+        loginService.RepairDV();
+        ActiveUser = user;
+        Response.Redirect(Constants.Redirects.MESSAGED_HOME + "Ha Reparado los digitos verificadores");
     }
 }

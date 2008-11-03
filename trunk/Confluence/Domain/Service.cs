@@ -13,7 +13,6 @@ namespace Confluence.Domain
         private Language language;
         private ServiceType type;
         private Client supplier;
-        private long dv;
         
         public virtual long Id
         {

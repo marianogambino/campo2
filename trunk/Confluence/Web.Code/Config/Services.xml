@@ -3,6 +3,7 @@
 
   <object name="AuditService" abstract="true">
     <property name="LogService" ref="Log" />
+    <property name="HashService" ref="HashService" />
   </object>
   
   <object name="LoginService" parent="AuditService"
@@ -29,6 +30,7 @@
           type="Confluence.Services.ServiceService, Services">
     <property name="ServiceDao" ref="ServiceDao" />
     <property name="ClientDao" ref="ClientDao" />
+    <property name="HashService" ref="HashService"/>
   </object>
   <object name="ProjectService" parent="AuditService"
           type="Confluence.Services.ProjectService, Services">

@@ -4,10 +4,11 @@ using System.Text;
 
 namespace Confluence.Domain
 {
-    public class Offer
+    public class Offer : DomainObject
     {
         #region properties
         private long id;
+        
         private Client bidder;
         private double amount;
         private DateTime release_date;
@@ -19,21 +20,25 @@ namespace Confluence.Domain
             set { id = value; }
             get { return id; }
         }
+        [DV(Property = "Id")]
         public virtual Client Bidder
         {
             set { bidder = value; }
             get { return bidder; }
         }
+        [DV]
         public virtual double Amount
         {
             set { amount = value; }
             get { return amount; }
         }
+        [DV]
         public virtual DateTime ReleaseDate
         {
             set { release_date = value; }
             get { return release_date; }
         }
+        [DV(Property = "Id")]
         public virtual Offer CounterOffer
         {
             set { counter_offer = value; }

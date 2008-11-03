@@ -26,6 +26,12 @@ namespace Confluence.Services
             set { log = value; }
             get { return log; }
         }
+        private IHashService hash_service;
+        public IHashService HashService
+        {
+            set { hash_service = value; }
+            get { return hash_service; }
+        }
         public LoginService() 
         {
             LogService = new Log();
@@ -53,7 +59,17 @@ namespace Confluence.Services
             User user = UserDao.GetByName(username);
             user.Password = /*SecurityService.GetHash(*/password/*)*/;
             UserDao.Update(user);
+
+            HashService.ComputeTotalHash(user);
             LogService.LogOperation(username, "El usuario cambio el password");
+        }
+        public void ValidateDV()
+        {
+            HashService.ValidateDV();
+        }
+        public void RepairDV()
+        {
+            HashService.RepairDV();
         }
     }
 }

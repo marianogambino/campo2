@@ -7,6 +7,7 @@
     </id>
     <property name="Amount" />
     <property name="ReleaseDate" column="release_date" />
+    <property name="DV" column="DVH" />
     <many-to-one name="CounterOffer"
              class="Confluence.Domain.Offer"
              column="counter_offer"

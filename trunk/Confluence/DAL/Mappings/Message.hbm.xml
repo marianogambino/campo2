@@ -8,5 +8,6 @@
     <property name="Author" />
     <property name="Mail" />
     <property name="MessageText" column="message" />
+    <property name="DV" column="DVH" />
   </class>
 </hibernate-mapping>

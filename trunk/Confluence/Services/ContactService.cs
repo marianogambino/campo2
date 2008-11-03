@@ -20,9 +20,18 @@ namespace Confluence.Services
             set { log_service = value; }
             get { return log_service; }
         }
+        private IHashService hash_service;
+        public IHashService HashService
+        {
+            set { hash_service = value; }
+            get { return hash_service; }
+        }
         public void SaveMessage(String author, String mail, String message)
         {
-            UserDao.SaveUserMessage(new Message(author, mail, message));
+            Message msj = new Message(author, mail, message);
+            UserDao.SaveUserMessage(msj);
+
+            HashService.ComputeTotalHash(msj);
             LogService.LogOperation("Invitado", "Se guardo un nuevo mensaje de contacto");
         }
     }

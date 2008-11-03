@@ -7,6 +7,7 @@
     </id>
     <property name="Name"/>
     <property name="Password"/>
+    <property name="DV" column="DVH" />
     <property name="Mail" column="email"/>
     <bag name="Patentes" 
          generic="true"

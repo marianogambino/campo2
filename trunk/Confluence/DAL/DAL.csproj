@@ -53,6 +53,7 @@
     <Compile Include="ClientDao.cs" />
     <Compile Include="ConnectionFactory.cs" />
     <Compile Include="DuplicateEntityException.cs" />
+    <Compile Include="DVException.cs" />
     <Compile Include="FamilyDao.cs" />
     <Compile Include="HashService.cs" />
     <Compile Include="IClientDao.cs" />
