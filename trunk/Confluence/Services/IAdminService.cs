@@ -23,5 +23,7 @@ namespace Confluence.Services
         IList<Patente> FindPatAvailableForFamily(long family_id);
         void UpdateFamily(long id,String description,IList<int> patentes, String username);
         Family FindFamilyById(long id);
+        void BackUpDatabase(String username);
+        void RestoreDatabase(String username);
     }
 }

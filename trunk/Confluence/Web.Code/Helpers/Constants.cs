@@ -62,6 +62,8 @@ public static class Constants
         public const String FAMILY_DETAILS = "familydetail_aspx";
         public const String ACCESS_LOG = "accesslog_aspx";
         public const String OPERATION_LOG = "operationlog_aspx";
+        public const String BACK_UP = "backup_aspx";
+        public const String RESTORE_DATA = "restoredata_aspx";
 
         //Supplier
         public const String LIST_SERVICES = "servicelist_aspx";

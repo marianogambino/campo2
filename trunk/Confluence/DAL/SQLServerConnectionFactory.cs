@@ -11,18 +11,21 @@ namespace Confluence.DAL
     {
         private SqlConnection connection;
         private const String CONNECTION_STRING = "Data Source=PABLO;Initial Catalog=Confluence;Integrated Security=True";
+        private const String RESTORE_STRING = "Data Source=PABLO;Initial Catalog=master;Integrated Security=True;Connect Timeout=2";
 
-        public override DbCommand GetCommand(String command)
-        {
-            return new SqlCommand(command, (SqlConnection)GetConnection());
-        }
         public override DbConnection GetConnection()
         {
             connection =  new SqlConnection(CONNECTION_STRING);
 
             if (connection.State != ConnectionState.Open)
                 connection.Open();
-
+            return connection;
+        }
+        public override DbConnection GetMasterConnection()
+        {
+            connection = new SqlConnection(RESTORE_STRING);
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
             return connection;
         }
     }
