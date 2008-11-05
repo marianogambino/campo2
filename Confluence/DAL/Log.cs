@@ -8,32 +8,24 @@ namespace Confluence.DAL
 {
     public class Log : ILog
     {
-        private ConnectionFactory factory = new SQLServerConnectionFactory();
+        private ConnectionFactory factory = ConnectionFactory.GetProductionFactory();
 
         public Log() { }
         public void LogAccess(User user)
         {
-            DbCommand cmd = factory.GetCommand(AccessCommand(user.Id,user.Name,AccessType.LOGIN));
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            factory.Execute(AccessCommand(user.Id, user.Name, AccessType.LOGIN));
         }
         public void LogExit(User user)
         {
-            DbCommand cmd = factory.GetCommand(AccessCommand(user.Id,user.Name, AccessType.LOGOUT));
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            factory.Execute(AccessCommand(user.Id, user.Name, AccessType.LOGOUT));
         }
         public void LogAccesFailure(String user_name)
         {
-            DbCommand cmd = factory.GetCommand(AccessCommand(00,user_name, AccessType.FAIL));
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            factory.Execute(AccessCommand(00, user_name, AccessType.FAIL));
         }
         public void LogOperation(String user_name, String message)
         {
-            DbCommand cmd = factory.GetCommand("INSERT INTO operation_log (user_name, operation, time) VALUES ('" + user_name + "','" + message +"','" +DateTime.Now.ToString() + "')");
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            factory.Execute("INSERT INTO operation_log (user_name, operation, time) VALUES ('" + user_name + "','" + message + "','" + DateTime.Now.ToString() + "')");
         }
 
         private String AccessCommand(long user_id,String user_name, AccessType type)

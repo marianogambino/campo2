@@ -34,7 +34,12 @@ namespace Confluence.Services
             set { hash_service = value; }
             get { return hash_service; }
         }
-
+        private IBackUpService backup_service;
+        public IBackUpService BackUpService
+        {
+            set { backup_service = value; }
+            get { return backup_service; }
+        }
         #endregion
 
         public IList<User> FindAllUsers()
@@ -161,6 +166,18 @@ namespace Confluence.Services
         public Family FindFamilyById(long id)
         {
             return FamilyDao.GetById(id);
+        }
+        public void BackUpDatabase(String username)
+        {
+            BackUpService.BackUp();
+
+            LogService.LogOperation(username, "Se realizó un backup del sistema");
+        }
+        public void RestoreDatabase(String username)
+        {
+            BackUpService.Restore();
+
+            LogService.LogOperation(username, "Se restauró la información del sistema");
         }
 
     }

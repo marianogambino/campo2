@@ -28,6 +28,9 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.FAMILY_DETAILS, 106);
         map.Add(Constants.PageNames.ACCESS_LOG, 107);
         map.Add(Constants.PageNames.OPERATION_LOG, 108);
+        //109 es Restaurar DV (no tiene pag)
+        map.Add(Constants.PageNames.BACK_UP, 110);
+        map.Add(Constants.PageNames.RESTORE_DATA, 111);
 
         //SUPPLIER
         map.Add(Constants.PageNames.LIST_SERVICES, 201);

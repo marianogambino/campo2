@@ -15,6 +15,7 @@
           type="Confluence.Services.AdminService, Services">
     <property name="UserDao" ref="UserDao"/>
     <property name="FamilyDao" ref="FamilyDao"/>
+    <property name="BackUpService" ref="BackUpService" />
   </object>
   <object name="RegistryService" parent="AuditService"
           type="Confluence.Services.RegistryService, Services">

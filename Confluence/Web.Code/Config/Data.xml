@@ -50,4 +50,5 @@
   
   <object name="Log" type="Confluence.DAL.Log, DAL" />
   <object name="HashService" type="Confluence.DAL.HashService, DAL" />
+  <object name="BackUpService" type="Confluence.DAL.BackUpService, DAL" />
 </objects>

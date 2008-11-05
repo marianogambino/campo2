@@ -8,7 +8,7 @@ namespace Confluence.DAL
 {
     public class HashService : IHashService
     {
-        private ConnectionFactory factory = new SQLServerConnectionFactory();
+        private ConnectionFactory factory = ConnectionFactory.GetProductionFactory();
 
         private static IDictionary<Type, String> Tables;
 
@@ -28,20 +28,22 @@ namespace Confluence.DAL
         {
             String table_name = Tables[obj.GetType()];
             long hash = ComputeHashForTable(table_name);
-            DbCommand cmd = factory.GetCommand("UPDATE DV SET DV = " + hash + " WHERE table_name = '" + table_name + "'");
-            cmd.ExecuteNonQuery();
+            factory.Execute("UPDATE DV SET DV = " + hash + " WHERE table_name = '" + table_name + "'");
         }
         private long ComputeHashForTable(String table_name)
         {
-            DbCommand cmd = factory.GetCommand("SELECT SUM(DVH) FROM " + table_name);
-            try
+            long result = 0;
+            factory.UseCommand(delegate(DbCommand cmd)
             {
-                return (long)cmd.ExecuteScalar();
-            }
-            catch (Exception)
-            {
-                return 0;
-            }
+                try
+                {
+                    cmd.CommandText = "SELECT SUM(DVH) FROM " + table_name;
+                    result = (long)cmd.ExecuteScalar();
+                }
+                catch (Exception) { }
+            });
+
+            return result;
         }
         #endregion
 
@@ -54,36 +56,44 @@ namespace Confluence.DAL
         private void ValidateTableHash(String table_name)
         {
             long computed = RecalculateHashForTable(table_name);
-            DbCommand cmd = factory.GetCommand("SELECT DV FROM DV WHERE table_name = '" + table_name + "'");
-            long stored = (long)cmd.ExecuteScalar();
+            long stored = 0;
+            factory.UseCommand(delegate(DbCommand cmd)
+            {
+                cmd.CommandText = "SELECT DV FROM DV WHERE table_name = '" + table_name + "'";
+                stored = (long)cmd.ExecuteScalar();
+            });
 
             if (!stored.Equals(computed)) throw new DVException(table_name, 0); //DV Vertical
-
         }
         private long RecalculateHashForTable(String table_name)
         {
-            DbCommand cmd = factory.GetCommand("SELECT * FROM " + table_name);
-            DbDataReader reader = cmd.ExecuteReader();
             long total = 0;
             long row_total = 0;
             int index = 1;
             int row = 1;
-            while (reader.Read())
-            {
-                int x;
-                for (x = 1; x < reader.FieldCount - 1; x++)
-                {
-                    row_total += index * Hash(reader[x]);
-                    index++;
-                }
-                if (!row_total.Equals(reader[x])) throw new DVException(table_name, row); //DV Horizontal
 
-                total += row_total;
-                row_total = 0;
-                index = 1;
-                row++;
-            }
-            reader.Close();
+            factory.UseCommand(delegate(DbCommand cmd)
+            {
+                cmd.CommandText = "SELECT * FROM " + table_name;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int x;
+                    for (x = 1; x < reader.FieldCount - 1; x++)
+                    {
+                        row_total += index * Hash(reader[x]);
+                        index++;
+                    }
+                    if (!row_total.Equals(reader[x])) throw new DVException(table_name, row); //DV Horizontal
+
+                    total += row_total;
+                    row_total = 0;
+                    index = 1;
+                    row++;
+                }
+                reader.Close();
+            });
+
             return total;
         }
         #endregion
@@ -99,30 +109,34 @@ namespace Confluence.DAL
         }
         private void RepairHashForTable(String table_name)
         {
-            DbCommand cmd = factory.GetCommand("SELECT * FROM " + table_name);
-            DbDataReader reader = cmd.ExecuteReader();
             long row_total = 0;
             int index = 1;
-            while (reader.Read())
+
+            factory.UseCommand(delegate(DbCommand cmd)
             {
-                int x;
-                for (x = 1; x < reader.FieldCount - 1; x++)
+                cmd.CommandText = "SELECT * FROM " + table_name;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    row_total += index * Hash(reader[x]);
-                    index++;
+                    int x;
+                    for (x = 1; x < reader.FieldCount - 1; x++)
+                    {
+                        row_total += index * Hash(reader[x]);
+                        index++;
+                    }
+
+                    factory.Execute("UPDATE " + table_name + " SET DVH = " + row_total + " WHERE id = " + reader[0].ToString());
+
+                    row_total = 0;
+                    index = 1;
                 }
-
-                factory.GetCommand("UPDATE " + table_name + " SET DVH = " + row_total + " WHERE id = " + reader[0].ToString()).ExecuteNonQuery();
-
-                row_total = 0;
-                index = 1;
-            }
-            reader.Close();
+                reader.Close();
+            });
         }
         private void RepairVerticalHashForTable(String table_name)
         {
             long DVV = ComputeHashForTable(table_name);
-            factory.GetCommand("UPDATE DV SET DV = " + DVV + " WHERE table_name = '" + table_name + "'").ExecuteNonQuery();
+            factory.Execute("UPDATE DV SET DV = " + DVV + " WHERE table_name = '" + table_name + "'");
         }
 
         private long Hash(object o)

@@ -70,4 +70,10 @@
   <object type="EditProfile.aspx">
     <property name="RegistryService" ref="RegistryService" />
   </object>
+  <object type="BackUp.aspx">
+    <property name="AdminService" ref="AdminService" />
+  </object>
+  <object type="RestoreData.aspx">
+    <property name="AdminService" ref="AdminService" />
+  </object>
 </objects>
