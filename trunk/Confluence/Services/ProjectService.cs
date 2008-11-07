@@ -157,5 +157,49 @@ namespace Confluence.Services
             HashService.ComputeTotalHash(project);
             LogService.LogOperation(name, "Se realizó una oferta por el Proyecto: " + project.Name);
         }
+        public IList<Offer> FindAllOffersForProject(long id)
+        {
+            Project project = GetById(id);
+            IList<Offer> ret = project.Offers;
+            return ret;
+        }
+        public IList<Project> FindAllAvailableProjects(string user)
+        {
+            return ProjectDao.FindAllAvailablesForUser(user);
+        }
+        public IList<Offer> FindAllOffersForUser(string user_name)
+        {
+            IList<Project> projects = ProjectDao.GetAllForUser(user_name);
+            IList<Offer> offers = new List<Offer>();
+            foreach (Project p in projects)
+                if (p.State.IsFree()) 
+                {
+                    foreach (Offer o in p.Offers)
+                        offers.Add(o);
+                }
+            return offers;
+        }
+        public Offer FindOfferById(long id)
+        {
+            return ProjectDao.GetOfferById(id);
+        }
+        public void AcceptOffer(long offer_id)
+        {
+            Offer of = FindOfferById(offer_id);
+            of.Won();
+            ProjectDao.Update(of.Project);
+
+            HashService.ComputeTotalHash(of.Project);
+            LogService.LogOperation(of.Project.Owner.ToString(), "Se aceptó una oferta por el Proyecto: " + of.Project.Name);
+        }
+        public void RejectOffer(long offer_id)
+        {
+
+            Offer of = ProjectDao.GetOfferById(offer_id);
+            ProjectDao.DeleteOffer(of);
+
+            HashService.ComputeTotalHash(of);
+            LogService.LogOperation(of.Project.Owner.ToString(), "Se rechazó una oferta por el Proyecto: " + of.Project.Name);
+        }
     }
 }

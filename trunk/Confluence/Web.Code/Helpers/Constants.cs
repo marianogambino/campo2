@@ -17,6 +17,7 @@ public static class Constants
         public const String PROJECT_ID = "project_id";
         public const String QUESTION_ID = "question_id";
         public const String FAMILY_ID = "family_id";
+        public const String OFFER_ID = "offer_id";
     }
 
     public static class Redirects
@@ -43,6 +44,8 @@ public static class Constants
         public const String USER_PROFILE = "~/UserProfile.aspx";
         public const String CHANGE_PWD = "~/ChangePass.aspx";
         public const String EDIT_PROFILE = "~/EditProfile.aspx";
+        public const String OFFER_LIST = "~/OfferList.aspx";
+        public const String OFFER_DETAIL = "~/OfferDetails.aspx?" + Constants.SessionKeys.OFFER_ID + "=";
     }
 
     public static class PageNames
@@ -73,6 +76,7 @@ public static class Constants
         public const String ASK_QUESTION = "askquestion_aspx";
         public const String MAKE_OFFER = "makeoffer_aspx";
 
+
         //Demandant
         public const String LIST_PROJECTS = "listprojects_aspx";
         public const String NEW_PROJECT = "newproject_aspx";
@@ -80,6 +84,8 @@ public static class Constants
         public const String PUBLICATIONS = "publications_aspx";
         public const String PROJECT_QUESTIONS = "projectquestions_aspx";
         public const String ANSWER_QUESTIONS = "answerquestions_aspx";
+        public const String OFFER_LIST = "offerlist_aspx";
+        public const String OFFER_DETAIL = "offerdetails_aspx";
 
     }
 }

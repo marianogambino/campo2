@@ -31,5 +31,10 @@ namespace Confluence.Domain
         {
             return Name;
         }
+        public virtual bool IsFree()
+        {
+            return (Id == 1);
+        }
+
     }
 }

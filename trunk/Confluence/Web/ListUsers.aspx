@@ -18,7 +18,7 @@
             <asp:BoundField DataField="Name" HeaderText="Name"/>
             <asp:BoundField DataField="Mail" HeaderText="Mail" />
             <asp:ButtonField HeaderText="Permisos" ButtonType="image" CommandName="Edit" ItemStyle-HorizontalAlign="Center" ImageUrl="~/Images/Icons/vcard.png" />
-            <asp:ButtonField HeaderText="Eliminar" ButtonType="image" CommandName="Delete" ItemStyle-HorizontalAlign="Center" ImageUrl="~/Images/Icons/user_delete.png" />
+            <asp:ButtonField HeaderText="Detalles" ButtonType="image" CommandName="Delete" ItemStyle-HorizontalAlign="Center" ImageUrl="~/Images/Icons/folder_user.png" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <RowStyle BackColor="White" ForeColor="#333333" />

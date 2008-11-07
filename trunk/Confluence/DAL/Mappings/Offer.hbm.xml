@@ -15,8 +15,8 @@
     <many-to-one name="Bidder"
              class="Confluence.Domain.Client"
              column="bidder_id"
-             cascade="none" />
-    <many-to-one name="Project" class="Confluence.Domain.Project" column="project_id" />
+             cascade="none" lazy="false" />
+    <many-to-one name="Project" class="Confluence.Domain.Project" column="project_id" lazy="false" />
   </class>
 </hibernate-mapping>
 

@@ -39,6 +39,7 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.PROPOSAL_DETAILS, 204);
         map.Add(Constants.PageNames.ASK_QUESTION, 205);
         map.Add(Constants.PageNames.MAKE_OFFER, 206);
+        
 
         //DEMANDANT
         map.Add(Constants.PageNames.LIST_PROJECTS, 301);
@@ -47,6 +48,8 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.PUBLICATIONS, 304);
         map.Add(Constants.PageNames.PROJECT_QUESTIONS, 305);
         map.Add(Constants.PageNames.ANSWER_QUESTIONS, 306);
+        map.Add(Constants.PageNames.OFFER_LIST, 307);
+        map.Add(Constants.PageNames.OFFER_DETAIL, 308);
 
     }
 

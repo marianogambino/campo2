@@ -86,6 +86,11 @@ namespace Confluence.Domain
             of.Bidder = this;
             return of;
         }
+
+        public override String ToString()
+        {
+            return Name;
+        }
         
     }
 }
