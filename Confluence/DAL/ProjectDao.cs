@@ -41,5 +41,17 @@ namespace Confluence.DAL
         {
             return QueryGeneric<Project>("From Project p Where p.Publication.Id > 0 And p.State.Id = 1 And p.Name like ?", "%" + name + "%");
         }
+        public Offer GetOfferById(long id)
+        {
+            return (Offer)HibernateTemplate.Get(typeof(Offer), id);
+        }
+        public void DeleteOffer(Offer of)
+        {
+            HibernateTemplate.Delete(of);
+        }
+        public IList<Project> FindAllAvailablesForUser(string username)
+        {
+            return QueryGeneric<Project>("From Project p Where p.Publication.Id > 0 and p.State.Id = 1 and p.Owner.UserAccount.Name = ?", username);
+        }
     }
 }

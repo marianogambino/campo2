@@ -19,29 +19,12 @@ namespace Confluence.Domain
         private DateTime end;
         private IList<Question> questions;
         private IList<Offer> offers;
+        private Offer accepted_offer;
 
         public virtual long Id
         {
             set { id = value; }
             get { return id; }
-        }
-        [DV(Property="Id")]
-        public virtual ProjectState State
-        {
-            set { state = value; }
-            get { return state; }
-        }
-        [DV(Property="Id")]
-        public virtual Client Owner
-        {
-            set { owner = value; }
-            get { return owner; }
-        }
-        [DV(Property="Id")]
-        public virtual Client Developer
-        {
-            set { developer = value; }
-            get { return developer; }
         }
         [DV]
         public virtual String Name
@@ -55,12 +38,6 @@ namespace Confluence.Domain
             set { descripton = value; }
             get { return descripton; }
         }
-        [DV(Property="Id")]
-        public virtual Language Language
-        {
-            set { language = value; }
-            get { return language; }
-        }
         [DV]
         public virtual DateTime Start
         {
@@ -72,6 +49,30 @@ namespace Confluence.Domain
         {
             set { end = value; }
             get { return end.Date; }
+        }
+        [DV(Property = "Id")]
+        public virtual Language Language
+        {
+            set { language = value; }
+            get { return language; }
+        }
+        [DV(Property="Id")]
+        public virtual Client Owner
+        {
+            set { owner = value; }
+            get { return owner; }
+        }
+        [DV(Property="Id")]
+        public virtual Client Developer
+        {
+            set { developer = value; }
+            get { return developer; }
+        }
+        [DV(Property = "Id")]
+        public virtual ProjectState State
+        {
+            set { state = value; }
+            get { return state; }
         }
         [DV(Property="Id")]
         public virtual Publication Publication
@@ -132,6 +133,10 @@ namespace Confluence.Domain
         {
             Developer = developer;
             State = new ProjectState(2);//En Desarrollo
+        }
+        public override String ToString()
+        {
+            return Name;
         }
     }
 }

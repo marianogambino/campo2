@@ -25,5 +25,11 @@ namespace Confluence.Services
         bool CanAccept(long pid);
         void AcceptProject(String developer_name, long pid);
         void MakeOffer(String name,long pid, Double amount, DateTime release_date);
+        IList<Offer> FindAllOffersForProject(long id);
+        IList<Offer> FindAllOffersForUser(string user_name);
+        IList<Project> FindAllAvailableProjects(string user_name);
+        Offer FindOfferById(long id);
+        void AcceptOffer(long offer_id);
+        void RejectOffer(long offer_id);
     }
 }

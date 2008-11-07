@@ -19,21 +19,19 @@ public partial class DeleteUser : PrivatePage
         get { return adminService; }
         set { adminService = value; }
     }
+    private User user_detailed;
+    public User UserDetailed
+    {
+        get { return user_detailed; }
+        set { user_detailed = value; }
+    }
     public override void On_Load(object sender, EventArgs args)
     {
         if (Page.IsPostBack) return;
         String user_id = (String)Request.QueryString[Constants.SessionKeys.USER_ID];
         User user = AdminService.FindUser(long.Parse(user_id));
         UID.Value = user.Id.ToString();
-        Nombre.Text = user.Name;
-        Mail.Text = user.Mail;
-
-        foreach (Family fam in user.Families) Familias.Items.Add(new ListItem(fam.Name));
-        foreach (Patente pat in user.Patentes) Patentes.Items.Add(new ListItem(pat.Name));
-
-        Familias.Visible = (Familias.Items.Count > 0);
-        Patentes.Visible = (Patentes.Items.Count > 0);
-
+        UserDetailed = user;
     }
 
     protected void Cancel_Click(object sender, EventArgs e)

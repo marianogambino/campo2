@@ -21,6 +21,7 @@ namespace Confluence.DAL
             Tables.Add(typeof(Project), "projects");
             Tables.Add(typeof(User), "users");
             Tables.Add(typeof(Client), "clients");
+            Tables.Add(typeof(Offer), "offers");
         }
 
         #region UPDATE DV

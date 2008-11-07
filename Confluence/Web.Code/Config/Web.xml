@@ -76,4 +76,10 @@
   <object type="RestoreData.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
+  <object type="OfferList.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
+  <object type="OfferDetails.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
 </objects>

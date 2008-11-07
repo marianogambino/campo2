@@ -1,4 +1,5 @@
 <%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DeleteUser.aspx.cs" Inherits="DeleteUser" Title="Untitled Page" %>
+<%@ Import Namespace="Confluence.Domain" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <script type="text/javascript">
     function confirmDelete(){
@@ -12,13 +13,34 @@
 <asp:HiddenField ID="UID" runat="server" />
 <div id="inputform">
     <label for="Nombre">Nombre:</label>
-    <asp:Label runat="server" ID="Nombre" /><br />
+    <asp:Label runat="server" ID="Nombre"><%=UserDetailed.Name%></asp:Label><br />
     <label for="Mail">E-Mail:</label>
-    <asp:Label runat="server" ID="Mail" /><br />
-    <label for="Patentes">Patentes:</label>
-    <asp:ListBox runat="server" ID="Patentes" Enabled="false"  /><br />
-    <label for="Familias">Familias:</label>
-    <asp:ListBox runat="server" ID="Familias" Enabled="false" /><br /><br />
+    <asp:Label runat="server" ID="Mail" ><%=UserDetailed.Mail%></asp:Label><br />
+    <table border="0">
+    <tr>
+        <td valign="top"><label style="text-decoration:underline;"><b>Familias:</b></label></td>
+        <td>
+            <dl>
+                <% foreach(Family fam in this.UserDetailed.Families){%>
+                    <dt><%=fam.Name + ":"%></dt>
+                     <%foreach (Patente pat in fam.Patentes){%>
+                         <dd style="font-size:0.8em; font-style:italic"><%=pat.Name%></dd>   
+                     <%} %>
+               <%}%>
+            </dl>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"><label style="text-decoration:underline;"><b>Patentes:</b></label></td>
+        <td>    
+            <dl>
+                <% foreach(Patente patente in this.UserDetailed.Patentes){%>
+                    <dt><%=patente.Name%></dt>
+                <%}%>
+            </dl>
+        </td>
+    </tr>
+    </table>
 </div>
 <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
 <asp:Button ID="Eliminar" runat="server" Text="Eliminar" OnClientClick="return confirmDelete();" OnClick="Eliminar_Click" />

@@ -14,5 +14,8 @@ namespace Confluence.DAL
         Question GetQuestionById(long qid);
         IList<Project> GetAllPublicatedProjects();
         IList<Project> FindPublicatedsByName(String name);
+        IList<Project> FindAllAvailablesForUser(string username);
+        Offer GetOfferById(long id);
+        void DeleteOffer(Offer o);
     }
 }

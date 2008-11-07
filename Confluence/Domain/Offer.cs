@@ -57,5 +57,9 @@ namespace Confluence.Domain
             Amount = amount;
             ReleaseDate = release_date;
         }
+        public virtual void Won()
+        {
+            Project.AcceptedBy(Bidder);
+        }
     }
 }
