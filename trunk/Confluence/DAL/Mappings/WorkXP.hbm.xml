@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain">
+  <class name="Confluence.Domain.WorkXP" table="workxp">
+    <id name="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="Place"/>
+    <property name="YearStart" column="year_start"/>
+    <property name="YearEnd" column="year_end"/>
+    <many-to-one name="Client" class="Confluence.Domain.Client" column="client_id" lazy="false" />
+  </class>
+</hibernate-mapping>

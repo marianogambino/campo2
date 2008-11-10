@@ -31,7 +31,10 @@ public partial class Registro : ComponentPage
         Client client = new Client(username.Text, password.Text, fullname.Text, country.Text);
         client.UserAccount.Mail = mail.Text;
         client.State = state.Text;
-        client.Phone = long.Parse(telephone.Text);
+
+        long phone = 0;
+        long.TryParse(telephone.Text, out phone);
+        client.Phone = phone;
         
         //Segun el tipo de usuario cargar las familias pertinentes.
         switch (usertypes.SelectedValue)
@@ -41,6 +44,7 @@ public partial class Registro : ComponentPage
                 break;
             case "O":
                 client.UserAccount.Families = RegistryService.GetSupplierFams();
+                fillSupplier(client);
                 break;
         }
                 
@@ -55,6 +59,89 @@ public partial class Registro : ComponentPage
     }
     protected void usertypes_SelectedIndexChanged(object sender, EventArgs e)
     {
-        fileupload.Visible = (usertypes.SelectedValue == "O");
+        education_panel.Visible = (usertypes.SelectedValue == "O");
+        work_panel.Visible = (usertypes.SelectedValue == "O");
     }
+    protected void Validate_End_Year(object source, ServerValidateEventArgs args)
+    {
+        if (education_year_end.Text == "")
+        {
+            args.IsValid = true;
+            return;
+        }
+        else
+        {
+            int end = int.Parse(education_year_end.Text);
+            int start = int.Parse(education_year_start.Text);
+            args.IsValid = (start <= end);
+        }
+    }
+    protected void Education_Submit(object sender, EventArgs e)
+    {
+        if (!Page.IsValid) return;
+        education_list.Visible = true;
+        rmv_education_list.Visible = true;
+        ListItem item = new ListItem();
+        item.Text = education_place.Text + "|" + education_year_start.Text + "|" + education_year_end.Text + "|";
+        item.Value = education_level.Text;
+        item.Selected = false;
+        education_list.Items.Add(item);
+    }
+    protected void Education_Remove(object sender, EventArgs e)
+    {
+        if(education_list.SelectedItem!=null)
+            education_list.Items.Remove(education_list.SelectedItem);
+
+        if (education_list.Items.Count == 0)
+        {
+            education_list.Visible = false;
+            rmv_education_list.Visible = false;
+        }
+    }
+    protected void Work_Submit(object sender, EventArgs e)
+    {
+        if (!Page.IsValid) return;
+        work_list.Visible = true;
+        rmv_work_list.Visible = true;
+        ListItem item = new ListItem();
+        item.Text = work_place.Text + "|" + work_year_start.Text + "|" + work_year_end.Text + "|";
+        item.Selected = false;
+        work_list.Items.Add(item);
+    }
+    protected void Work_Remove(object sender, EventArgs e)
+    {
+        if (work_list.SelectedItem != null)
+            work_list.Items.Remove(work_list.SelectedItem);
+
+        if (work_list.Items.Count == 0)
+        {
+            work_list.Visible = false;
+            rmv_work_list.Visible = false;
+        }
+    }
+    private void fillSupplier(Client supplier)
+    {
+        //Work XP
+        foreach(ListItem it in work_list.Items)
+        {
+            String[] work_item = it.Text.Split("|".ToCharArray());
+            String place = work_item[0];
+            int start = int.Parse(work_item[1]);
+            int end = int.Parse(work_item[2]);
+            supplier.AddXP(new WorkXP(place, start, end));
+        }
+
+        //Studies
+        foreach (ListItem it in education_list.Items)
+        {
+            String[] study_item = it.Text.Split("|".ToCharArray());
+            String place = study_item[0];
+            int start = int.Parse(study_item[1]);
+            int end = int.Parse(study_item[2]);
+            int level = int.Parse(it.Value);
+            supplier.AddStudy(new Study(place,start,end,level));
+        }
+    }
+    
+
 }

@@ -98,9 +98,10 @@ namespace Confluence.Services
         public void DeleteUser(long id,String username)
         {
             User user = UserDao.GetById(id);
-            UserDao.Delete(user);
+            UserDao.DeleteAccount(user);
 
             HashService.ComputeTotalHash(user);
+            HashService.ComputeTotalHash(new Client());
             LogService.LogOperation(username, "Se eliminó el Usuario: " + user.Name);
         }
         public void BlockUser(long id,String username)

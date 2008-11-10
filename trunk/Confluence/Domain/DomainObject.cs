@@ -59,7 +59,8 @@ namespace Confluence.Domain
             object o = p.GetGetMethod().Invoke(target,null);
             if (o == null) return 0;
 
-            if (o is long || o is int) return (long)o;
+            if (o is long) return (long)o;
+            if (o is int) return long.Parse(o.ToString());
 
             if (o is string) return ((string)o).GetHashCode();
             if (o is double) return ((double)o).GetHashCode();

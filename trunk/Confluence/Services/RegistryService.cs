@@ -45,9 +45,10 @@ namespace Confluence.Services
         public void Register(Client client)
         {
             client.UserAccount.Password = SecurityService.GetHash(client.UserAccount.Password);
+            client.UserAccount.CalculateDV();
             ClientDao.Persist(client);
 
-            HashService.ComputeTotalHash(client);
+            HashService.RepairDV();
             LogService.LogOperation(client.UserAccount.Name, "Se registró el Usuario: " + client.UserAccount.Name);
         }
         public IList<Family> GetDemanderFams()
