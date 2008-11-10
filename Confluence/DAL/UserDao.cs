@@ -31,6 +31,11 @@ namespace Confluence.DAL
             message.CalculateDV();
             HibernateTemplate.Save(message);
         }
+        public void DeleteAccount(User user_account)
+        {
+            IList<Client> found = QueryGeneric<Client>("From Client c WHERE c.UserAccount.Name=?", user_account.Name);
+            HibernateTemplate.Delete(found[0]);
+        }
         
     }
 }

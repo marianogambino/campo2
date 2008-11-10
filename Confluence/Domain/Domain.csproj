@@ -54,7 +54,9 @@
     <Compile Include="QuestionState.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="ServiceType.cs" />
+    <Compile Include="Study.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="WorkXP.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -156,6 +156,12 @@ a.DcRemove
 	width:350px;
 	height:200px;
 }
+div.registerPanel
+{
+	width:700px;
+	border:solid 1px grey;
+	margin:5px;
+}
 /************************************************************************************************/
 /*PARAGRAPHS*/
 #paragraphs p

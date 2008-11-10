@@ -9,7 +9,7 @@
         return confirm("Desea bloquear al usuario?");
     }
 </script>
-<h1>Detalles del Usuario a Eliminar</h1>
+<h1>Detalles del Usuario</h1>
 <asp:HiddenField ID="UID" runat="server" />
 <div id="inputform">
     <label for="Nombre">Nombre:</label>

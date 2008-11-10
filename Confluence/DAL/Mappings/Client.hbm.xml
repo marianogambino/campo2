@@ -11,6 +11,22 @@
                  cascade="all"
                  lazy="false"
                  unique="true"/>
+    <bag  name="WorkXP" 
+          generic="true"
+          lazy="false"
+          cascade="all" inverse="true">
+      <key column="client_id"/>
+      <one-to-many class="Confluence.Domain.WorkXP"/>
+    </bag>
+    
+    <bag  name="Study" 
+          generic="true"
+          lazy="false"
+          cascade="all" inverse="true">
+      <key column="client_id"/>
+      <one-to-many class="Confluence.Domain.Study"/>
+    </bag>
+    
     <property name="Name" />
     <property name="Country" />
     <property name="State" />

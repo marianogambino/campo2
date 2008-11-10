@@ -13,6 +13,8 @@ namespace Confluence.Domain
         private String country;
         private String state;
         private long phone;
+        private IList<WorkXP> work_xp;
+        private IList<Study> study;
 
         public virtual long Id
         {
@@ -49,11 +51,25 @@ namespace Confluence.Domain
             get { return phone; }
             set { phone = value; }
         }
+        public virtual IList<WorkXP> WorkXP
+        {
+            set { work_xp = value; }
+            get { return work_xp; }
+        }
+        public virtual IList<Study> Study
+        {
+            set { study = value; }
+            get { return study; }
+        }
         #endregion
 
-        public Client() { }
+        public Client() 
+        {
+            WorkXP = new List<WorkXP>();
+            Study = new List<Study>();
+        }
 
-        public Client(String username, String pass, String name, String country)
+        public Client(String username, String pass, String name, String country):this()
         {
             Name = name;
             Country = country;
@@ -90,6 +106,18 @@ namespace Confluence.Domain
         public override String ToString()
         {
             return Name;
+        }
+        public virtual void AddXP(WorkXP xp)
+        {
+            xp.Client = this;
+            xp.CalculateDV();
+            WorkXP.Add(xp);
+        }
+        public virtual void AddStudy(Study st)
+        {
+            st.Client = this;
+            st.CalculateDV();
+            Study.Add(st);
         }
         
     }

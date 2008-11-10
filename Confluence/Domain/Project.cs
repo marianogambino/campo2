@@ -19,7 +19,6 @@ namespace Confluence.Domain
         private DateTime end;
         private IList<Question> questions;
         private IList<Offer> offers;
-        private Offer accepted_offer;
 
         public virtual long Id
         {
