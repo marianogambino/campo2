@@ -6,7 +6,18 @@ namespace Confluence.Domain
 {
     public class Study : DomainObject
     {
+        private static Dictionary<int, string> levels;
+        static Study()
+        {
+            levels = new Dictionary<int, string>();
+            levels.Add(1, "Primario");
+            levels.Add(2, "Secundario");
+            levels.Add(3, "Terceario");
+            levels.Add(4, "Universitario");
+        }
+
         private long id;
+
         private String institute;
         private int level;
         private int year_start;
@@ -56,5 +67,11 @@ namespace Confluence.Domain
             YearEnd = end;
             Level = level;
         }
+        public virtual String StringLevel
+        {
+            get { return levels[Level]; }
+        }
+        
+
     }
 }

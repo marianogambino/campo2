@@ -82,4 +82,13 @@
   <object type="OfferDetails.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
+  <object type="FindRRHH.aspx">
+    <property name="ResourceService" ref="ResourceService" />
+  </object>
+  <object type="ResourceDetail.aspx">
+    <property name="ResourceService" ref="ResourceService" />
+  </object>
+  <object type="OfferRRHH.aspx">
+    <property name="ResourceService" ref="ResourceService" />
+  </object>
 </objects>

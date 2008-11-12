@@ -48,5 +48,5 @@ namespace Confluence.Domain
             YearStart = start;
             YearEnd = end;
         }
-    }
+   }
 }
