@@ -10,6 +10,7 @@ namespace Confluence.Domain
         private String description;
         private double amount;
         private Client resource;
+        private Client employer;
 
         public virtual long Id
         {
@@ -34,11 +35,18 @@ namespace Confluence.Domain
             set { resource = value; }
             get { return resource; }
         }
+        [DV(Property = "Id")]
+        public virtual Client Employer
+        {
+            set { employer = value; }
+            get { return employer; }
+        }
         public Proposal() { }
-        public Proposal(double amount, string desc)
+        public Proposal(double amount, string desc,Client employer)
         {
             Amount = amount;
             Description = desc;
+            Employer = employer;
         }
     }
 }

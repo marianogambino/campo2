@@ -12,5 +12,9 @@
              class="Confluence.Domain.Client"
              column="resource_id"
              cascade="none" lazy="false" />
+    <many-to-one name="Employer"
+            class="Confluence.Domain.Client"
+            column="employer_id"
+            cascade="none" lazy="false" />
   </class>
 </hibernate-mapping>

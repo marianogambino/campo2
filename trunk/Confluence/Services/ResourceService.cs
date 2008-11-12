@@ -45,13 +45,27 @@ namespace Confluence.Services
 
         public void MakeOffer(string user_name, long resource_id, double amount, string description)
         {
+            Client employer = ClientDao.GetByName(user_name);
             Client resource = ClientDao.GetById(resource_id);
-            Proposal offer = new Proposal(amount, description);
+            Proposal offer = new Proposal(amount, description,employer);
             resource.AddProposal(offer);
             ClientDao.Update(resource);
 
             HashService.RepairDV();
             LogService.LogOperation(user_name, "Se Realizó una oferta por el recurso: " + resource.Name);
+        }
+
+        public IList<Proposal> FindAllOffersForEmployer(long employer_id)
+        {
+            return ClientDao.FindAllOffersFor(employer_id);
+        }
+        public void DeleteOffer(long offer_id)
+        {
+            Proposal found = ClientDao.GetOffer(offer_id);
+            ClientDao.DeleteOffer(found);
+
+            HashService.ComputeTotalHash(found);
+            LogService.LogOperation(found.Employer.UserAccount.Name, "Se Eliminó una propuesta laboral realizada a: " + found.Resource);
         }
     }
 }
