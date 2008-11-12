@@ -15,5 +15,9 @@ namespace Confluence.Services.Tests.Stubs
         public Client GetById(long id) { return null; }
         public Client GetByName(String name) { return null; }
         public bool IsHR(String name) { return true; }
+        public IList<Proposal> FindAllOffersFor(long id) { return null; }
+        public void DeleteOffer(Proposal id) { }
+        public Proposal GetOffer(long id) { return null; }
+
     }
 }

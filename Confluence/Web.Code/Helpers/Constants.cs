@@ -50,6 +50,7 @@ public static class Constants
         public const String RESOURCE_LIST = "~/FindRRHH.aspx";
         public const String RESOURCE_DETAILS = "~/ResourceDetail.aspx?" + Constants.SessionKeys.RESOURCE_ID + "=";
         public const String MAKE_OFFER_TO_RESOURCE = "~/OfferRRHH.aspx?" + Constants.SessionKeys.RESOURCE_ID + "=";
+        public const String LIST_RRHH_OFFERS = "~/ListRRHHOffers.aspx";
     }
 
     public static class PageNames
@@ -93,6 +94,7 @@ public static class Constants
         public const String LIST_RRHH = "findrrhh_aspx";
         public const String RESOURCE_DETAIL = "resourcedetail_aspx";
         public const String OFFER_RRHH = "offerrrhh_aspx";
+        public const String LIST_RRHHOFFERS = "listrrhhoffers_aspx";
 
     }
 }
