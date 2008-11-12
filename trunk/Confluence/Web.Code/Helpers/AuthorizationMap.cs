@@ -50,6 +50,9 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.ANSWER_QUESTIONS, 306);
         map.Add(Constants.PageNames.OFFER_LIST, 307);
         map.Add(Constants.PageNames.OFFER_DETAIL, 308);
+        map.Add(Constants.PageNames.LIST_RRHH, 309);
+        map.Add(Constants.PageNames.RESOURCE_DETAIL, 310);
+        map.Add(Constants.PageNames.OFFER_RRHH, 311);
 
     }
 

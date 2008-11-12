@@ -26,6 +26,14 @@
       <key column="client_id"/>
       <one-to-many class="Confluence.Domain.Study"/>
     </bag>
+
+    <bag  name="Proposals" 
+      generic="true"
+      lazy="false"
+      cascade="all" inverse="true">
+      <key column="resource_id"/>
+      <one-to-many class="Confluence.Domain.Proposal"/>
+    </bag>
     
     <property name="Name" />
     <property name="Country" />

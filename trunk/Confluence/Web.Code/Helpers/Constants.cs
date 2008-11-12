@@ -18,6 +18,7 @@ public static class Constants
         public const String QUESTION_ID = "question_id";
         public const String FAMILY_ID = "family_id";
         public const String OFFER_ID = "offer_id";
+        public const String RESOURCE_ID = "resource_id";
     }
 
     public static class Redirects
@@ -46,6 +47,9 @@ public static class Constants
         public const String EDIT_PROFILE = "~/EditProfile.aspx";
         public const String OFFER_LIST = "~/OfferList.aspx";
         public const String OFFER_DETAIL = "~/OfferDetails.aspx?" + Constants.SessionKeys.OFFER_ID + "=";
+        public const String RESOURCE_LIST = "~/FindRRHH.aspx";
+        public const String RESOURCE_DETAILS = "~/ResourceDetail.aspx?" + Constants.SessionKeys.RESOURCE_ID + "=";
+        public const String MAKE_OFFER_TO_RESOURCE = "~/OfferRRHH.aspx?" + Constants.SessionKeys.RESOURCE_ID + "=";
     }
 
     public static class PageNames
@@ -86,6 +90,9 @@ public static class Constants
         public const String ANSWER_QUESTIONS = "answerquestions_aspx";
         public const String OFFER_LIST = "offerlist_aspx";
         public const String OFFER_DETAIL = "offerdetails_aspx";
+        public const String LIST_RRHH = "findrrhh_aspx";
+        public const String RESOURCE_DETAIL = "resourcedetail_aspx";
+        public const String OFFER_RRHH = "offerrrhh_aspx";
 
     }
 }

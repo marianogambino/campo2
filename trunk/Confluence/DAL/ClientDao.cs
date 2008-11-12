@@ -17,10 +17,5 @@ namespace Confluence.DAL
             IList<Client> found = QueryGeneric<Client>("From Client c WHERE c.UserAccount.Name=?", name);
             return (found.Count > 0) ? found[0] : null;
         }
-        public bool IsHR(String name)
-        {
-            Client c = GetByName(name);
-            return c.UserAccount.Families.Contains(new Family("Ofertante", ""));
-        }
     }
 }

@@ -15,6 +15,7 @@ namespace Confluence.Domain
         private long phone;
         private IList<WorkXP> work_xp;
         private IList<Study> study;
+        private IList<Proposal> proposals;
 
         public virtual long Id
         {
@@ -60,6 +61,11 @@ namespace Confluence.Domain
         {
             set { study = value; }
             get { return study; }
+        }
+        public virtual IList<Proposal> Proposals 
+        {
+            set { proposals = value; }
+            get { return proposals; }
         }
         #endregion
 
@@ -118,6 +124,17 @@ namespace Confluence.Domain
             st.Client = this;
             st.CalculateDV();
             Study.Add(st);
+        }
+        public virtual void AddProposal(Proposal prop)
+        {
+            prop.Resource = this;
+            prop.CalculateDV();
+            Proposals.Add(prop);
+        }
+
+        public virtual bool IsHR()
+        {
+            return UserAccount.Families.Contains(new Family("Ofertante", ""));
         }
         
     }

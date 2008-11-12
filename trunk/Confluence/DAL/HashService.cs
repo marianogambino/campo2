@@ -24,6 +24,7 @@ namespace Confluence.DAL
             Tables.Add(typeof(Offer), "offers");
             Tables.Add(typeof(WorkXP), "workxp");
             Tables.Add(typeof(Study), "studies");
+            Tables.Add(typeof(Proposal), "proposals");
         }
 
         #region UPDATE DV
@@ -148,6 +149,7 @@ namespace Confluence.DAL
 
             if (o is long) return (long)o;
             if (o is int) return long.Parse(o.ToString());
+            if (o is decimal) return decimal.ToInt32((decimal)o);
 
             if (o is string) return ((string)o).GetHashCode();
             if (o is double) return ((double)o).GetHashCode();

@@ -63,9 +63,9 @@ namespace Confluence.Services
             fams.Add(FamilyDao.GetById(1));
             return fams;
         }
-        public bool IsHR(String username)
+        public bool IsHR(String user_name)
         {
-            return ClientDao.IsHR(username);
+            return ClientDao.GetByName(user_name).IsHR();
         }
     }
 }

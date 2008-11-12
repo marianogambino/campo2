@@ -61,6 +61,7 @@ namespace Confluence.Domain
 
             if (o is long) return (long)o;
             if (o is int) return long.Parse(o.ToString());
+            if (o is decimal) return decimal.ToInt32((decimal)o);
 
             if (o is string) return ((string)o).GetHashCode();
             if (o is double) return ((double)o).GetHashCode();

@@ -38,5 +38,9 @@
     <property name="ProjectDao" ref="ProjectDao" />
     <property name="ClientDao" ref="ClientDao" />
   </object>
+  <object name="ResourceService" parent="AuditService" 
+          type="Confluence.Services.ResourceService, Services">
+    <property name="ClientDao" ref="ClientDao" />
+  </object>
   <object name="SecurityService" type="Confluence.Services.SecurityService, Services" />
   </objects>
