@@ -137,5 +137,13 @@ namespace Confluence.Domain
         {
             return Name;
         }
+        public virtual void EndProject()
+        {
+            State = new ProjectState(3);
+        }
+        public virtual void CancelProject()
+        {
+            State = new ProjectState(4);
+        }
     }
 }
