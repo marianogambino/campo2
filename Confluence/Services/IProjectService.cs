@@ -31,5 +31,8 @@ namespace Confluence.Services
         Offer FindOfferById(long id);
         void AcceptOffer(long offer_id);
         void RejectOffer(long offer_id);
+        IList<Project> FindProjectsForDeveloper(long user_id);
+        void EndProject(long pid);
+        void CancelProject(long pid);
     }
 }

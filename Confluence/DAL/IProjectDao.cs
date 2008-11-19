@@ -17,5 +17,6 @@ namespace Confluence.DAL
         IList<Project> FindAllAvailablesForUser(string username);
         Offer GetOfferById(long id);
         void DeleteOffer(Offer o);
+        IList<Project> FindProjectsForDeveloper(long user_id);
     }
 }

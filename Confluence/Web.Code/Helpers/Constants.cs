@@ -51,6 +51,9 @@ public static class Constants
         public const String RESOURCE_DETAILS = "~/ResourceDetail.aspx?" + Constants.SessionKeys.RESOURCE_ID + "=";
         public const String MAKE_OFFER_TO_RESOURCE = "~/OfferRRHH.aspx?" + Constants.SessionKeys.RESOURCE_ID + "=";
         public const String LIST_RRHH_OFFERS = "~/ListRRHHOffers.aspx";
+        public const String DEVELOPER_PROJECT_LIST = "~/ListCurrentProjects.aspx";
+        public const String DEVELOPER_PROJECT_DETAILS = "~/DeveloperProjectDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
+        public const String DELIVERY_DATES = "~/DeliveryDates.aspx";
     }
 
     public static class PageNames
@@ -80,7 +83,9 @@ public static class Constants
         public const String PROPOSAL_DETAILS = "proposaldetails_aspx";
         public const String ASK_QUESTION = "askquestion_aspx";
         public const String MAKE_OFFER = "makeoffer_aspx";
-
+        public const String LIST_CURRENT_PROJECTS = "listcurrentprojects_aspx";
+        public const String DEVELOPER_PROJECT_DETAILS = "developerprojectdetails_aspx";
+        public const String DELIVERY_DATES = "deliverydates_aspx";
 
         //Demandant
         public const String LIST_PROJECTS = "listprojects_aspx";

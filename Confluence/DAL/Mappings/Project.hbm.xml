@@ -31,10 +31,12 @@
 
     <many-to-one name="Owner"
                  class="Confluence.Domain.Client"
+                 lazy="false" 
                  column="owner_id"
                  cascade="none" />
     
     <many-to-one name="Developer"
+                 lazy="false" 
                  class="Confluence.Domain.Client"
                  column="developer_id"
                  cascade="none" />

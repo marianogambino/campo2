@@ -39,6 +39,9 @@ public class AuthorizationMap
         map.Add(Constants.PageNames.PROPOSAL_DETAILS, 204);
         map.Add(Constants.PageNames.ASK_QUESTION, 205);
         map.Add(Constants.PageNames.MAKE_OFFER, 206);
+        map.Add(Constants.PageNames.LIST_CURRENT_PROJECTS, 207);
+        map.Add(Constants.PageNames.DEVELOPER_PROJECT_DETAILS, 208);
+        map.Add(Constants.PageNames.DELIVERY_DATES, 209);
         
 
         //DEMANDANT

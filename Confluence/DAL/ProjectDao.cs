@@ -53,5 +53,9 @@ namespace Confluence.DAL
         {
             return QueryGeneric<Project>("From Project p Where p.Publication.Id > 0 and p.State.Id = 1 and p.Owner.UserAccount.Name = ?", username);
         }
+        public IList<Project> FindProjectsForDeveloper(long id)
+        {
+            return QueryGeneric<Project>("From Project p Where p.State.Id = 2 and p.Developer.UserAccount.Id = ?", id);
+        }
     }
 }

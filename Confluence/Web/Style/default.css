@@ -178,6 +178,30 @@ div.registerPanel
 {
 	margin:10px 0px 0px 20px;
 }
+/*************************************************************************************************/
+/**Delivery Dates**/
+
+#delivery_dates
+{
+	margin-left:25px;
+}
+#delivery_dates .entry
+{
+	margin:5px;
+	padding:5px;
+	border:solid 1px black;
+	width: 800px;
+}
+#delivery_dates .entry h2
+{
+	background:url(../Images/Icons/chart_bar.png) no-repeat left center;
+	padding-left:20px;
+}
+#delivery_dates .entry .date
+{
+	color:red;
+}
+
 
 /*************************************************************************************************/
 /**ACCORDION MENU**/

@@ -94,4 +94,13 @@
   <object type="ListRRHHOffers.aspx">
     <property name="ResourceService" ref="ResourceService" />
   </object>
+  <object type="ListCurrentProjects.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
+  <object type="DeveloperProjectDetails.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
+  <object type="DeliveryDates.aspx">
+    <property name="ProjectService" ref="ProjectService" />
+  </object>
 </objects>

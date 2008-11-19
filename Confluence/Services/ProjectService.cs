@@ -201,5 +201,27 @@ namespace Confluence.Services
             HashService.ComputeTotalHash(of);
             LogService.LogOperation(of.Project.Owner.ToString(), "Se rechazó una oferta por el Proyecto: " + of.Project.Name);
         }
+        public IList<Project> FindProjectsForDeveloper(long user_id)
+        {
+            return ProjectDao.FindProjectsForDeveloper(user_id);
+        }
+        public void EndProject(long pid)
+        {
+            Project p = ProjectDao.GetById(pid);
+            p.EndProject();
+            ProjectDao.Update(p);
+
+            HashService.ComputeTotalHash(p);
+            LogService.LogOperation(p.Developer.UserAccount.Name, "Se terminó el Proyecto: " + p.Name);
+        }
+        public void CancelProject(long pid)
+        {
+            Project p = ProjectDao.GetById(pid);
+            p.CancelProject();
+            ProjectDao.Update(p);
+
+            HashService.ComputeTotalHash(p);
+            LogService.LogOperation(p.Developer.UserAccount.Name, "Se canceló el desarrollo del Proyecto: " + p.Name);
+        }
     }
 }
