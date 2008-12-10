@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="NewProject.aspx.cs" Inherits="NewProject" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="NuevoProyecto.aspx.vb" Inherits="NuevoProyecto" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Crear nuevo Proyecto:</h1>
 <div id="inputform">
@@ -11,7 +11,7 @@
 <label for="language">Lenguaje:</label>
 <asp:DropDownList ID="lang" runat="server" DataTextField="Name" DataValueField="Id" /><br />
 <label for="endDate">Fin estimado:</label>
-<asp:Calendar ID="end" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" >
+<asp:Calendar ID="end_cal" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" >
     <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
     <SelectorStyle BackColor="#CCCCCC" />
     <WeekendDayStyle BackColor="#FFFFCC" />

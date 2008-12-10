@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ProjectDetails.aspx.cs" Inherits="ProjectDetails" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="DetallesProyecto.aspx.vb" Inherits="DetallesProyecto" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <script type="text/javascript">
     function confirmDelete(){
@@ -20,7 +20,7 @@
 <label for="language">Lenguaje:</label>
 <asp:DropDownList ID="lang" runat="server" DataTextField="Name" DataValueField="Id" /><br />
 <label for="endDate">Fin estimado:</label>
-<asp:Calendar ID="end" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" >
+<asp:Calendar ID="end_cal" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" >
     <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
     <SelectorStyle BackColor="#CCCCCC" />
     <WeekendDayStyle BackColor="#FFFFCC" />
@@ -34,6 +34,5 @@
 <asp:Button ID="Editar" runat="server" Text="Editar" OnClick="Editar_Proyecto" />
 <asp:Button ID="Eliminar" runat="server" Text="Eliminar" OnClientClick="return confirmDelete();" OnClick="Eliminar_Proyecto" />
 <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
-
 </asp:Content>
 

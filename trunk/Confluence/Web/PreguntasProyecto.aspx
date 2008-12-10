@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ProjectQuestions.aspx.cs" Inherits="ProjectQuestions" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="PreguntasProyecto.aspx.vb" Inherits="PreguntasProyecto" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Preguntas del Proyecto:</h1>
 <asp:HiddenField ID="pid" runat="server" />

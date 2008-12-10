@@ -22,22 +22,22 @@
   <object type="ServiceList.aspx">
     <property name="ServiceService" ref="ServiceService" />
   </object>
-  <object type="NewService.aspx">
+  <object type="NuevoServicio.aspx">
     <property name="ServiceService" ref="ServiceService" />
   </object>
   <object type="ListarProyectos.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="NewProject.aspx">
+  <object type="NuevoProyecto.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="ProjectDetails.aspx">
+  <object type="DetallesProyecto.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="Publications.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="ProjectQuestions.aspx">
+  <object type="PreguntasProyecto.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="ResponderPregunta.aspx">
@@ -58,7 +58,7 @@
   <object type="ListarFamilias.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
-  <object type="NewFamily.aspx">
+  <object type="NuevaFamilia.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
   <object type="DetalleFamilia.aspx">
@@ -76,10 +76,10 @@
   <object type="RestoreData.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
-  <object type="OfferList.aspx">
+  <object type="ListarOfertas.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="OfferDetails.aspx">
+  <object type="DetallesOferta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="FindRRHH.aspx">
