@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AccessLog.aspx.cs" Inherits="AccessLog" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="BitacoraAccesos.aspx.vb" Inherits="BitacoraAccesos" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Bitácora de Accesos</h1>
 
@@ -33,7 +33,4 @@
     </div>
 </div>
 </asp:Content>
-
-
-
 

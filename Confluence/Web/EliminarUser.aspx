@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DeleteUser.aspx.cs" Inherits="DeleteUser" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="EliminarUser.aspx.vb" Inherits="EliminarUser" title="Untitled Page" %>
 <%@ Import Namespace="Confluence.Domain" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <script type="text/javascript">
@@ -21,12 +21,12 @@
         <td valign="top"><label style="text-decoration:underline;"><b>Familias:</b></label></td>
         <td>
             <dl>
-                <% foreach(Family fam in this.UserDetailed.Families){%>
+                <% For Each fam As Family In Me.UserDetailed.Families%>
                     <dt><%=fam.Name + ":"%></dt>
-                     <%foreach (Patente pat in fam.Patentes){%>
+                     <%For Each pat As Patente In fam.Patentes%>
                          <dd style="font-size:0.8em; font-style:italic"><%=pat.Name%></dd>   
-                     <%} %>
-               <%}%>
+                     <%Next%>
+               <%Next%>
             </dl>
         </td>
     </tr>
@@ -34,9 +34,9 @@
         <td valign="top"><label style="text-decoration:underline;"><b>Patentes:</b></label></td>
         <td>    
             <dl>
-                <% foreach(Patente patente in this.UserDetailed.Patentes){%>
-                    <dt><%=patente.Name%></dt>
-                <%}%>
+                <% For Each pat As Patente In Me.UserDetailed.Patentes%>
+                    <dt><%=pat.Name%></dt>
+                <%Next%>
             </dl>
         </td>
     </tr>

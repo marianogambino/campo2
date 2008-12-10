@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Confluence.DAL.BackUpService" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BackUpService.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAAAACAAAAAIAAAAAAAAAAAgAAAQA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="BACKUP_PROCEDURE" Hidden="true" />
+      <Field Name="factory" Hidden="true" />
+      <Field Name="RESTORE_PROCEDURE" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.BaseDao&lt;T&gt;">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BaseDao.cs</FileName>
+      <HashCode>gAQgAAAAAAAAAAAAAAAAAAIAAAEAAgAAAgAAAQAAAIA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Confluence.DAL.BusyDatabaseException" Collapsed="true">
+    <Position X="16.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>BusyDatabaseException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Confluence.DAL.ClientDao">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClientDao.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAgACAAAAAAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.ConnectionFactory" Collapsed="true">
+    <Position X="12.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConnectionFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAAAQAYAAAAAAAAAAAAAAAIAAAAAABAAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Confluence.DAL.DuplicateEntityException">
+    <Position X="18.75" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>DuplicateEntityException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Confluence.DAL.DVException">
+    <Position X="21" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>DVException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAICAAACAgAAAAAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Confluence.DAL.FamilyDao">
+    <Position X="5.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FamilyDao.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAQAAAAAAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.HashService" BaseTypeListCollapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>HashService.cs</FileName>
+      <HashCode>EAAIAACAAAIgAAAAAAAAQAIAAAAAABACBAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="factory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.Log" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Log.cs</FileName>
+      <HashCode>AAAAAAAAAoAgAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="factory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.ProjectDao">
+    <Position X="0.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProjectDao.cs</FileName>
+      <HashCode>AgAEpAgABAAAAAAAAAAQAAAAAAAAAABAAgAACQAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.ServiceDao">
+    <Position X="3" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ServiceDao.cs</FileName>
+      <HashCode>AAACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAwAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.DAL.SQLServerConnectionFactory">
+    <Position X="12.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SQLServerConnectionFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAQACIAAAAAABAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="connection" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Confluence.DAL.UserDao">
+    <Position X="9.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>UserDao.cs</FileName>
+      <HashCode>AAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAQAAAAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlConnection" Collapsed="true">
+    <Position X="15.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.Common.DbConnection" Collapsed="true">
+    <Position X="15.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Exception" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Confluence.DAL.IClientDao">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IClientDao.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAACAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Confluence.DAL.IDAO&lt;T&gt;">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IDAO.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAIAAAEAAAAAAgAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Confluence.DAL.IFamilyDao">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IFamilyDao.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Confluence.DAL.IProjectDao">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IProjectDao.cs</FileName>
+      <HashCode>AgAEpAgABAAAAAAAAAAQAAAAAAAAAABAAAAACQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Confluence.DAL.IServiceDao">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IServiceDao.cs</FileName>
+      <HashCode>AAACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Confluence.DAL.IUserDao">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IUserDao.cs</FileName>
+      <HashCode>AAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Confluence.DAL.AccessType">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Log.cs</FileName>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

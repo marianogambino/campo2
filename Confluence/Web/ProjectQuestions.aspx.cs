@@ -21,6 +21,7 @@ public partial class ProjectQuestions : PrivatePage
 
     public override void On_Load(object sender, EventArgs e)
     {
+        if (Page.IsPostBack) return;
         pid.Value = Request.QueryString[Constants.SessionKeys.PROJECT_ID];
         QuestionGrid.DataSource = ProjectService.FindUnansweredQuestions(long.Parse(pid.Value));
         QuestionGrid.DataBind();

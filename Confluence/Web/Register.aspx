@@ -47,13 +47,13 @@
             <tr>
                 <td>Instituto:</td>
                 <td><asp:TextBox ID="education_place" runat="server" ValidationGroup="educ"/></td>
-                <td><asp:RequiredFieldValidator ID="req_education_place" runat="server" ControlToValidate="education_place" ErrorMessage="Instituto es requerido" ValidationGroup="educ" /></td>
+                <td><asp:RequiredFieldValidator ID="req_education_place" runat="server" ControlToValidate="education_place" ErrorMessage="* Instituto es requerido" ValidationGroup="educ" /></td>
             </tr>
             <tr>
                 <td>Año Inicio:</td>
                 <td><asp:TextBox ID="education_year_start" runat="server" /></td>
                 <td>
-                    <asp:RequiredFieldValidator ID="req_education_year_start" runat="server" ControlToValidate="education_year_start" ErrorMessage="Año Inicial es requerido" Display="Dynamic" ValidationGroup="educ" />
+                    <asp:RequiredFieldValidator ID="req_education_year_start" runat="server" ControlToValidate="education_year_start" ErrorMessage="* Año Inicial es requerido" Display="Dynamic" ValidationGroup="educ" />
                     <asp:RangeValidator ID="rng_education_year_start" runat="server" ControlToValidate="education_year_start" Type="Integer" MinimumValue="1900" MaximumValue="2008" ErrorMessage="Año Inicial no válido" Display="dynamic" ValidationGroup="educ" />
                 </td>
             </tr>
@@ -83,22 +83,22 @@
             <tr>
                 <td>Lugar:</td>
                 <td><asp:TextBox ID="work_place" runat="server" ValidationGroup="work"/></td>
-                <td><asp:RequiredFieldValidator ID="req_work_place" runat="server" ControlToValidate="work_place" ErrorMessage="Lugar es requerido" ValidationGroup="work" /></td>
+                <td><asp:RequiredFieldValidator ID="req_work_place" runat="server" ControlToValidate="work_place" ErrorMessage="* Lugar es requerido" ValidationGroup="work" /></td>
             </tr>
             <tr>
                 <td>Año Inicio:</td>
                 <td><asp:TextBox ID="work_year_start" runat="server" /></td>
                 <td>
-                    <asp:RequiredFieldValidator ID="req_work_start" runat="server" ControlToValidate="work_year_start" ErrorMessage="Año Inicial es requerido" Display="Dynamic" ValidationGroup="work" />
-                    <asp:RangeValidator ID="rng_work_start" runat="server" ControlToValidate="work_year_start" Type="Integer" MinimumValue="1900" MaximumValue="2008" ErrorMessage="Año Inicial no válido" Display="dynamic" ValidationGroup="work" />
+                    <asp:RequiredFieldValidator ID="req_work_start" runat="server" ControlToValidate="work_year_start" ErrorMessage="* Año Inicial es requerido" Display="Dynamic" ValidationGroup="work" />
+                    <asp:RangeValidator ID="rng_work_start" runat="server" ControlToValidate="work_year_start" Type="Integer" MinimumValue="1900" MaximumValue="2008" ErrorMessage="* Año Inicial no válido" Display="dynamic" ValidationGroup="work" />
                 </td>
             </tr>
             <tr>
                 <td>Año Fin:</td>
                 <td><asp:TextBox ID="work_year_end" runat="server" ValidationGroup="educ" /></td>
                 <td>
-                    <asp:RangeValidator ID="rng_work_year_end" runat="server" ControlToValidate="work_year_end" Type="Integer" MinimumValue="1900" MaximumValue="2008" ErrorMessage="Año de Finalización no válido" Display="dynamic" ValidationGroup="work" />
-                    <asp:CustomValidator ID="cst_work_year_end" runat="server" ControlToValidate="work_year_end" ErrorMessage="El año de finalización debe ser posterior al de inicio" Display="dynamic" OnServerValidate="Validate_End_Year" ValidationGroup="work" />
+                    <asp:RangeValidator ID="rng_work_year_end" runat="server" ControlToValidate="work_year_end" Type="Integer" MinimumValue="1900" MaximumValue="2008" ErrorMessage="* Año de Finalización no válido" Display="dynamic" ValidationGroup="work" />
+                    <asp:CustomValidator ID="cst_work_year_end" runat="server" ControlToValidate="work_year_end" ErrorMessage="* El año de finalización debe ser posterior al de inicio" Display="dynamic" OnServerValidate="Validate_End_Year" ValidationGroup="work" />
                 </td>
             </tr>
             <tr>
