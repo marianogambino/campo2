@@ -54,11 +54,11 @@
                 <div id="accordion">
                     <h2 class="accordion_toggle">Main</h2>
                     <div class="accordion_content">
-                        <a href="Login.aspx">Login</a><br />
+                        <a href="Inicio.aspx">Login</a><br />
                         <a href="Register.aspx">Registrarse</a><br />
                         <a href="Contacto.aspx">Contacto</a><br />
                         <a href="About.aspx">Quienes Somos</a><br />
-                        <a href="HowItWorks.aspx">Como Funciona</a>
+                        <a href="ComoFunciona.aspx">Como Funciona</a>
                     </div>
                     <%if(ThisPage.IsLogged){%>
                         <%foreach(Family fam in ThisPage.ActiveUser.Families){%>

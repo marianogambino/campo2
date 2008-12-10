@@ -1,6 +1,7 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListProjects.aspx.cs" Inherits="ListProjects" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ListarPropuestas.aspx.vb" Inherits="ListarPropuestas" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <div id="inputform">
+<h1>Buscar Propuestas:</h1>
         <label for="SearchTxt">Buscar:</label>
         <asp:TextBox ID="SearchTxt" runat="server" /><br />
         <label></label>
@@ -9,20 +10,16 @@
     </div>
         
     <div class="gridview">
-    <asp:GridView   ID="ProjectGrid" 
+    <asp:GridView   ID="ProposalsGrid" 
                     runat="server" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="#336666" 
                     BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" 
-                    DataKeyNames="Id" OnRowEditing="Project_Details" OnRowDeleting="Project_Questions" >
+                    DataKeyNames="Id" OnRowEditing="Proposal_Details">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" Visible="false"/>
             <asp:BoundField DataField="Name" HeaderText="Name"/>
-            <asp:BoundField DataField="State" HeaderText="State"/>
             <asp:BoundField DataField="Language" HeaderText="Language" />
-            <asp:BoundField DataField="Publication" HeaderText="Publication" />
-            <asp:BoundField DataField="Start" HeaderText="Start" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="false" />
             <asp:BoundField DataField="End" HeaderText="End" DataFormatString="{0:dd/MM/yyyy}" HtmlEncode="false" />
             <asp:ButtonField HeaderText="Details" ButtonType="Image" ItemStyle-HorizontalAlign="center" ImageUrl="~/Images/Icons/book_go.png" CommandName="Edit" />
-            <asp:ButtonField HeaderText="Questions" ButtonType="Image" ItemStyle-HorizontalAlign="center" ImageUrl="~/Images/Icons/comments.png" CommandName="Delete" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <RowStyle BackColor="White" ForeColor="#333333" />
