@@ -12,7 +12,7 @@ namespace Confluence.Domain
             levels = new Dictionary<int, string>();
             levels.Add(1, "Primario");
             levels.Add(2, "Secundario");
-            levels.Add(3, "Terceario");
+            levels.Add(3, "Terciario");
             levels.Add(4, "Universitario");
         }
 

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Confluence.Services.AdminService" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>AdminService.cs</FileName>
+      <HashCode>gCEAAQAAAQQIAAAEAAAQAgAACQoACgUgAAgEGEEAAAg=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="backup_service" Hidden="true" />
+      <Field Name="familyDao" Hidden="true" />
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log_service" Hidden="true" />
+      <Field Name="userDao" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.ContactService" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ContactService.cs</FileName>
+      <HashCode>gAEAAAAAAEAAAAAAAgAAAgAAAAAAAAAAAAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log_service" Hidden="true" />
+      <Field Name="user_dao" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.LoginService" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LoginService.cs</FileName>
+      <HashCode>gAEIBACAAAAAgAAAAAAACgAAAAIAAAAAAAAAiAAAACA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log" Hidden="true" />
+      <Field Name="security_service" Hidden="true" />
+      <Field Name="userDao" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.ProjectService" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProjectService.cs</FileName>
+      <HashCode>ggUEIIwYIAggAAAAAUkAAEAAEAMEQAIAABACKAACoIA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="client_dao" Hidden="true" />
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log_service" Hidden="true" />
+      <Field Name="project_dao" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.RegistryService" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>RegistryService.cs</FileName>
+      <HashCode>gAEABAQAAAgAARAAAAAAAAAAAACBAAAgAAAACAAEACg=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="client_dao" Hidden="true" />
+      <Field Name="family_dao" Hidden="true" />
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log_service" Hidden="true" />
+      <Field Name="security_service" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.ResourceService" BaseTypeListCollapsed="true">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ResourceService.cs</FileName>
+      <HashCode>gAEAAAQABAgAAAAAAAAQAAAAAAAIAAAAAAACCEAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="client_dao" Hidden="true" />
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log_service" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.SecurityService" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SecurityService.cs</FileName>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="HEX" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Confluence.Services.ServiceService" BaseTypeListCollapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ServiceService.cs</FileName>
+      <HashCode>gAEAAIQAIIgAAAAAgAAAAAAAAAEEgAAAAAAICAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="client_dao" Hidden="true" />
+      <Field Name="hash_service" Hidden="true" />
+      <Field Name="log_service" Hidden="true" />
+      <Field Name="service_dao" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+</ClassDiagram>

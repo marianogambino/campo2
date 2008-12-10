@@ -56,7 +56,7 @@
                     <div class="accordion_content">
                         <a href="Login.aspx">Login</a><br />
                         <a href="Register.aspx">Registrarse</a><br />
-                        <a href="Contact.aspx">Contacto</a><br />
+                        <a href="Contacto.aspx">Contacto</a><br />
                         <a href="About.aspx">Quienes Somos</a><br />
                         <a href="HowItWorks.aspx">Como Funciona</a>
                     </div>

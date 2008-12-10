@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AskQuestion.aspx.cs" Inherits="AskQuestion" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="RealizarPregunta.aspx.vb" Inherits="RealizarPregunta" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Realizar Pregunta:</h1>
 <div id="inputform">
@@ -12,5 +12,4 @@
 <asp:Button ID="Ask" runat="Server" Text="Preguntar" OnClick="Ask_Click" />
 <asp:Button ID="Cancel" runat="Server" Text="Cancelar" CausesValidation="false" OnClick="Cancel_Click" />
 </asp:Content>
-
 

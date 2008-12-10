@@ -30,21 +30,21 @@ public static class Constants
         public const String INTRUDER = "~/Intruder.aspx";
         public const String LIST_USERS = "~/ListUsers.aspx";
         public const String USER_DETAIL = "~/UserDetail.aspx?" + Constants.SessionKeys.USER_ID + "=";
-        public const String DELETE_USER = "~/DeleteUser.aspx?" + Constants.SessionKeys.USER_ID + "=";
+        public const String DELETE_USER = "~/EliminarUser.aspx?" + Constants.SessionKeys.USER_ID + "=";
         public const String SING_UP = "~/Register.aspx";
         public const String LIST_SERVICES = "~/ServiceList.aspx";
         public const String LIST_PROJECTS = "~/ListProjects.aspx";
         public const String PROJECT_DETAIL = "~/ProjectDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
         public const String PROJECT_QUESTIONS = "~/ProjectQuestions.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
-        public const String ANSWER_QUESTIONS = "~/AnswerQuestions.aspx?" + Constants.SessionKeys.QUESTION_ID + "=";
+        public const String ANSWER_QUESTIONS = "~/ResponderPregunta.aspx?" + Constants.SessionKeys.QUESTION_ID + "=";
         public const String PROPOSAL_DETAILS = "~/ProposalDetails.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
-        public const String ASK_QUESTION = "~/AskQuestion.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
+        public const String ASK_QUESTION = "~/RealizarPregunta.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
         public const String MAKE_OFFER = "~/MakeOffer.aspx?" + Constants.SessionKeys.PROJECT_ID + "=";
-        public const String FAMILY_DETAIL = "~/FamilyDetail.aspx?" + Constants.SessionKeys.FAMILY_ID + "=";
+        public const String FAMILY_DETAIL = "~/DetalleFamilia.aspx?" + Constants.SessionKeys.FAMILY_ID + "=";
         public const String FAMILY_LIST = "~/ListFamilies.aspx";
         public const String USER_PROFILE = "~/UserProfile.aspx";
-        public const String CHANGE_PWD = "~/ChangePass.aspx";
-        public const String EDIT_PROFILE = "~/EditProfile.aspx";
+        public const String CHANGE_PWD = "~/CambiarPass.aspx";
+        public const String EDIT_PROFILE = "~/EditarPerfil.aspx";
         public const String OFFER_LIST = "~/OfferList.aspx";
         public const String OFFER_DETAIL = "~/OfferDetails.aspx?" + Constants.SessionKeys.OFFER_ID + "=";
         public const String RESOURCE_LIST = "~/FindRRHH.aspx";
@@ -61,19 +61,19 @@ public static class Constants
         //Publics
         public const String HOME = "default_aspx";
         public const String USER_PROFILE = "userprofile_aspx";
-        public const String CHANGE_PASS = "changepass_aspx";
-        public const String EDIT_PROFILE = "editprofile_aspx";
+        public const String CHANGE_PASS = "cambiarpass_aspx";
+        public const String EDIT_PROFILE = "editarperfil_aspx";
 
         //Admin
         public const String LIST_USERS = "listusers_aspx";
         public const String USER_DETAIL = "userdetail_aspx";
-        public const String DELETE_USER = "deleteuser_aspx";
+        public const String DELETE_USER = "eliminaruser_aspx";
         public const String LIST_FAMILIES = "listfamilies_aspx";
         public const String NEW_FAMILY = "newfamily_aspx";
-        public const String FAMILY_DETAILS = "familydetail_aspx";
-        public const String ACCESS_LOG = "accesslog_aspx";
+        public const String FAMILY_DETAILS = "detallefamilia_aspx";
+        public const String ACCESS_LOG = "bitacoraaccesos_aspx";
         public const String OPERATION_LOG = "operationlog_aspx";
-        public const String BACK_UP = "backup_aspx";
+        public const String BACK_UP = "realizarbackup_aspx";
         public const String RESTORE_DATA = "restoredata_aspx";
 
         //Supplier
@@ -81,7 +81,7 @@ public static class Constants
         public const String NEW_SERVICE = "newservice_aspx";
         public const String LIST_PROPOSALS = "listproposals_aspx";
         public const String PROPOSAL_DETAILS = "proposaldetails_aspx";
-        public const String ASK_QUESTION = "askquestion_aspx";
+        public const String ASK_QUESTION = "realizarpregunta_aspx";
         public const String MAKE_OFFER = "makeoffer_aspx";
         public const String LIST_CURRENT_PROJECTS = "listcurrentprojects_aspx";
         public const String DEVELOPER_PROJECT_DETAILS = "developerprojectdetails_aspx";
@@ -93,7 +93,7 @@ public static class Constants
         public const String PROJECT_DETAIL = "projectdetails_aspx";
         public const String PUBLICATIONS = "publications_aspx";
         public const String PROJECT_QUESTIONS = "projectquestions_aspx";
-        public const String ANSWER_QUESTIONS = "answerquestions_aspx";
+        public const String ANSWER_QUESTIONS = "responderpregunta_aspx";
         public const String OFFER_LIST = "offerlist_aspx";
         public const String OFFER_DETAIL = "offerdetails_aspx";
         public const String LIST_RRHH = "findrrhh_aspx";

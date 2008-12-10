@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="FamilyDetail.aspx.cs" Inherits="FamilyDetail" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="DetalleFamilia.aspx.vb" Inherits="DetalleFamilia" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Modificar Familia:</h1>
 <div id="inputform">

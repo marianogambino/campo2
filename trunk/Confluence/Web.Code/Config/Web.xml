@@ -10,13 +10,13 @@
   <object type="UserDetail.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
-  <object type="DeleteUser.aspx">
+  <object type="EliminarUser.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
   <object type="Register.aspx">
     <property name="RegistryService" ref="RegistryService"/>
   </object>
-  <object type="Contact.aspx">
+  <object type="Contacto.aspx">
     <property name="ContactService" ref="ContactService"/>
   </object>
   <object type="ServiceList.aspx">
@@ -40,7 +40,7 @@
   <object type="ProjectQuestions.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="AnswerQuestions.aspx">
+  <object type="ResponderPregunta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="ListProposals.aspx">
@@ -49,7 +49,7 @@
   <object type="ProposalDetails.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="AskQuestion.aspx">
+  <object type="RealizarPregunta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="MakeOffer.aspx">
@@ -61,16 +61,16 @@
   <object type="NewFamily.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
-  <object type="FamilyDetail.aspx">
+  <object type="DetalleFamilia.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
-  <object type="ChangePass.aspx">
+  <object type="CambiarPass.aspx">
     <property name="LoginService" ref="LoginService" />
   </object>
-  <object type="EditProfile.aspx">
+  <object type="EditarPerfil.aspx">
     <property name="RegistryService" ref="RegistryService" />
   </object>
-  <object type="BackUp.aspx">
+  <object type="RealizarBackUp.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
   <object type="RestoreData.aspx">

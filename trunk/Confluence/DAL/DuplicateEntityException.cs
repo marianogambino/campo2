@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Confluence.DAL
 {
-    public class DuplicateEntityException : ApplicationException
+    public class DuplicateEntityException : Exception
     {
         private String exceptionCause;
 
