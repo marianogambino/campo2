@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="OfferDetails.aspx.cs" Inherits="OfferDetails" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="DetallesOferta.aspx.vb" Inherits="DetallesOferta" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <script type="text/javascript">
     function confirmAccept(){
@@ -24,4 +24,5 @@
 <asp:Button ID="Reject" runat="Server" Text="Rechazar" OnClick="Reject_Click" OnClientClick="return confirmReject();" />
 <asp:Button ID="Cancel" runat="Server" Text="Cancel" OnClick="Cancel_Click" />
 </asp:Content>
+
 

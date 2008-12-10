@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="NewService.aspx.cs" Inherits="NewService" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="NuevoServicio.aspx.vb" Inherits="NuevoServicio" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Crear nuevo Servicio:</h1>
 <div id="inputform">
@@ -18,6 +18,5 @@
 
 <asp:Button ID="Save" Text="Save" runat="server" OnClick="Save_Click" />
 <asp:Button ID="Cancel" Text="Cancel" runat="server" CausesValidation="false" OnClick="Cancel_Click" />
-
 </asp:Content>
 

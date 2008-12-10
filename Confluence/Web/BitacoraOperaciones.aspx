@@ -1,6 +1,5 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="OperationLog.aspx.cs" Inherits="OperationLog" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="BitacoraOperaciones.aspx.vb" Inherits="BitacoraOperaciones" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
-<h1>Bitácora de Operaciones</h1>
 <div id="inputform">
     <label for="SearchTxt">Nombre de Usuario:</label>
     <asp:TextBox ID="SearchTxt" runat="server" />
