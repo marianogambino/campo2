@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListFamilies.aspx.cs" Inherits="ListFamilies" Title="Untitled Page" EnableEventValidation="false" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ListarFamilias.aspx.vb" Inherits="ListarFamilias" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
     <h1>Listado de Familias</h1>
     <div class="gridview">

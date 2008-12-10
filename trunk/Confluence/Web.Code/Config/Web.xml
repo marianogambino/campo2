@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <objects  xmlns="http://www.springframework.net" >
 
-  <object type="Login.aspx">
+  <object type="Inicio.aspx">
     <property name="LoginService" ref="LoginService"/>
   </object>
-  <object type="ListUsers.aspx">
+  <object type="ListarUsuarios.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
   <object type="UserDetail.aspx">
@@ -25,7 +25,7 @@
   <object type="NewService.aspx">
     <property name="ServiceService" ref="ServiceService" />
   </object>
-  <object type="ListProjects.aspx">
+  <object type="ListarProyectos.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="NewProject.aspx">
@@ -43,7 +43,7 @@
   <object type="ResponderPregunta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="ListProposals.aspx">
+  <object type="ListarPropuestas.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="ProposalDetails.aspx">
@@ -52,10 +52,10 @@
   <object type="RealizarPregunta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="MakeOffer.aspx">
+  <object type="RealizarOferta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="ListFamilies.aspx">
+  <object type="ListarFamilias.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
   <object type="NewFamily.aspx">
