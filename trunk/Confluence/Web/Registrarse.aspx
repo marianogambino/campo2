@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Registro" Title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Registrarse.aspx.vb" Inherits="Registrarse" title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
 <h1>Registro de nuevo Usuario</h1>
 <div id="inputform">
@@ -8,7 +8,7 @@
     <label for="password">Contraseña:</label>
     <asp:TextBox ID="password" runat="server" TextMode="Password" ValidationGroup="main" />
     <asp:RequiredFieldValidator ID="reqPassword" runat="server" ControlToValidate="password" ErrorMessage="* Contraseña es requerida" EnableViewState="true" /><br />
-    <label for="passwordR" runat="server">Repetir Contraseña:</label>
+    <label id="Label1" for="passwordR" runat="server">Repetir Contraseña:</label>
     <asp:TextBox ID="passwordR" runat="server" TextMode="password" EnableViewState="true" ValidationGroup="main" />
     <asp:RequiredFieldValidator ID="reqPasswordR" runat="server" ControlToValidate="passwordR" ErrorMessage="* Repetir Contraseña es requerido" Display="dynamic" />
     <asp:CompareValidator ID="comparePassword" runat="server" ControlToValidate="passwordR" ControlToCompare="password" Operator="Equal" ErrorMessage="* Las contraseñas no son iguales" /><br />

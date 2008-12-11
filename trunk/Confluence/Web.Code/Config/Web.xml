@@ -7,19 +7,19 @@
   <object type="ListarUsuarios.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
-  <object type="UserDetail.aspx">
+  <object type="DetalleUsuario.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
   <object type="EliminarUser.aspx">
     <property name="AdminService" ref="AdminService"/>
   </object>
-  <object type="Register.aspx">
+  <object type="Registrarse.aspx">
     <property name="RegistryService" ref="RegistryService"/>
   </object>
   <object type="Contacto.aspx">
     <property name="ContactService" ref="ContactService"/>
   </object>
-  <object type="ServiceList.aspx">
+  <object type="ListarServicios.aspx">
     <property name="ServiceService" ref="ServiceService" />
   </object>
   <object type="NuevoServicio.aspx">
@@ -34,7 +34,7 @@
   <object type="DetallesProyecto.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="Publications.aspx">
+  <object type="Publicaciones.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="PreguntasProyecto.aspx">
@@ -46,7 +46,7 @@
   <object type="ListarPropuestas.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
-  <object type="ProposalDetails.aspx">
+  <object type="DetallesPropuesta.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
   <object type="RealizarPregunta.aspx">
@@ -73,7 +73,7 @@
   <object type="RealizarBackUp.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
-  <object type="RestoreData.aspx">
+  <object type="Restaurar.aspx">
     <property name="AdminService" ref="AdminService" />
   </object>
   <object type="ListarOfertas.aspx">
