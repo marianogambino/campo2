@@ -55,7 +55,7 @@
                     <h2 class="accordion_toggle">Main</h2>
                     <div class="accordion_content">
                         <a href="Inicio.aspx">Login</a><br />
-                        <a href="Register.aspx">Registrarse</a><br />
+                        <a href="Registrarse.aspx">Registrarse</a><br />
                         <a href="Contacto.aspx">Contacto</a><br />
                         <a href="About.aspx">Quienes Somos</a><br />
                         <a href="ComoFunciona.aspx">Como Funciona</a>
