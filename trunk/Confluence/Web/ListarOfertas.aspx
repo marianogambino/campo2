@@ -1,25 +1,27 @@
-<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ListarOfertas.aspx.vb" Inherits="ListarOfertas" title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ListarOfertas.aspx.vb" Inherits="ListarOfertas" title="Untitled Page" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
-    <h1>Listado de Presupuestos</h1>
+    <h1><asp:Label ID="h1" runat="server" meta:resourcekey="h1Resource1">Listado de Presupuestos</asp:Label></h1>
     <div id="inputform">
-        <label for="SearchTxt">Proyecto:</label>
-        <asp:DropDownList ID="projectcombo" runat="server" DataValueField="Id" DataTextField="Name" /><br />
+        <asp:label CssClass="label" runat="server" ID="Label1" meta:resourcekey="Label1Resource1">Proyecto:</asp:label>
+        <asp:DropDownList ID="projectcombo" runat="server" DataValueField="Id" DataTextField="Name" meta:resourcekey="projectcomboResource1" /><br />
         <label></label>
-        <asp:Button text="buscar" runat="server" ID="Search" OnClick="SearhProject" />
+        <asp:Button text="buscar" runat="server" ID="Search" OnClick="SearhProject" meta:resourcekey="SearchResource1" />
         <br />
     </div>    
     <div class="gridview">
     <asp:GridView   ID="OfferGrid" 
                     runat="server" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="#336666" 
                     BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" 
-                    DataKeyNames="Id" OnRowDeleting="OfferDetails">
+                    DataKeyNames="Id" OnRowDeleting="OfferDetails" meta:resourcekey="OfferGridResource1">
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" Visible="false"/>
-            <asp:BoundField DataField="Project" HeaderText="Proyecto" />
-            <asp:BoundField DataField="Bidder" HeaderText="Ofertante"/>
-            <asp:BoundField DataField="ReleaseDate" HeaderText="Fecha de Entrega" />
-            <asp:BoundField DataField="Amount" HeaderText="Monto" />
-            <asp:ButtonField HeaderText="Detalles" ButtonType="image" CommandName="Delete" ItemStyle-HorizontalAlign="Center" ImageUrl="~/Images/Icons/coins.png" />
+            <asp:BoundField DataField="Id" HeaderText="Id" Visible="False" meta:resourcekey="BoundFieldResource1"/>
+            <asp:BoundField DataField="Project" HeaderText="Proyecto" meta:resourcekey="BoundFieldResource2" />
+            <asp:BoundField DataField="Bidder" HeaderText="Ofertante" meta:resourcekey="BoundFieldResource3"/>
+            <asp:BoundField DataField="ReleaseDate" HeaderText="Fecha de Entrega" meta:resourcekey="BoundFieldResource4" />
+            <asp:BoundField DataField="Amount" HeaderText="Monto" meta:resourcekey="BoundFieldResource5" />
+            <asp:ButtonField HeaderText="Detalles" ButtonType="Image" CommandName="Delete" ImageUrl="~/Images/Icons/coins.png" meta:resourcekey="ButtonFieldResource1" >
+                <ItemStyle HorizontalAlign="Center" />
+            </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <RowStyle BackColor="White" ForeColor="#333333" />

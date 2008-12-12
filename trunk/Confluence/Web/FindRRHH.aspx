@@ -1,24 +1,26 @@
-<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="FindRRHH.aspx.vb" Inherits="FindRRHH" title="Untitled Page" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="FindRRHH.aspx.vb" Inherits="FindRRHH" title="Untitled Page" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
-<h1>Listado de Recursos Humanos</h1>
+<h1><asp:Label ID="h1" runat="server" meta:resourcekey="h1Resource1">Listado de Recursos Humanos</asp:Label></h1>
     <div id="inputform">
-        <label for="SearchTxt">Buscar:</label>
-        <asp:TextBox ID="SearchTxt" runat="server" /><br />
+        <asp:label CssClass="label" runat="server" ID="Label1" meta:resourcekey="Label1Resource1">Buscar:</asp:label>
+        <asp:TextBox ID="SearchTxt" runat="server" meta:resourcekey="SearchTxtResource1" /><br />
         <label></label>
-        <asp:Button text="buscar" runat="server" ID="Search" OnClick="Search_Name" />
+        <asp:Button text="buscar" runat="server" ID="Search" OnClick="Search_Name" meta:resourcekey="SearchResource1" />
         <br />
     </div>    
     <div class="gridview">
     <asp:GridView   ID="ResourceGrid" 
                     runat="server" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="#336666" 
                     BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" 
-                    DataKeyNames="Id" OnRowDeleting="Show_Details">
+                    DataKeyNames="Id" OnRowDeleting="Show_Details" meta:resourcekey="ResourceGridResource1">
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" Visible="false"/>
-            <asp:BoundField DataField="Name" HeaderText="Name"/>
-            <asp:BoundField DataField="Country" HeaderText="Pais" />
-            <asp:BoundField DataField="State" HeaderText="Provincia" />
-            <asp:ButtonField HeaderText="Detalles" ButtonType="image" CommandName="Delete" ItemStyle-HorizontalAlign="Center" ImageUrl="~/Images/Icons/user_suit.png" />
+            <asp:BoundField DataField="Id" HeaderText="Id" Visible="False" meta:resourcekey="BoundFieldResource1"/>
+            <asp:BoundField DataField="Name" HeaderText="Name" meta:resourcekey="BoundFieldResource2"/>
+            <asp:BoundField DataField="Country" HeaderText="Pais" meta:resourcekey="BoundFieldResource3" />
+            <asp:BoundField DataField="State" HeaderText="Provincia" meta:resourcekey="BoundFieldResource4" />
+            <asp:ButtonField HeaderText="Detalles" ButtonType="Image" CommandName="Delete" ImageUrl="~/Images/Icons/user_suit.png" meta:resourcekey="ButtonFieldResource1" >
+                <ItemStyle HorizontalAlign="Center" />
+            </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <RowStyle BackColor="White" ForeColor="#333333" />

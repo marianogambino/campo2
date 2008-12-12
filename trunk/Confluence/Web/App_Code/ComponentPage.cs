@@ -57,5 +57,14 @@ public class ComponentPage : System.Web.UI.Page
         Session[Constants.SessionKeys.USER] = null;
         Response.Redirect(Constants.Redirects.HOME);
     }
+    protected override void InitializeCulture()
+    {
+        String chosen_lang = (string) Session["lang"];
+        if (chosen_lang != null && chosen_lang.Equals("en"))
+        {
+            UICulture = "EN";
+        }
+        base.InitializeCulture();
+    }
     #endregion
 }

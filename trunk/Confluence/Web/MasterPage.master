@@ -26,14 +26,18 @@
         <div id="topsection">
             <div class="innertube">
                 <%if(ThisPage.IsLogged){%>
-                <div id="statbar" class="boxed">
-                    <span class="hellouser">Hello, <%=ThisPage.ActiveUser.Name %></span>.<br />
-                    <asp:LinkButton  CausesValidation="false" ID="UserProfile"  CssClass="profile" runat="server" OnClick="Profile_Click">Profile</asp:LinkButton><br />
-                    <asp:LinkButton  CausesValidation="false" ID="logoutLink"   CssClass="logout" runat="server" OnClick="Logout">Logout</asp:LinkButton>
+                <div class="boxed statbar">
+                    <span class="hellouser"><asp:Label ID="hi" runat="server" meta:resourcekey="hi">Hola</asp:Label>, <%=ThisPage.ActiveUser.Name %></span>.<br />
+                    <asp:LinkButton  CausesValidation="False" ID="UserProfile"  CssClass="profile" runat="server" OnClick="Profile_Click" meta:resourcekey="UserProfileResource1">Profile</asp:LinkButton><br />
+                    <asp:LinkButton  CausesValidation="False" ID="logoutLink"   CssClass="logout" runat="server" OnClick="Logout" meta:resourcekey="logoutLinkResource1">Logout</asp:LinkButton>
                 </div>
                 <%} %>
+                <div class="boxed statbar">
+                    <asp:LinkButton CausesValidation="False" ID="LinkButton1" CssClass="english" runat="server" OnClick="Change_English" meta:resourcekey="LinkButton1Resource1">Ingles</asp:LinkButton><br />
+                    <asp:LinkButton CausesValidation="False" ID="LinkButton2" CssClass="spanish" runat="server" OnClick="Change_Spanish" meta:resourcekey="LinkButton2Resource1">Español</asp:LinkButton>
+                </div>
                 <h1>Confluence</h1>
-                <h2 class="subtitle">Recursos Humanos Online</h2>
+                <h2 class="subtitle"><asp:label ID="subtitle" runat="server" meta:resourcekey="subtitle">Recursos Humanos Online</asp:label></h2>
                 <div class="clearboth" />
             </div>
         </div>
@@ -41,8 +45,8 @@
         <div id="contentwrapper">
             <div id="contentcolumn">
                 <div class="innertube boxed">
-                <h3 class="error"><asp:Label runat="server" ID="Problems" EnableViewState="false"></asp:Label></h3>
-                <h3 class="info"><asp:Label runat="server" ID="Info" EnableViewState="false"></asp:Label></h3>
+                <h3 class="error"><asp:Label runat="server" ID="Problems" EnableViewState="False" meta:resourcekey="ProblemsResource1"></asp:Label></h3>
+                <h3 class="info"><asp:Label runat="server" ID="Info" EnableViewState="False" meta:resourcekey="InfoResource1"></asp:Label></h3>
                 <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
                 </asp:contentplaceholder>
                 </div>

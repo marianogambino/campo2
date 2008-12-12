@@ -24,4 +24,14 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
     }
+    protected void Change_English(object sender, EventArgs e)
+    {
+        Session["lang"] = "en";
+        Response.Redirect(Constants.Redirects.HOME);
+    }
+    protected void Change_Spanish(object sender, EventArgs e)
+    {
+        Session["lang"] = "es";
+        Response.Redirect(Constants.Redirects.HOME);
+    }
 }
