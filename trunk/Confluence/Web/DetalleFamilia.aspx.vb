@@ -27,36 +27,33 @@ Partial Class DetalleFamilia
         name.Text = fam.Name
         description.Text = fam.Description
 
+        Dim selecteds As IList(Of ListItem) = New List(Of ListItem)()
         For Each pat As Patente In fam.Patentes
-            SelectedPatentes.Items.Add(New ListItem(pat.Name, pat.Id.ToString()))
+            selecteds.Add(New ListItem(pat.Name, pat.Id.ToString()))
         Next
-        AvailablePatentes.DataSource = AdminService.FindPatAvailableForFamily(Long.Parse(fid.Value))
-        AvailablePatentes.DataBind()
+        dblList.LoadSelecteds(selecteds)
+
+        Dim availables As IList(Of Patente) = AdminService.FindPatAvailableForFamily(Long.Parse(fid.Value))
+
+        Dim avals As IList(Of ListItem) = New List(Of ListItem)()
+        For Each pat As Patente In availables
+            avals.Add(New ListItem(pat.Name, pat.Id.ToString()))
+        Next
+        dblList.LoadAvailables(avals)
     End Sub
 
     Public Sub Save_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim patentes As List(Of Int32) = New List(Of Int32)()
 
-        For Each it As ListItem In SelectedPatentes.Items
+        For Each it As ListItem In dblList.GetSelecteds
             patentes.Add(Int32.Parse(it.Value))
         Next
 
         AdminService.UpdateFamily(Long.Parse(fid.Value), description.Text, patentes, ActiveUser.Name)
         Info.Text = "Familia Editada"
     End Sub
-    Public Sub RemovePatente(ByVal sender As Object, ByVal e As System.EventArgs)
-        Transfer(SelectedPatentes, AvailablePatentes)
-    End Sub
-    Public Sub AddPatente(ByVal sender As Object, ByVal e As System.EventArgs)
-        Transfer(AvailablePatentes, SelectedPatentes)
-    End Sub
-    Public Sub Transfer(ByVal from As ListBox, ByVal tu As ListBox)
-        Dim item As ListItem = from.SelectedItem
-        If item Is Nothing Then Return
-        from.Items.Remove(item)
-        tu.Items.Add(item)
-    End Sub
-    Public Sub Cancel_Click(ByVal sender As Object, ByVal e As System.EventArgs)
 
+    Public Sub Cancel_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        Response.Redirect(Constants.Redirects.HOME)
     End Sub
 End Class

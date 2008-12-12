@@ -117,91 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddPatResource1.Text" xml:space="preserve">
+  <data name="cst_work_year_endResource1.ErrorMessage" xml:space="preserve">
+    <value>* Year End Must Be Greater Than Year Start</value>
+  </data>
+  <data name="cst_work_year_endResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cst_work_year_endResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label15Resource1.Text" xml:space="preserve">
+    <value>Work Experience</value>
+  </data>
+  <data name="Label15Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label16Resource1.Text" xml:space="preserve">
+    <value>Place:</value>
+  </data>
+  <data name="Label16Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label17Resource1.Text" xml:space="preserve">
+    <value>Year Start:</value>
+  </data>
+  <data name="Label17Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label18Resource1.Text" xml:space="preserve">
+    <value>Year End:</value>
+  </data>
+  <data name="Label18Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="req_work_placeResource1.ErrorMessage" xml:space="preserve">
+    <value>* Place is Required</value>
+  </data>
+  <data name="req_work_placeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="req_work_placeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="req_work_startResource1.ErrorMessage" xml:space="preserve">
+    <value>* Year Start is Required</value>
+  </data>
+  <data name="req_work_startResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="req_work_startResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rmv_work_listResource1.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="rmv_work_listResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rng_work_startResource1.ErrorMessage" xml:space="preserve">
+    <value>* Year Start not Valid</value>
+  </data>
+  <data name="rng_work_startResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rng_work_startResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rng_work_year_endResource1.ErrorMessage" xml:space="preserve">
+    <value>* Year End not valid</value>
+  </data>
+  <data name="rng_work_year_endResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rng_work_year_endResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_addResource1.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="AddPatResource1.ToolTip" xml:space="preserve">
+  <data name="work_addResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="AvailablePatentesResource1.ToolTip" xml:space="preserve">
+  <data name="work_listResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="CancelResource1.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="CancelResource1.ToolTip" xml:space="preserve">
+  <data name="work_placeResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="desc_lblResource1.Text" xml:space="preserve">
-    <value>Description:</value>
-  </data>
-  <data name="desc_lblResource1.ToolTip" xml:space="preserve">
+  <data name="work_placeResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="descriptionResource1.Text" xml:space="preserve">
+  <data name="work_year_endResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="descriptionResource1.ToolTip" xml:space="preserve">
+  <data name="work_year_endResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="doublelist.ItemName" xml:space="preserve">
-    <value>Patents</value>
-  </data>
-  <data name="h1Resource1.Text" xml:space="preserve">
-    <value>Edit Family</value>
-  </data>
-  <data name="h1Resource1.ToolTip" xml:space="preserve">
+  <data name="work_year_startResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="Label1Resource1.Text" xml:space="preserve">
-    <value>Patents:</value>
-  </data>
-  <data name="Label1Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Label2Resource1.Text" xml:space="preserve">
-    <value>Selecteds:</value>
-  </data>
-  <data name="Label2Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="name_lblResource1.Text" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="name_lblResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="nameResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="nameResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PageResource1.Title" xml:space="preserve">
-    <value>Edit Family</value>
-  </data>
-  <data name="RemovePatResource1.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="RemovePatResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="reqDescriptionResource1.ErrorMessage" xml:space="preserve">
-    <value>* Description is Required</value>
-  </data>
-  <data name="reqDescriptionResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="reqDescriptionResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SaveResource1.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="SaveResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SelectedPatentesResource1.ToolTip" xml:space="preserve">
+  <data name="work_year_startResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>
