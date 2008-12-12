@@ -52,56 +52,8 @@ Partial Class Registrarse
         work_panel.Visible = (usertypes.SelectedValue = "O")
     End Sub
 
-    Public Sub Validate_End_Year(ByVal sender As Object, ByVal args As ServerValidateEventArgs)
-        If (education_year_end.Text = "") Then
-            args.IsValid = True
-            Return
-        Else
-            Dim end_y As Int16 = Int16.Parse(education_year_end.Text)
-            Dim start_y As Int16 = Int16.Parse(education_year_start.Text)
-            args.IsValid = (start_y <= end_y)
-        End If
-    End Sub
-    Public Sub Education_Submit(ByVal sender As Object, ByVal e As System.EventArgs)
-        If (Not Page.IsValid) Then Return
-        education_list.Visible = True
-        rmv_education_list.Visible = True
-        Dim item As ListItem = New ListItem()
-        item.Text = education_place.Text + "|" + education_year_start.Text + "|" + education_year_end.Text + "|"
-        item.Value = education_level.Text
-        item.Selected = False
-        education_list.Items.Add(item)
-    End Sub
-
-    Public Sub Education_Remove(ByVal sender As Object, ByVal e As System.EventArgs)
-        If (Not education_list.SelectedItem Is Nothing) Then education_list.Items.Remove(education_list.SelectedItem)
-
-        If (education_list.Items.Count = 0) Then
-            education_list.Visible = False
-            rmv_education_list.Visible = False
-        End If
-    End Sub
-
-    Public Sub Work_Submit(ByVal sender As Object, ByVal e As System.EventArgs)
-        If (Not Page.IsValid) Then Return
-        work_list.Visible = True
-        rmv_work_list.Visible = True
-        Dim item As ListItem = New ListItem()
-        item.Text = work_place.Text + "|" + work_year_start.Text + "|" + work_year_end.Text + "|"
-        item.Selected = False
-        work_list.Items.Add(item)
-    End Sub
-
-    Public Sub Work_Remove(ByVal sender As Object, ByVal e As System.EventArgs)
-        If (Not work_list.SelectedItem Is Nothing) Then work_list.Items.Remove(work_list.SelectedItem)
-        If (work_list.Items.Count = 0) Then
-            work_list.Visible = False
-            rmv_work_list.Visible = False
-        End If
-    End Sub
-
     Public Sub fillSupplier(ByRef supplier As Client)
-        For Each it As ListItem In work_list.Items
+        For Each it As ListItem In education.GetEducationItems
             Dim work_item() As String = it.Text.Split("|".ToCharArray())
             Dim place As String = work_item(0)
             Dim start As Int16 = Int16.Parse(work_item(1))
@@ -109,7 +61,7 @@ Partial Class Registrarse
             supplier.AddXP(New WorkXP(place, start, end_y))
         Next
 
-        For Each it As ListItem In education_list.Items
+        For Each it As ListItem In works.GetWorkItems
             Dim study_item() As String = it.Text.Split("|".ToCharArray())
             Dim place As String = study_item(0)
             Dim start As Int16 = Int16.Parse(study_item(1))

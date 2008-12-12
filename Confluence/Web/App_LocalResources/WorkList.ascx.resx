@@ -117,91 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddPatResource1.Text" xml:space="preserve">
-    <value>Add</value>
+  <data name="cst_work_year_endResource1.ErrorMessage" xml:space="preserve">
+    <value>* El año de finalización debe ser posterior al de inicio</value>
   </data>
-  <data name="AddPatResource1.ToolTip" xml:space="preserve">
+  <data name="cst_work_year_endResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="AvailablePatentesResource1.ToolTip" xml:space="preserve">
+  <data name="cst_work_year_endResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="CancelResource1.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="Label15Resource1.Text" xml:space="preserve">
+    <value>Experiencia Laboral:</value>
   </data>
-  <data name="CancelResource1.ToolTip" xml:space="preserve">
+  <data name="Label15Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="desc_lblResource1.Text" xml:space="preserve">
-    <value>Description:</value>
+  <data name="Label16Resource1.Text" xml:space="preserve">
+    <value>Lugar:</value>
   </data>
-  <data name="desc_lblResource1.ToolTip" xml:space="preserve">
+  <data name="Label16Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="descriptionResource1.Text" xml:space="preserve">
+  <data name="Label17Resource1.Text" xml:space="preserve">
+    <value>Año Inicio:</value>
+  </data>
+  <data name="Label17Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="descriptionResource1.ToolTip" xml:space="preserve">
+  <data name="Label18Resource1.Text" xml:space="preserve">
+    <value>Año Fin:</value>
+  </data>
+  <data name="Label18Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="doublelist.ItemName" xml:space="preserve">
-    <value>Patents</value>
+  <data name="req_work_placeResource1.ErrorMessage" xml:space="preserve">
+    <value>* Lugar es requerido</value>
   </data>
-  <data name="h1Resource1.Text" xml:space="preserve">
-    <value>Edit Family</value>
-  </data>
-  <data name="h1Resource1.ToolTip" xml:space="preserve">
+  <data name="req_work_placeResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="Label1Resource1.Text" xml:space="preserve">
-    <value>Patents:</value>
-  </data>
-  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+  <data name="req_work_placeResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label2Resource1.Text" xml:space="preserve">
-    <value>Selecteds:</value>
+  <data name="req_work_startResource1.ErrorMessage" xml:space="preserve">
+    <value>* Año Inicial es requerido</value>
   </data>
-  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+  <data name="req_work_startResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="name_lblResource1.Text" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="name_lblResource1.ToolTip" xml:space="preserve">
+  <data name="req_work_startResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="nameResource1.Text" xml:space="preserve">
+  <data name="rmv_work_listResource1.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="rmv_work_listResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="nameResource1.ToolTip" xml:space="preserve">
+  <data name="rng_work_startResource1.ErrorMessage" xml:space="preserve">
+    <value>* Año Inicial no válido</value>
+  </data>
+  <data name="rng_work_startResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="PageResource1.Title" xml:space="preserve">
-    <value>Edit Family</value>
-  </data>
-  <data name="RemovePatResource1.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="RemovePatResource1.ToolTip" xml:space="preserve">
+  <data name="rng_work_startResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="reqDescriptionResource1.ErrorMessage" xml:space="preserve">
-    <value>* Description is Required</value>
+  <data name="rng_work_year_endResource1.ErrorMessage" xml:space="preserve">
+    <value>* Año de Finalización no válido</value>
   </data>
-  <data name="reqDescriptionResource1.Text" xml:space="preserve">
+  <data name="rng_work_year_endResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="reqDescriptionResource1.ToolTip" xml:space="preserve">
+  <data name="rng_work_year_endResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="SaveResource1.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="work_addResource1.Text" xml:space="preserve">
+    <value>Agregar</value>
   </data>
-  <data name="SaveResource1.ToolTip" xml:space="preserve">
+  <data name="work_addResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="SelectedPatentesResource1.ToolTip" xml:space="preserve">
+  <data name="work_listResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_placeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_placeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_year_endResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_year_endResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_year_startResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="work_year_startResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>
