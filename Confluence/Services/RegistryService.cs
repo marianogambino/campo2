@@ -67,5 +67,19 @@ namespace Confluence.Services
         {
             return ClientDao.GetByName(user_name).IsHR();
         }
+        public Client GetClientFromAccountName(string name)
+        {
+            return ClientDao.GetByName(name);
+        }
+        public void UpdateProfile(string ac_name, string name, string mail, string country, string state, string phone)
+        {
+            Client client = ClientDao.GetByName(ac_name);
+            client.Name = name;
+            client.UserAccount.Mail = mail;
+            client.Country = country;
+            client.State = state;
+            client.Phone = long.Parse(phone);
+            ClientDao.Update(client);
+        }
     }
 }
