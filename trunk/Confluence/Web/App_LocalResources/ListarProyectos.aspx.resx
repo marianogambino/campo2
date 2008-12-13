@@ -204,6 +204,9 @@
   <data name="ButtonFieldResource2.Text" xml:space="preserve">
     <value />
   </data>
+  <data name="export.Text" xml:space="preserve">
+    <value>Exportar CSV</value>
+  </data>
   <data name="h1Resource1.Text" xml:space="preserve">
     <value>Listar Proyectos</value>
   </data>

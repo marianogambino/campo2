@@ -21,5 +21,6 @@
         <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
     </asp:GridView>
     </div>
+    <asp:Button ID="Export" runat="server" Text="Export" OnClick="ExportGmail" />
 </asp:Content>
 

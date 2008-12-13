@@ -67,5 +67,18 @@ namespace Confluence.Services
             HashService.ComputeTotalHash(found);
             LogService.LogOperation(found.Employer.UserAccount.Name, "Se Eliminó una propuesta laboral realizada a: " + found.Resource);
         }
+
+        public IList<Client> GetAllContactsForEmployer(long employer_id)
+        {
+            IList<Client> result = new List<Client>();
+
+            IList<Proposal> proposals = FindAllOffersForEmployer(employer_id);
+
+            foreach (Proposal prop in proposals)
+            {
+                if (!result.Contains(prop.Resource)) result.Add(prop.Resource);
+            }
+            return result;
+        }
     }
 }

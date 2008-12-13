@@ -34,5 +34,6 @@ namespace Confluence.Services
         IList<Project> FindProjectsForDeveloper(long user_id);
         void EndProject(long pid);
         void CancelProject(long pid);
+        void ExportCSV(string user);
     }
 }

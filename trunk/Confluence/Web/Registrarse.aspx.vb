@@ -53,7 +53,8 @@ Partial Class Registrarse
     End Sub
 
     Public Sub fillSupplier(ByRef supplier As Client)
-        For Each it As ListItem In education.GetEducationItems
+
+        For Each it As ListItem In works.GetWorkItems
             Dim work_item() As String = it.Text.Split("|".ToCharArray())
             Dim place As String = work_item(0)
             Dim start As Int16 = Int16.Parse(work_item(1))
@@ -61,7 +62,7 @@ Partial Class Registrarse
             supplier.AddXP(New WorkXP(place, start, end_y))
         Next
 
-        For Each it As ListItem In works.GetWorkItems
+        For Each it As ListItem In education.GetEducationItems
             Dim study_item() As String = it.Text.Split("|".ToCharArray())
             Dim place As String = study_item(0)
             Dim start As Int16 = Int16.Parse(study_item(1))

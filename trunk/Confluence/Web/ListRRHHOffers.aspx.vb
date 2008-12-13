@@ -1,8 +1,9 @@
 Imports Confluence.Services
 Imports Confluence.Domain
 Imports System.Collections.Generic
-
-
+Imports System.Xml
+Imports System.Xml.XPath
+Imports System.Xml.Xsl
 
 Partial Class ListRRHHOffers
     Inherits PrivatePage
@@ -38,4 +39,43 @@ Partial Class ListRRHHOffers
     End Sub
 
 
+    Protected Sub ExportGmail(ByVal sender As Object, ByVal e As System.EventArgs) Handles Export.Click
+        Dim path As String = "C:\contacts.csv"
+        Dim file As System.IO.FileInfo = New System.IO.FileInfo(path)
+        If (file.Exists) Then file.Delete()
+
+        Dim contacts As IList(Of Client) = ResourceService.GetAllContactsForEmployer(ActiveUser.Id)
+        Dim writer As XmlTextWriter = New XmlTextWriter("c:\contacts.xml", Nothing)
+        writer.WriteStartElement("contacts")
+        writer.WriteStartElement("contact")
+        writer.WriteElementString("name", "Name")
+        writer.WriteElementString("mail", "E-mail")
+        writer.WriteElementString("description", "Notes")
+        writer.WriteEndElement()
+        For Each c As Client In contacts
+            writer.WriteStartElement("contact")
+            writer.WriteElementString("name", c.Name)
+            writer.WriteElementString("mail", c.UserAccount.Mail)
+            writer.WriteElementString("description", "exported from confluence RRHH")
+            writer.WriteEndElement()
+        Next
+        writer.WriteFullEndElement()
+        writer.Close()
+
+        Dim doc As XPathDocument = New XPathDocument("c:\contacts.xml")
+        Dim trans As XslCompiledTransform = New XslCompiledTransform()
+
+        trans.Load(Server.MapPath("XSLT/TransformCSV.xsl"))
+        writer = New XmlTextWriter("C:\contacts.csv", Nothing)
+        trans.Transform(doc, Nothing, writer)
+        writer.Close()
+        If (file.Exists) Then
+            Response.Clear()
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name)
+            Response.AddHeader("Content-Length", file.Length.ToString())
+            Response.ContentType = "application/octet-stream"
+            Response.WriteFile(file.FullName)
+            Response.End()
+        End If
+    End Sub
 End Class

@@ -35,6 +35,7 @@
         <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
     </asp:GridView>
+    <asp:Button ID="export" runat="server" Text="Exportar" OnClick="ExportCSV" meta:resourcekey="export" />
     </div>
 </asp:Content>
 
