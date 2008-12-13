@@ -80,6 +80,8 @@ namespace Confluence.Services
             client.State = state;
             client.Phone = long.Parse(phone);
             ClientDao.Update(client);
+            HashService.RepairDV();
+            LogService.LogOperation(ac_name, "Actualizo su Perfil");
         }
     }
 }
