@@ -12,5 +12,6 @@ namespace Confluence.Services
         void MakeOffer(string user_name, long resource_id, double amount, string description);
         IList<Proposal> FindAllOffersForEmployer(long employer_id);
         void DeleteOffer(long proposal_id);
+        IList<Client> GetAllContactsForEmployer(long employer_id);
     }
 }

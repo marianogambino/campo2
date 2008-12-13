@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Confluence.DAL;
 using Confluence.Domain;
+using System.Xml;
+using System.Xml.Xsl;
+using System.Xml.XPath;
 
 namespace Confluence.Services
 {
@@ -222,6 +225,10 @@ namespace Confluence.Services
 
             HashService.ComputeTotalHash(p);
             LogService.LogOperation(p.Developer.UserAccount.Name, "Se canceló el desarrollo del Proyecto: " + p.Name);
+        }
+        public void ExportCSV(string user)
+        {
+            
         }
     }
 }

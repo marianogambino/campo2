@@ -46,7 +46,8 @@
     </table>
 
 </div>
-    <asp:Button ID="MakeOffer" runat="server" Text="Realizar Oferta" OnClick="Make_Offer" meta:resourcekey="MakeOfferResource1" />
+<asp:Button ID="MakeOffer" runat="server" Text="Realizar Oferta" OnClick="Make_Offer" meta:resourcekey="MakeOfferResource1" />
 <asp:Button ID="Cancel" runat="server" Text="Cancelar" OnClick="Cancel_Click" meta:resourcekey="CancelResource1" />
+<asp:Button Id="exportHtml" runat="server" Text="HTML" OnClick="ExportToHTML" />
 </asp:Content>
 
