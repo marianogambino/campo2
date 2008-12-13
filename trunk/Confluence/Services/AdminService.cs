@@ -168,9 +168,12 @@ namespace Confluence.Services
         {
             return FamilyDao.GetById(id);
         }
-        public void BackUpDatabase(String username)
+        public void BackUpDatabase(String username, bool complete)
         {
-            BackUpService.BackUp();
+            if (complete)
+                BackUpService.BackUp();
+            else
+                BackUpService.DifferentialBackup();
 
             LogService.LogOperation(username, "Se realizó un backup del sistema");
         }

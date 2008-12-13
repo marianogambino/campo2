@@ -26,7 +26,7 @@ Partial Class RealizarBackUp
         Dim file As System.IO.FileInfo = New System.IO.FileInfo(path)
         If (file.Exists) Then file.Delete()
 
-        AdminService.BackUpDatabase(ActiveUser.Name)
+        AdminService.BackUpDatabase(ActiveUser.Name, backuptype.SelectedValue.Equals("C"))
 
         If (file.Exists) Then
             Response.Clear()
