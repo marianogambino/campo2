@@ -1,6 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 <%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="Confluence.Domain" %>
+<%@ Import Namespace="Web.Code.Helpers" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script runat="server">
@@ -58,11 +59,11 @@
                 <div id="accordion">
                     <h2 class="accordion_toggle">Main</h2>
                     <div class="accordion_content">
-                        <a href="Inicio.aspx">Login</a><br />
-                        <a href="Registrarse.aspx">Registrarse</a><br />
-                        <a href="Contacto.aspx">Contacto</a><br />
-                        <a href="About.aspx">Quienes Somos</a><br />
-                        <a href="ComoFunciona.aspx">Como Funciona</a>
+                        <a href="Inicio.aspx"><%=PatNames.Instance.get(1,Page.UICulture)%></a><br />
+                        <a href="Registrarse.aspx"><%=PatNames.Instance.get(2,Page.UICulture)%></a><br />
+                        <a href="Contacto.aspx"><%=PatNames.Instance.get(3,Page.UICulture)%></a><br />
+                        <a href="About.aspx"><%=PatNames.Instance.get(4,Page.UICulture)%></a><br />
+                        <a href="ComoFunciona.aspx"><%=PatNames.Instance.get(5,Page.UICulture)%></a>
                     </div>
                     <%if(ThisPage.IsLogged){%>
                         <%foreach(Family fam in ThisPage.ActiveUser.Families){%>
@@ -70,7 +71,7 @@
                             <div class="accordion_content">
                             <%foreach(Patente pat in fam.Patentes){%>
                                 <%if(pat.Show){ %>
-                                    <a href="<%=pat.Path%>"><%=pat.Name%></a><br />
+                                    <a href="<%=pat.Path%>"><%=PatNames.Instance.get(pat.Id,Page.UICulture)%></a><br />
                                 <%} %>
                             <%}%>
                             </div>
