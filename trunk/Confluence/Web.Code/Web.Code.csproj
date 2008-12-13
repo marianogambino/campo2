@@ -36,6 +36,7 @@
     <Compile Include="Helpers\AuthorizationMap.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\Is.cs" />
+    <Compile Include="Helpers\PatNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specs\SecuritySpec.cs" />
   </ItemGroup>

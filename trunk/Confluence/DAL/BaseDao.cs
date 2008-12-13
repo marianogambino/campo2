@@ -26,7 +26,7 @@ namespace Confluence.DAL
             entity.CalculateDV();
             HibernateTemplate.Update(entity);
         }
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             HibernateTemplate.Delete(entity);
         }

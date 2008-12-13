@@ -29,7 +29,7 @@ Partial Class NuevaFamilia
             Problems.Text = "La Familia Ya Existe"
             Return
         End If
-        Dim patentes As List(Of Int16) = New List(Of Int16)()
+        Dim patentes As IList(Of Int32) = New List(Of Int32)()
         For Each it As ListItem In SelectedPatentes.Items
             patentes.Add(Int16.Parse(it.Value))
         Next

@@ -37,8 +37,8 @@ Partial Class DetalleUsuario
         Response.Redirect(Constants.Redirects.LIST_USERS)
     End Sub
     Public Sub SaveBtn_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        Dim patentes As List(Of Int16) = New List(Of Int16)()
-        Dim familias As List(Of Int16) = New List(Of Int16)()
+        Dim patentes As IList(Of Int32) = New List(Of Int32)()
+        Dim familias As IList(Of Int32) = New List(Of Int32)()
 
         For Each it As ListItem In SelectedPatentes.Items
             patentes.Add(Int16.Parse(it.Value))
