@@ -103,4 +103,7 @@
   <object type="DeliveryDates.aspx">
     <property name="ProjectService" ref="ProjectService" />
   </object>
+  <object type="PerfilUsuario.aspx">
+    <property name="AdminService" ref="AdminService" />
+  </object>
 </objects>

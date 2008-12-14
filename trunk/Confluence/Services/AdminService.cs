@@ -183,6 +183,11 @@ namespace Confluence.Services
 
             LogService.LogOperation(username, "Se restauró la información del sistema");
         }
+        public void ScheduleBackup(String username,DateTime date)
+        {
+            BackUpService.ScheduleBackup(date);
+            LogService.LogOperation(username, "Se programo un backup");
+        }
 
     }
 }

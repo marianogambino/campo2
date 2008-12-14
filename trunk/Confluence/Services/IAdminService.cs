@@ -25,5 +25,6 @@ namespace Confluence.Services
         Family FindFamilyById(long id);
         void BackUpDatabase(String username,bool complete);
         void RestoreDatabase(String username);
+        void ScheduleBackup(String username,DateTime date);
     }
 }

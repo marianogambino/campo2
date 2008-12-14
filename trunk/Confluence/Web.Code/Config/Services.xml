@@ -10,6 +10,7 @@
           type="Confluence.Services.LoginService, Services" >
     <property name="UserDao" ref="UserDao"/>
     <property name="SecurityService" ref="SecurityService" />
+    <property name="BackUpService" ref="BackUpService" />
   </object>
   <object name="AdminService" parent="AuditService"
           type="Confluence.Services.AdminService, Services">

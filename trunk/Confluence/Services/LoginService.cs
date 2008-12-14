@@ -32,6 +32,12 @@ namespace Confluence.Services
             set { hash_service = value; }
             get { return hash_service; }
         }
+        private IBackUpService backup_service;
+        public IBackUpService BackUpService
+        {
+            set { backup_service = value; }
+            get { return backup_service; }
+        }
         public LoginService() 
         {
             LogService = new Log();
@@ -40,6 +46,7 @@ namespace Confluence.Services
 
         public User doLogin(string userName, string pass)
         {
+            BackUpService.CheckSchedule();
             User found = UserDao.GetByName(userName);
             //String password = SecurityService.GetHash(pass);
 
