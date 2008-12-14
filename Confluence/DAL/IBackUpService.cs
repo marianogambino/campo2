@@ -9,5 +9,7 @@ namespace Confluence.DAL
         void BackUp();
         void Restore();
         void DifferentialBackup();
+        void ScheduleBackup(DateTime date);
+        void CheckSchedule();
     }
 }

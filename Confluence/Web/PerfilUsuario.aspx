@@ -5,6 +5,9 @@
 
 <asp:LinkButton ID="ChangePass" runat="server" OnClick="Change_Pass" meta:resourcekey="ChangePassResource1"><h3 class="biglink">Cambiar Contraseña</h3></asp:LinkButton><br />
 <asp:LinkButton ID="EditProfile" runat="server" OnClick="Edit_Profile" meta:resourcekey="EditProfileResource1"><h3 class="biglink">Editar Perfil</h3></asp:LinkButton><br />
+<%If ActiveUser.ContainsPatente(110) Then %>
+    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="BackupExpress" meta:resourcekey="BCKP"><h3 class="biglink">Backup Express</h3></asp:LinkButton><br />
+<% End If %>
 </div>
 </asp:Content>
 
