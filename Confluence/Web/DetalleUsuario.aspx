@@ -25,6 +25,9 @@
                     </table>
                     </center>
                 </td>
+            </tr>
+            <tr>
+                <td></td>
                 <td><asp:label CssClass="label" runat="server" ID="Label5" meta:resourcekey="Label5Resource1">Seleccionadas:</asp:label></td>
                 <td><asp:ListBox ID="SelectedFamilies" runat="server" SelectionMode="Multiple" Width="150px" meta:resourcekey="SelectedFamiliesResource1"/></td>
             </tr>
@@ -44,6 +47,9 @@
                     </table>
                     </center>
                 </td>
+            </tr>
+            <tr>
+                <td></td>
                 <td><asp:label CssClass="label" runat="server" ID="Label8" meta:resourcekey="Label8Resource1">Seleccionadas:</asp:label></td>
                 <td><asp:ListBox ID="SelectedPatentes" runat="server" SelectionMode="Multiple" Width="150px" meta:resourcekey="SelectedPatentesResource1" /></td>
             </tr>

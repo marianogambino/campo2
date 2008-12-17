@@ -48,7 +48,10 @@ Partial Class DetalleFamilia
         For Each it As ListItem In dblList.GetSelecteds
             patentes.Add(Int32.Parse(it.Value))
         Next
-
+        If (patentes.Count <= 0) Then
+            Problems.Text = "No se puede crear una familia sin patentes"
+            Return
+        End If
         AdminService.UpdateFamily(Long.Parse(fid.Value), description.Text, patentes, ActiveUser.Name)
         Info.Text = "Familia Editada"
     End Sub

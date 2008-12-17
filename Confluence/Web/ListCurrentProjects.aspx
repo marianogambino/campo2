@@ -10,7 +10,7 @@
             <asp:BoundField DataField="Id" HeaderText="Id" Visible="False" meta:resourcekey="BoundFieldResource1"/>
             <asp:BoundField DataField="Name" HeaderText="Nombre" meta:resourcekey="BoundFieldResource2" />
             <asp:BoundField DataField="Owner" HeaderText="Due&#241;o" meta:resourcekey="BoundFieldResource3" />
-            <asp:ButtonField HeaderText="Eliminar Oferta" ButtonType="Image" ImageUrl="~/Images/Icons/money_delete.png" CommandName="Edit" meta:resourcekey="ButtonFieldResource1" >
+            <asp:ButtonField HeaderText="Eliminar Oferta" ButtonType="Image" ImageUrl="~/Images/Icons/chart_bar.png" CommandName="Edit" meta:resourcekey="ButtonFieldResource1" >
                 <ItemStyle HorizontalAlign="Center" />
             </asp:ButtonField>
         </Columns>

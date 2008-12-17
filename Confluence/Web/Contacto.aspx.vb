@@ -18,6 +18,7 @@ Partial Class Contacto
     End Sub
     Public Sub Accept_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         ContactService.SaveMessage(name.Text, mail.Text, message.Text)
+        ActiveUser = ActiveUser
         Response.Redirect(Constants.Redirects.MESSAGED_HOME + "Mensaje Enviado")
     End Sub
 

@@ -30,7 +30,7 @@ namespace Confluence.DAL
                     cmd.CommandText = RESTORE_PROCEDURE;
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     throw new BusyDatabaseException();
                 }
