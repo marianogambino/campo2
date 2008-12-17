@@ -29,6 +29,10 @@ Partial Class NuevaFamilia
             Problems.Text = "La Familia Ya Existe"
             Return
         End If
+        If (SelectedPatentes.Items.Count <= 0) Then
+            Problems.Text = "No se puede crear una familia sin patentes"
+            Return
+        End If
         Dim patentes As IList(Of Int32) = New List(Of Int32)()
         For Each it As ListItem In SelectedPatentes.Items
             patentes.Add(Int16.Parse(it.Value))

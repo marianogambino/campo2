@@ -15,6 +15,10 @@ namespace Confluence.DAL
         {
             return FindAllGeneric<Family>("From Family f Where f.Id > 2");
         }
+        public IList<Family> GetAllForAssign()
+        {
+            return FindAllGeneric<Family>("From Family f");
+        }
 
         public IList<Patente> GetAllPatents()
         {

@@ -75,7 +75,7 @@ namespace Confluence.Services
 
         public IList<Patente> FindPatAvailableForUser(long uid)
         {
-            IList<Patente> all = FamilyDao.GetAllPatents();
+            IList<Patente> all = FamilyDao.GetAllForAssign();
             User user = UserDao.GetById(uid);
             foreach (Patente pat in user.Patentes)
                 if (all.Contains(pat)) all.Remove(pat);

@@ -129,6 +129,51 @@
   <data name="countryResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="errmail.ErrorMessage" xml:space="preserve">
+    <value>* Mail es requerido</value>
+  </data>
+  <data name="errmail.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errmail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errname.ErrorMessage" xml:space="preserve">
+    <value>* Nombre es requerido</value>
+  </data>
+  <data name="errname.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errname.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errncountry.ErrorMessage" xml:space="preserve">
+    <value>* Pais es requerido</value>
+  </data>
+  <data name="errncountry.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errncountry.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errphone.ErrorMessage" xml:space="preserve">
+    <value>* Telefono es requerido</value>
+  </data>
+  <data name="errphone.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errphone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errstate.ErrorMessage" xml:space="preserve">
+    <value>* Provincia es requerido</value>
+  </data>
+  <data name="errstate.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errstate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="h1Resource1.Text" xml:space="preserve">
     <value>Editar Perfil</value>
   </data>
