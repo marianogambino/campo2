@@ -9,6 +9,6 @@ namespace Confluence.DAL
     {
         IList<Patente> GetAllPatents();
         Family GetByName(String name);
-        IList<Patente> GetAllForAssign();
+        IList<Family> GetAllForAssign();
     }
 }

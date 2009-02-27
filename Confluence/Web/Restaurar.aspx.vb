@@ -34,7 +34,10 @@ Partial Class Restaurar
             Info.Text = "Restauración finalizada exitosamente"
         Catch ex As BusyDatabaseException
             Problems.Text = "En este momento la base de datos se encuentra en uso y es imposible realizar la restauración. Intente más tarde"
+        Catch ex2 As FormatException
+            Problems.Text = "El formato del archivo .bak es incorrecto"
         End Try
+
         Dim path As String = "c:\confluence_restore.bak"
         Dim f As System.IO.FileInfo = New System.IO.FileInfo(path)
         If (f.Exists) Then f.Delete()

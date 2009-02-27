@@ -15,12 +15,12 @@ namespace Web.Tests
         private const String SERVER = "localhost";
         private const int PORT = 4444;
         private const String BROWSER = "*iexplore";
-        private const String URL = "http://localhost:3255";
+        private const String URL = "http://localhost:1206";
         private const char SEPARATOR = '€';
 
-        public const String LOGIN_URL = "/Web/Login.aspx";
-        private const String LOGIN_NAME = "ctl00_ContentPlaceHolder_txtName";
-        private const String LOGIN_PASSWORD = "ctl00_ContentPlaceHolder_txtPass";
+        public const String LOGIN_URL = "/Web/Inicio.aspx";
+        private const String LOGIN_NAME = "ctl00_ContentPlaceHolder_name";
+        private const String LOGIN_PASSWORD = "ctl00_ContentPlaceHolder_pass";
         private const String LOGIN_BUTTON = "ctl00_ContentPlaceHolder_submit";
 
         protected const String TIMEOUT = "30000";
@@ -108,7 +108,7 @@ namespace Web.Tests
         {
             try
             {
-                Assert.AreEqual(URL + url , Selenium.GetLocation());
+                Assert.IsTrue(Selenium.GetLocation().Contains(url));
             }
             catch (AssertionException)
             {

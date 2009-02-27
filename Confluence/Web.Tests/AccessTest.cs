@@ -9,7 +9,7 @@ namespace Web.Tests
     [TestFixture]
     public class AccessTest : IntegrationTest
     {
-        private const String LIST_USER_PAGE = "/Web/ListUsers.aspx";
+        private const String LIST_USER_PAGE = "/Web/ListarUsuarios.aspx";
         [Test]
         public void UnloggedUserToLogin()
         {
@@ -23,15 +23,15 @@ namespace Web.Tests
             LogIn("PabloDos", "Secret");
             Selenium.Open(LIST_USER_PAGE);
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertURL("/Web/Default.aspx");
+            AssertURL("http://localhost:1206/Web/Default.aspx?info=No%20posee%20los%20permisos%20necesarios");
         }
         [Test]
         public void GoodAccess()
         {
-            LogIn("Pablo", "secreto");
+            LogIn("Pablo", "123");
             Selenium.Open(LIST_USER_PAGE);
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertURL("/Web/ListUsers.aspx");
+            AssertURL("/Web/ListarUsuarios.aspx");
         }
     }
 }

@@ -33,11 +33,11 @@ namespace Web.Tests
         [Test]
         public void GoodLogin()
         {
-            LogIn("Pablo", "secreto");
+            LogIn("Pablo", "123");
 
             Selenium.WaitForPageToLoad(TIMEOUT);
-            AssertIsTextPresent("Hello, Pablo");
-            AssertIsTextPresent("Logout");
+            AssertIsTextPresent("Hola, Pablo.");
+            AssertIsTextPresent("Salir");
         }
 
         [Test]
@@ -71,7 +71,7 @@ namespace Web.Tests
         public void LogOut()
         {
             GoodLogin();
-            Selenium.Click("link=Logout");
+            Selenium.Click("link=Salir");
             Selenium.WaitForPageToLoad(TIMEOUT);
             AssertIsElementAbsent("statbar");
         }

@@ -2,322 +2,136 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Font Name="Tahoma" Size="8.25" />
   <Class Name="Confluence.Domain.Answer">
-    <Position X="17.25" Y="5.5" Width="1.5" />
+    <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Answer.cs</FileName>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="id" Hidden="true" />
-      <Field Name="text" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Client">
-    <Position X="3.25" Y="3" Width="1.5" />
+    <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Client.cs</FileName>
       <HashCode>AAACAQAAAAEAIDAEgAAABQRIAgYEAIAmAAACJACAAgA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="UserAccount" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Property Name="Proposals" />
-      <Property Name="WorkXP" />
-      <Property Name="Study" />
-    </ShowAsCollectionAssociation>
-    <Members>
-      <Field Name="country" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-      <Field Name="phone" Hidden="true" />
-      <Field Name="proposals" Hidden="true" />
-      <Field Name="state" Hidden="true" />
-      <Field Name="study" Hidden="true" />
-      <Field Name="user_account" Hidden="true" />
-      <Field Name="work_xp" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.DV">
-    <Position X="14.25" Y="10.25" Width="1.5" />
+    <Position X="12.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>DV.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="Property" Hidden="true" />
-    </Members>
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
   </Class>
   <Class Name="Confluence.Domain.Family">
-    <Position X="5.25" Y="12" Width="1.5" />
+    <Position X="10.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Family.cs</FileName>
       <HashCode>AAACAAAAAAAgAAAAoAAAAARAAAAEQIAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Patentes" />
-    </ShowAsCollectionAssociation>
-    <Members>
-      <Field Name="description" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-      <Field Name="patentes" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Language">
-    <Position X="14.25" Y="3" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Language.cs</FileName>
       <HashCode>AAACAAAAAAAAAAAEgAAAAAQAAAAEAIAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Message">
-    <Position X="11.75" Y="10.25" Width="1.5" />
+    <Position X="8.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>Message.cs</FileName>
       <HashCode>AAACAAAAAAAAAAAAgAAAAIAAAAAAAIAAAAgAAQAAAiE=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="author" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="mail" Hidden="true" />
-      <Field Name="message" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Offer">
-    <Position X="17.25" Y="3" Width="1.5" />
+    <Position X="4.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>Offer.cs</FileName>
       <HashCode>AAADAAEAAQAIAAAAAAAACACAAAgQgAAAAAEAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Bidder" />
-      <Property Name="CounterOffer" />
-      <Property Name="Project" />
-    </ShowAsAssociation>
-    <Members>
-      <Field Name="amount" Hidden="true" />
-      <Field Name="bidder" Hidden="true" />
-      <Field Name="counter_offer" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="project" Hidden="true" />
-      <Field Name="release_date" Hidden="true" />
-    </Members>
-    <AssociationLine Name="Project" Type="Confluence.Domain.Project" ManuallyRouted="true">
-      <Path>
-        <Point X="17.922" Y="3" />
-        <Point X="17.922" Y="0.733" />
-        <Point X="12.656" Y="0.733" />
-        <Point X="12.656" Y="3" />
-      </Path>
-    </AssociationLine>
   </Class>
   <Class Name="Confluence.Domain.Patente">
-    <Position X="7.5" Y="9" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Patente.cs</FileName>
       <HashCode>AAACAAAAAAAAAAIEgAACAAQAAAAEAIAABAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-      <Field Name="path" Hidden="true" />
-      <Field Name="show" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Project">
-    <Position X="11.5" Y="3" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Project.cs</FileName>
       <HashCode>wAICAACCCCAwgAgkEAICBEQAAIQEAACEAAIAJEAAAgA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Developer" />
-      <Property Name="Owner" />
-      <Property Name="Language" />
-      <Property Name="Publication" />
-      <Property Name="State" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Property Name="Questions" />
-      <Property Name="Offers" />
-    </ShowAsCollectionAssociation>
-    <Members>
-      <Field Name="descripton" Hidden="true" />
-      <Field Name="developer" Hidden="true" />
-      <Field Name="end" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="language" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-      <Field Name="offers" Hidden="true" />
-      <Field Name="owner" Hidden="true" />
-      <Field Name="publication" Hidden="true" />
-      <Field Name="questions" Hidden="true" />
-      <Field Name="start" Hidden="true" />
-      <Field Name="state" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.ProjectState">
-    <Position X="8.75" Y="3" Width="1.5" />
+    <Position X="2.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>ProjectState.cs</FileName>
       <HashCode>CAACAAAAAAAAAAAEAAAAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Proposal">
-    <Position X="6.25" Y="3" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Proposal.cs</FileName>
       <HashCode>AAAGAAAAIAAgACAAIAAAAACAAAAAgAAAAAAAAAAABgA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Employer" />
-      <Property Name="Resource" />
-    </ShowAsAssociation>
-    <Members>
-      <Field Name="amount" Hidden="true" />
-      <Field Name="description" Hidden="true" />
-      <Field Name="employer" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="resource" Hidden="true" />
-    </Members>
-    <AssociationLine Name="Resource" Type="Confluence.Domain.Client" FixedToPoint="true">
-      <Path>
-        <Point X="6.25" Y="3.765" />
-        <Point X="4.75" Y="3.765" />
-      </Path>
-    </AssociationLine>
   </Class>
   <Class Name="Confluence.Domain.Publication">
-    <Position X="14.25" Y="7.75" Width="1.5" />
+    <Position X="4.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Publication.cs</FileName>
       <HashCode>AAACAAAAAAAAAAAEAAAAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Question">
-    <Position X="14.25" Y="5.5" Width="1.5" />
+    <Position X="6.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Question.cs</FileName>
       <HashCode>AAACAAAAAAAAAAAAAAAACAAAAAgAAAAMAAAADgAAAgI=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Project" />
-      <Property Name="Answer" />
-      <Property Name="State" />
-    </ShowAsAssociation>
-    <Members>
-      <Field Name="answer" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="project" Hidden="true" />
-      <Field Name="state" Hidden="true" />
-      <Field Name="text" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.QuestionState">
-    <Position X="17.25" Y="7.5" Width="1.5" />
+    <Position X="6.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>QuestionState.cs</FileName>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="id" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.Service">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <FileName>Service.cs</FileName>
       <HashCode>AAACAAAACAAgAIgAIACAAAQAAAAFAAAAAQAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Supplier" />
-      <Property Name="Type" />
-    </ShowAsAssociation>
-    <Members>
-      <Field Name="description" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="language" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-      <Field Name="supplier" Hidden="true" />
-      <Field Name="type" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.ServiceType">
-    <Position X="0.5" Y="6" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>ServiceType.cs</FileName>
       <HashCode>AAACAAAAAAAgAAAEoAAAAAAAAAAAAIAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
-    <Members>
-      <Field Name="description" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-    </Members>
   </Class>
-  <Class Name="Confluence.Domain.Study" Collapsed="true">
-    <Position X="6.25" Y="7.25" Width="1.5" />
+  <Class Name="Confluence.Domain.Study">
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Study.cs</FileName>
       <HashCode>AAACAIAAAAAAAAAAABAAEDAAAAEgAAABAAAAJAAAAgQ=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Confluence.Domain.User">
-    <Position X="3.25" Y="8.5" Width="1.5" />
+    <Position X="12.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <FileName>User.cs</FileName>
       <HashCode>AAQCAAAEAAAAAAAAgAAAAARAIAAEQIACAAAAAwAAAgE=</HashCode>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Patentes" />
-      <Property Name="Families" />
-    </ShowAsCollectionAssociation>
-    <Members>
-      <Field Name="families" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="mail" Hidden="true" />
-      <Field Name="name" Hidden="true" />
-      <Field Name="password" Hidden="true" />
-      <Field Name="patentes" Hidden="true" />
-    </Members>
   </Class>
   <Class Name="Confluence.Domain.WorkXP">
-    <Position X="6.25" Y="6.25" Width="1.5" />
+    <Position X="8.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>WorkXP.cs</FileName>
       <HashCode>AAACAIAAAAAAAAAAABAAEAAAAAAAQAAAAEAAJAAAAgQ=</HashCode>
-    </TypeIdentifier>
-    <Members>
-      <Field Name="client" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="place" Hidden="true" />
-      <Field Name="year_end" Hidden="true" />
-      <Field Name="year_start" Hidden="true" />
-    </Members>
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
-  </Class>
-  <Class Name="Confluence.Domain.DomainObject" Collapsed="true">
-    <Position X="10" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <FileName>DomainObject.cs</FileName>
-      <HashCode>AQAAAAAAAAAAAAAAgAAAAAAAAAAgAACAAQAAAAAAAAE=</HashCode>
     </TypeIdentifier>
   </Class>
 </ClassDiagram>
