@@ -29,6 +29,8 @@ namespace Confluence.Services.Tests.Stubs
         {
             //updated
         }
+        public IList<Family> GetAllForAssign(){return null;}
+
 
         public IList<Family> GetAll()
         {

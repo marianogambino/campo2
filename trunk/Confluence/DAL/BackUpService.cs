@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.Common;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Smo.SqlEnum;
+using Microsoft.SqlServer.Management.Common;
 
 namespace Confluence.DAL
 {
@@ -12,6 +15,8 @@ namespace Confluence.DAL
         private const String DIFF_BACKUP_PROCEDURE = "Confluence_Diff_Backup";
         private const String RESTORE_PROCEDURE = @"RESTORE DATABASE Confluence FROM DISK = 'c:\confluence_restore.bak' WITH REPLACE";
         private const String SCHEDULED_BKP = "scheduled_backup";
+        private const String SERVER_NAME = "PABLO";
+        private const String DB_NAME = "Confluence";
 
         public void BackUp()
         {
@@ -23,19 +28,18 @@ namespace Confluence.DAL
         }
         public void Restore()
         {
-            factory.UseMasterCommand(delegate(DbCommand cmd)
-            {
-                try
-                {
-                    cmd.CommandText = RESTORE_PROCEDURE;
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    throw new BusyDatabaseException();
-                }
-                
-            });
+            Server server = new Server(SERVER_NAME);
+            Database db = server.Databases[DB_NAME];
+            Microsoft.SqlServer.Management.Smo.Restore rst = new Restore();
+
+            rst.Devices.AddDevice(@"c:\confluence_restore.bak", DeviceType.File);
+            rst.Database = DB_NAME;
+            rst.ReplaceDatabase = true;
+
+            if (!rst.SqlVerify(server))  throw new FormatException();
+
+            if (db != null) server.KillAllProcesses(DB_NAME);
+            rst.SqlRestore(server);
         }
         public void ScheduleBackup(DateTime date)
         {
